@@ -1,0 +1,321 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+import "google/api/annotations.proto";
+
+package special_app_v1;
+
+option go_package = "special_app/pkg/proto/v1;special_app_v1";
+
+service SpecialAppService {
+  rpc GetUsers(GetUsersRequest) returns (GetUsersResponse) {
+    option (google.api.http) = {
+      get: "/v1/users"
+    };
+  }
+
+
+  rpc GetIventInfo(GetIventInfoRequest) returns (GetIventInfoResponse) {
+    option (google.api.http) = {
+      get: "/v1/ivents/{id}"
+    };
+  }
+  rpc GetIvents(GetIventsRequest) returns (GetIventsResponse) {
+    option (google.api.http) = {
+      get: "/v1/ivents"
+    };
+  }
+  rpc CreateIvent(CreateIventRequest) returns (GetIventInfoResponse) {
+    option (google.api.http) = {
+      post: "/v1/ivents"
+      body: "*"
+    };
+  }
+  rpc UpdateIvent(UpdateIventRequest) returns (GetIventInfoResponse) {
+    option (google.api.http) = {
+      patch: "/v1/ivents/{id}"
+      body: "*"
+    };
+  }
+  rpc DeleteIvent(DeleteIventRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      delete: "/v1/ivents/{id}"
+    };
+  }
+
+  rpc CreateIventPicture(CreatePictureRequest) returns (GetIventInfoResponse) {
+    option (google.api.http) = {
+      post: "/v1/ivent_pictures"
+      body: "*"
+    };
+  }
+  rpc DeleteIventPicture(DeletePictureRequest) returns (GetIventInfoResponse) {
+    option (google.api.http) = {
+      delete: "/v1/ivent_pictures/{id}"
+    };
+  }
+
+
+  rpc GetItemInfo(GetItemInfoRequest) returns (GetItemInfoResponse) {
+    option (google.api.http) = {
+      get: "/v1/items/{id}"
+    };
+  }
+  rpc GetItems(GetItemsRequest) returns (GetItemsResponse) {
+    option (google.api.http) = {
+      get: "/v1/items"
+    };
+  }
+    rpc CreateItem(CreateItemRequest) returns (GetItemInfoResponse) {
+    option (google.api.http) = {
+      post: "/v1/items"
+      body: "*"
+    };
+  }
+  rpc UpdateItem(UpdateItemRequest) returns (GetItemInfoResponse) {
+    option (google.api.http) = {
+      patch: "/v1/items/{id}"
+      body: "*"
+    };
+  }
+  rpc DeleteItem(DeleteItemRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      delete: "/v1/items/{id}"
+    };
+  }
+
+  rpc CreateItemPicture(CreatePictureRequest) returns (GetItemInfoResponse) {
+    option (google.api.http) = {
+      post: "/v1/item_pictures"
+      body: "*"
+    };
+  }
+  rpc DeleteItemPicture(DeletePictureRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      delete: "/v1/item_pictures/{id}"
+    };
+  }
+
+
+  rpc GetOrderInfo(GetOrderInfoRequest) returns (GetOrderInfoResponse) {
+    option (google.api.http) = {
+      get: "/v1/orders/{id}"
+    };
+  }
+  rpc GetOrders(GetOrdersRequest) returns (GetOrdersResponse) {
+    option (google.api.http) = {
+      get: "/v1/orders"
+    };
+  }
+  rpc UpdateOrder(UpdateOrderRequest) returns (GetOrderInfoResponse) {
+    option (google.api.http) = {
+      patch: "/v1/orders/{id}"
+      body: "*"
+    };
+  }
+  rpc DeleteOrder(DeleteOrderRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      delete: "/v1/orders/{id}"
+    };
+  }
+}
+
+// pictures
+
+message LittlePictureInfo {
+  bytes picture = 1;
+  string mime_type = 2;
+}
+
+message PictureInfo {
+  string id = 1;
+  bytes picture = 2;
+  string mime_type = 3;
+}
+
+message CreatePictureRequest {
+  PictureInfo picture = 1;
+}
+
+message DeletePictureRequest {
+  string id = 1;
+}
+
+// Users
+
+message GetUsersRequest {}
+
+message UserInfo{
+  string name = 1;
+  string surname = 2;
+  string nickname = 3;
+  string phone_number = 4;
+}
+
+message GetUsersResponse {
+  repeated UserInfo users = 1;
+}
+
+// Ivents
+
+message GetIventInfoRequest {
+  string id = 1;
+}
+
+message GetIventsRequest {}
+
+message CreateIventRequest {
+  string title = 1;
+  string description = 2;
+  google.protobuf.Timestamp datetime = 3;
+  int64 price = 4;
+  int64 total_seats = 5;
+  int64 occupied_seats = 6;
+  LittlePictureInfo little_picture = 7;
+}
+
+message UpdateIventRequest {
+  string id = 1;
+  optional string title = 2;
+  optional string description = 3;
+  optional google.protobuf.Timestamp datetime = 4;
+  optional int64 price = 5;
+  optional int64 total_seats = 6;
+  optional int64 occupied_seats = 7;
+  optional LittlePictureInfo little_picture = 8;
+}
+
+message DeleteIventRequest {
+  string id = 1;
+}
+
+message UserIventInfo {
+  string id = 1; 
+  string user_nickname = 2;
+  int64 number_of_guests = 3;
+}
+
+message GetIventInfoResponse {
+  string id = 1;
+  string title = 2;
+  string description = 3;
+  google.protobuf.Timestamp datetime = 4;
+  int64 price = 5;
+  int64 total_seats = 6;
+  int64 occupied_seats = 7;
+  LittlePictureInfo little_picture = 8;
+  repeated PictureInfo pictures = 9;
+  repeated UserIventInfo userIvents = 10;
+}
+
+message IventInfoForList {
+  string id = 1;
+  string title = 2;
+  google.protobuf.Timestamp datetime = 3;
+  int64 price = 4;
+  int64 total_seats = 5;
+  int64 occupied_seats = 6;
+  LittlePictureInfo little_picture = 7;
+}
+
+message GetIventsResponse {
+  repeated IventInfoForList ivents = 1;
+}
+
+// Item
+
+message GetItemInfoRequest {
+  string id = 1;
+}
+
+message GetItemsRequest {}
+
+message CreateItemRequest {
+  string title = 1;
+  string description = 2;
+  int64 price = 3;
+  LittlePictureInfo little_picture = 4;
+}
+
+message UpdateItemRequest {
+  string id = 1;
+  optional string title = 2;
+  optional string description = 3;
+  optional int64 price = 4;
+  optional LittlePictureInfo little_picture = 5;
+}
+
+message DeleteItemRequest {
+  string id = 1;
+}
+
+message GetItemInfoResponse {
+  string id = 1;
+  string title = 2;
+  string description = 3;
+  int64 price = 4;
+  LittlePictureInfo little_picture = 5;
+  repeated PictureInfo pictures = 6;
+}
+
+message ItemInfoForList {
+  string id = 1;
+  string title = 2;
+  int64 price = 3;
+  LittlePictureInfo little_picture = 4;
+}
+
+message GetItemsResponse {
+  repeated ItemInfoForList items = 1;
+}
+
+// Order
+
+message GetOrderInfoRequest {
+  string id = 1;
+}
+
+message GetOrdersRequest {}
+
+message UpdateOrderRequest {
+  string id = 1;
+  string status = 2;
+}
+
+message DeleteOrderRequest {
+  string id = 1;
+}
+
+message OrderItemInfoForList {
+  string id = 1;
+  string item_id = 2;
+  string title = 3;
+  int64 price = 4;
+  int64 quantity = 5;
+  LittlePictureInfo little_picture = 6;
+}
+
+message GetOrderInfoResponse {
+  string id = 1;
+  string number = 2;
+  string user_nickname = 3;
+  google.protobuf.Timestamp form_date = 4;
+  google.protobuf.Timestamp completion_date = 5;
+  string comment = 6;
+  string status = 7;
+  int64 order_amount = 8;
+  repeated OrderItemInfoForList items = 9;
+}
+
+message OrderInfoForList {
+  string id = 1;
+  string number = 2;
+  google.protobuf.Timestamp completion_date = 3;
+  string status = 4;
+  int64 order_amount = 5;
+}
+
+message GetOrdersResponse {
+  repeated OrderInfoForList orders = 1;
+}
