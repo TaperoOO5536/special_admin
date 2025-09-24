@@ -4,7 +4,7 @@
 // 	protoc        (unknown)
 // source: special-admin.proto
 
-package special_app_v1
+package special_admin_v1
 
 import (
 	_ "google.golang.org/genproto/googleapis/api/annotations"
@@ -2103,8 +2103,8 @@ const file_special_admin_proto_rawDesc = "" +
 	"\x06status\x18\x04 \x01(\tR\x06status\x12!\n" +
 	"\forder_amount\x18\x05 \x01(\x03R\vorderAmount\"M\n" +
 	"\x11GetOrdersResponse\x128\n" +
-	"\x06orders\x18\x01 \x03(\v2 .special_app_v1.OrderInfoForListR\x06orders2\xd1\x10\n" +
-	"\x11SpecialAppService\x12`\n" +
+	"\x06orders\x18\x01 \x03(\v2 .special_app_v1.OrderInfoForListR\x06orders2\xd3\x10\n" +
+	"\x13SpecialAdminService\x12`\n" +
 	"\bGetUsers\x12\x1f.special_app_v1.GetUsersRequest\x1a .special_app_v1.GetUsersResponse\"\x11\x82\xd3\xe4\x93\x02\v\x12\t/v1/users\x12r\n" +
 	"\fGetIventInfo\x12#.special_app_v1.GetIventInfoRequest\x1a$.special_app_v1.GetIventInfoResponse\"\x17\x82\xd3\xe4\x93\x02\x11\x12\x0f/v1/ivents/{id}\x12d\n" +
 	"\tGetIvents\x12 .special_app_v1.GetIventsRequest\x1a!.special_app_v1.GetIventsResponse\"\x12\x82\xd3\xe4\x93\x02\f\x12\n" +
@@ -2129,7 +2129,7 @@ const file_special_admin_proto_rawDesc = "" +
 	"\tGetOrders\x12 .special_app_v1.GetOrdersRequest\x1a!.special_app_v1.GetOrdersResponse\"\x12\x82\xd3\xe4\x93\x02\f\x12\n" +
 	"/v1/orders\x12s\n" +
 	"\vUpdateOrder\x12\".special_app_v1.UpdateOrderRequest\x1a$.special_app_v1.GetOrderInfoResponse\"\x1a\x82\xd3\xe4\x93\x02\x14:\x01*2\x0f/v1/orders/{id}\x12b\n" +
-	"\vDeleteOrder\x12\".special_app_v1.DeleteOrderRequest\x1a\x16.google.protobuf.Empty\"\x17\x82\xd3\xe4\x93\x02\x11*\x0f/v1/orders/{id}B)Z'special_app/pkg/proto/v1;special_app_v1b\x06proto3"
+	"\vDeleteOrder\x12\".special_app_v1.DeleteOrderRequest\x1a\x16.google.protobuf.Empty\"\x17\x82\xd3\xe4\x93\x02\x11*\x0f/v1/orders/{id}B-Z+special_admin/pkg/proto/v1;special_admin_v1b\x06proto3"
 
 var (
 	file_special_admin_proto_rawDescOnce sync.Once
@@ -2206,44 +2206,44 @@ var file_special_admin_proto_depIdxs = []int32{
 	28, // 22: special_app_v1.GetOrderInfoResponse.items:type_name -> special_app_v1.OrderItemInfoForList
 	32, // 23: special_app_v1.OrderInfoForList.completion_date:type_name -> google.protobuf.Timestamp
 	30, // 24: special_app_v1.GetOrdersResponse.orders:type_name -> special_app_v1.OrderInfoForList
-	4,  // 25: special_app_v1.SpecialAppService.GetUsers:input_type -> special_app_v1.GetUsersRequest
-	7,  // 26: special_app_v1.SpecialAppService.GetIventInfo:input_type -> special_app_v1.GetIventInfoRequest
-	8,  // 27: special_app_v1.SpecialAppService.GetIvents:input_type -> special_app_v1.GetIventsRequest
-	9,  // 28: special_app_v1.SpecialAppService.CreateIvent:input_type -> special_app_v1.CreateIventRequest
-	10, // 29: special_app_v1.SpecialAppService.UpdateIvent:input_type -> special_app_v1.UpdateIventRequest
-	11, // 30: special_app_v1.SpecialAppService.DeleteIvent:input_type -> special_app_v1.DeleteIventRequest
-	2,  // 31: special_app_v1.SpecialAppService.CreateIventPicture:input_type -> special_app_v1.CreatePictureRequest
-	3,  // 32: special_app_v1.SpecialAppService.DeleteIventPicture:input_type -> special_app_v1.DeletePictureRequest
-	16, // 33: special_app_v1.SpecialAppService.GetItemInfo:input_type -> special_app_v1.GetItemInfoRequest
-	17, // 34: special_app_v1.SpecialAppService.GetItems:input_type -> special_app_v1.GetItemsRequest
-	18, // 35: special_app_v1.SpecialAppService.CreateItem:input_type -> special_app_v1.CreateItemRequest
-	19, // 36: special_app_v1.SpecialAppService.UpdateItem:input_type -> special_app_v1.UpdateItemRequest
-	20, // 37: special_app_v1.SpecialAppService.DeleteItem:input_type -> special_app_v1.DeleteItemRequest
-	2,  // 38: special_app_v1.SpecialAppService.CreateItemPicture:input_type -> special_app_v1.CreatePictureRequest
-	3,  // 39: special_app_v1.SpecialAppService.DeleteItemPicture:input_type -> special_app_v1.DeletePictureRequest
-	24, // 40: special_app_v1.SpecialAppService.GetOrderInfo:input_type -> special_app_v1.GetOrderInfoRequest
-	25, // 41: special_app_v1.SpecialAppService.GetOrders:input_type -> special_app_v1.GetOrdersRequest
-	26, // 42: special_app_v1.SpecialAppService.UpdateOrder:input_type -> special_app_v1.UpdateOrderRequest
-	27, // 43: special_app_v1.SpecialAppService.DeleteOrder:input_type -> special_app_v1.DeleteOrderRequest
-	6,  // 44: special_app_v1.SpecialAppService.GetUsers:output_type -> special_app_v1.GetUsersResponse
-	13, // 45: special_app_v1.SpecialAppService.GetIventInfo:output_type -> special_app_v1.GetIventInfoResponse
-	15, // 46: special_app_v1.SpecialAppService.GetIvents:output_type -> special_app_v1.GetIventsResponse
-	13, // 47: special_app_v1.SpecialAppService.CreateIvent:output_type -> special_app_v1.GetIventInfoResponse
-	13, // 48: special_app_v1.SpecialAppService.UpdateIvent:output_type -> special_app_v1.GetIventInfoResponse
-	33, // 49: special_app_v1.SpecialAppService.DeleteIvent:output_type -> google.protobuf.Empty
-	13, // 50: special_app_v1.SpecialAppService.CreateIventPicture:output_type -> special_app_v1.GetIventInfoResponse
-	13, // 51: special_app_v1.SpecialAppService.DeleteIventPicture:output_type -> special_app_v1.GetIventInfoResponse
-	21, // 52: special_app_v1.SpecialAppService.GetItemInfo:output_type -> special_app_v1.GetItemInfoResponse
-	23, // 53: special_app_v1.SpecialAppService.GetItems:output_type -> special_app_v1.GetItemsResponse
-	21, // 54: special_app_v1.SpecialAppService.CreateItem:output_type -> special_app_v1.GetItemInfoResponse
-	21, // 55: special_app_v1.SpecialAppService.UpdateItem:output_type -> special_app_v1.GetItemInfoResponse
-	33, // 56: special_app_v1.SpecialAppService.DeleteItem:output_type -> google.protobuf.Empty
-	21, // 57: special_app_v1.SpecialAppService.CreateItemPicture:output_type -> special_app_v1.GetItemInfoResponse
-	33, // 58: special_app_v1.SpecialAppService.DeleteItemPicture:output_type -> google.protobuf.Empty
-	29, // 59: special_app_v1.SpecialAppService.GetOrderInfo:output_type -> special_app_v1.GetOrderInfoResponse
-	31, // 60: special_app_v1.SpecialAppService.GetOrders:output_type -> special_app_v1.GetOrdersResponse
-	29, // 61: special_app_v1.SpecialAppService.UpdateOrder:output_type -> special_app_v1.GetOrderInfoResponse
-	33, // 62: special_app_v1.SpecialAppService.DeleteOrder:output_type -> google.protobuf.Empty
+	4,  // 25: special_app_v1.SpecialAdminService.GetUsers:input_type -> special_app_v1.GetUsersRequest
+	7,  // 26: special_app_v1.SpecialAdminService.GetIventInfo:input_type -> special_app_v1.GetIventInfoRequest
+	8,  // 27: special_app_v1.SpecialAdminService.GetIvents:input_type -> special_app_v1.GetIventsRequest
+	9,  // 28: special_app_v1.SpecialAdminService.CreateIvent:input_type -> special_app_v1.CreateIventRequest
+	10, // 29: special_app_v1.SpecialAdminService.UpdateIvent:input_type -> special_app_v1.UpdateIventRequest
+	11, // 30: special_app_v1.SpecialAdminService.DeleteIvent:input_type -> special_app_v1.DeleteIventRequest
+	2,  // 31: special_app_v1.SpecialAdminService.CreateIventPicture:input_type -> special_app_v1.CreatePictureRequest
+	3,  // 32: special_app_v1.SpecialAdminService.DeleteIventPicture:input_type -> special_app_v1.DeletePictureRequest
+	16, // 33: special_app_v1.SpecialAdminService.GetItemInfo:input_type -> special_app_v1.GetItemInfoRequest
+	17, // 34: special_app_v1.SpecialAdminService.GetItems:input_type -> special_app_v1.GetItemsRequest
+	18, // 35: special_app_v1.SpecialAdminService.CreateItem:input_type -> special_app_v1.CreateItemRequest
+	19, // 36: special_app_v1.SpecialAdminService.UpdateItem:input_type -> special_app_v1.UpdateItemRequest
+	20, // 37: special_app_v1.SpecialAdminService.DeleteItem:input_type -> special_app_v1.DeleteItemRequest
+	2,  // 38: special_app_v1.SpecialAdminService.CreateItemPicture:input_type -> special_app_v1.CreatePictureRequest
+	3,  // 39: special_app_v1.SpecialAdminService.DeleteItemPicture:input_type -> special_app_v1.DeletePictureRequest
+	24, // 40: special_app_v1.SpecialAdminService.GetOrderInfo:input_type -> special_app_v1.GetOrderInfoRequest
+	25, // 41: special_app_v1.SpecialAdminService.GetOrders:input_type -> special_app_v1.GetOrdersRequest
+	26, // 42: special_app_v1.SpecialAdminService.UpdateOrder:input_type -> special_app_v1.UpdateOrderRequest
+	27, // 43: special_app_v1.SpecialAdminService.DeleteOrder:input_type -> special_app_v1.DeleteOrderRequest
+	6,  // 44: special_app_v1.SpecialAdminService.GetUsers:output_type -> special_app_v1.GetUsersResponse
+	13, // 45: special_app_v1.SpecialAdminService.GetIventInfo:output_type -> special_app_v1.GetIventInfoResponse
+	15, // 46: special_app_v1.SpecialAdminService.GetIvents:output_type -> special_app_v1.GetIventsResponse
+	13, // 47: special_app_v1.SpecialAdminService.CreateIvent:output_type -> special_app_v1.GetIventInfoResponse
+	13, // 48: special_app_v1.SpecialAdminService.UpdateIvent:output_type -> special_app_v1.GetIventInfoResponse
+	33, // 49: special_app_v1.SpecialAdminService.DeleteIvent:output_type -> google.protobuf.Empty
+	13, // 50: special_app_v1.SpecialAdminService.CreateIventPicture:output_type -> special_app_v1.GetIventInfoResponse
+	13, // 51: special_app_v1.SpecialAdminService.DeleteIventPicture:output_type -> special_app_v1.GetIventInfoResponse
+	21, // 52: special_app_v1.SpecialAdminService.GetItemInfo:output_type -> special_app_v1.GetItemInfoResponse
+	23, // 53: special_app_v1.SpecialAdminService.GetItems:output_type -> special_app_v1.GetItemsResponse
+	21, // 54: special_app_v1.SpecialAdminService.CreateItem:output_type -> special_app_v1.GetItemInfoResponse
+	21, // 55: special_app_v1.SpecialAdminService.UpdateItem:output_type -> special_app_v1.GetItemInfoResponse
+	33, // 56: special_app_v1.SpecialAdminService.DeleteItem:output_type -> google.protobuf.Empty
+	21, // 57: special_app_v1.SpecialAdminService.CreateItemPicture:output_type -> special_app_v1.GetItemInfoResponse
+	33, // 58: special_app_v1.SpecialAdminService.DeleteItemPicture:output_type -> google.protobuf.Empty
+	29, // 59: special_app_v1.SpecialAdminService.GetOrderInfo:output_type -> special_app_v1.GetOrderInfoResponse
+	31, // 60: special_app_v1.SpecialAdminService.GetOrders:output_type -> special_app_v1.GetOrdersResponse
+	29, // 61: special_app_v1.SpecialAdminService.UpdateOrder:output_type -> special_app_v1.GetOrderInfoResponse
+	33, // 62: special_app_v1.SpecialAdminService.DeleteOrder:output_type -> google.protobuf.Empty
 	44, // [44:63] is the sub-list for method output_type
 	25, // [25:44] is the sub-list for method input_type
 	25, // [25:25] is the sub-list for extension type_name

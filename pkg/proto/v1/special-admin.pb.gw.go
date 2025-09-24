@@ -2,11 +2,11 @@
 // source: special-admin.proto
 
 /*
-Package special_app_v1 is a reverse proxy.
+Package special_admin_v1 is a reverse proxy.
 
 It translates gRPC into RESTful JSON APIs.
 */
-package special_app_v1
+package special_admin_v1
 
 import (
 	"context"
@@ -35,7 +35,7 @@ var (
 	_ = metadata.Join
 )
 
-func request_SpecialAppService_GetUsers_0(ctx context.Context, marshaler runtime.Marshaler, client SpecialAppServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_SpecialAdminService_GetUsers_0(ctx context.Context, marshaler runtime.Marshaler, client SpecialAdminServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
 		protoReq GetUsersRequest
 		metadata runtime.ServerMetadata
@@ -47,7 +47,7 @@ func request_SpecialAppService_GetUsers_0(ctx context.Context, marshaler runtime
 	return msg, metadata, err
 }
 
-func local_request_SpecialAppService_GetUsers_0(ctx context.Context, marshaler runtime.Marshaler, server SpecialAppServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_SpecialAdminService_GetUsers_0(ctx context.Context, marshaler runtime.Marshaler, server SpecialAdminServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
 		protoReq GetUsersRequest
 		metadata runtime.ServerMetadata
@@ -56,7 +56,7 @@ func local_request_SpecialAppService_GetUsers_0(ctx context.Context, marshaler r
 	return msg, metadata, err
 }
 
-func request_SpecialAppService_GetIventInfo_0(ctx context.Context, marshaler runtime.Marshaler, client SpecialAppServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_SpecialAdminService_GetIventInfo_0(ctx context.Context, marshaler runtime.Marshaler, client SpecialAdminServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
 		protoReq GetIventInfoRequest
 		metadata runtime.ServerMetadata
@@ -77,7 +77,7 @@ func request_SpecialAppService_GetIventInfo_0(ctx context.Context, marshaler run
 	return msg, metadata, err
 }
 
-func local_request_SpecialAppService_GetIventInfo_0(ctx context.Context, marshaler runtime.Marshaler, server SpecialAppServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_SpecialAdminService_GetIventInfo_0(ctx context.Context, marshaler runtime.Marshaler, server SpecialAdminServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
 		protoReq GetIventInfoRequest
 		metadata runtime.ServerMetadata
@@ -95,7 +95,7 @@ func local_request_SpecialAppService_GetIventInfo_0(ctx context.Context, marshal
 	return msg, metadata, err
 }
 
-func request_SpecialAppService_GetIvents_0(ctx context.Context, marshaler runtime.Marshaler, client SpecialAppServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_SpecialAdminService_GetIvents_0(ctx context.Context, marshaler runtime.Marshaler, client SpecialAdminServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
 		protoReq GetIventsRequest
 		metadata runtime.ServerMetadata
@@ -107,7 +107,7 @@ func request_SpecialAppService_GetIvents_0(ctx context.Context, marshaler runtim
 	return msg, metadata, err
 }
 
-func local_request_SpecialAppService_GetIvents_0(ctx context.Context, marshaler runtime.Marshaler, server SpecialAppServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_SpecialAdminService_GetIvents_0(ctx context.Context, marshaler runtime.Marshaler, server SpecialAdminServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
 		protoReq GetIventsRequest
 		metadata runtime.ServerMetadata
@@ -116,7 +116,7 @@ func local_request_SpecialAppService_GetIvents_0(ctx context.Context, marshaler 
 	return msg, metadata, err
 }
 
-func request_SpecialAppService_CreateIvent_0(ctx context.Context, marshaler runtime.Marshaler, client SpecialAppServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_SpecialAdminService_CreateIvent_0(ctx context.Context, marshaler runtime.Marshaler, client SpecialAdminServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
 		protoReq CreateIventRequest
 		metadata runtime.ServerMetadata
@@ -131,7 +131,7 @@ func request_SpecialAppService_CreateIvent_0(ctx context.Context, marshaler runt
 	return msg, metadata, err
 }
 
-func local_request_SpecialAppService_CreateIvent_0(ctx context.Context, marshaler runtime.Marshaler, server SpecialAppServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_SpecialAdminService_CreateIvent_0(ctx context.Context, marshaler runtime.Marshaler, server SpecialAdminServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
 		protoReq CreateIventRequest
 		metadata runtime.ServerMetadata
@@ -143,7 +143,7 @@ func local_request_SpecialAppService_CreateIvent_0(ctx context.Context, marshale
 	return msg, metadata, err
 }
 
-func request_SpecialAppService_UpdateIvent_0(ctx context.Context, marshaler runtime.Marshaler, client SpecialAppServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_SpecialAdminService_UpdateIvent_0(ctx context.Context, marshaler runtime.Marshaler, client SpecialAdminServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
 		protoReq UpdateIventRequest
 		metadata runtime.ServerMetadata
@@ -167,7 +167,7 @@ func request_SpecialAppService_UpdateIvent_0(ctx context.Context, marshaler runt
 	return msg, metadata, err
 }
 
-func local_request_SpecialAppService_UpdateIvent_0(ctx context.Context, marshaler runtime.Marshaler, server SpecialAppServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_SpecialAdminService_UpdateIvent_0(ctx context.Context, marshaler runtime.Marshaler, server SpecialAdminServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
 		protoReq UpdateIventRequest
 		metadata runtime.ServerMetadata
@@ -188,7 +188,7 @@ func local_request_SpecialAppService_UpdateIvent_0(ctx context.Context, marshale
 	return msg, metadata, err
 }
 
-func request_SpecialAppService_DeleteIvent_0(ctx context.Context, marshaler runtime.Marshaler, client SpecialAppServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_SpecialAdminService_DeleteIvent_0(ctx context.Context, marshaler runtime.Marshaler, client SpecialAdminServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
 		protoReq DeleteIventRequest
 		metadata runtime.ServerMetadata
@@ -209,7 +209,7 @@ func request_SpecialAppService_DeleteIvent_0(ctx context.Context, marshaler runt
 	return msg, metadata, err
 }
 
-func local_request_SpecialAppService_DeleteIvent_0(ctx context.Context, marshaler runtime.Marshaler, server SpecialAppServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_SpecialAdminService_DeleteIvent_0(ctx context.Context, marshaler runtime.Marshaler, server SpecialAdminServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
 		protoReq DeleteIventRequest
 		metadata runtime.ServerMetadata
@@ -227,7 +227,7 @@ func local_request_SpecialAppService_DeleteIvent_0(ctx context.Context, marshale
 	return msg, metadata, err
 }
 
-func request_SpecialAppService_CreateIventPicture_0(ctx context.Context, marshaler runtime.Marshaler, client SpecialAppServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_SpecialAdminService_CreateIventPicture_0(ctx context.Context, marshaler runtime.Marshaler, client SpecialAdminServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
 		protoReq CreatePictureRequest
 		metadata runtime.ServerMetadata
@@ -242,7 +242,7 @@ func request_SpecialAppService_CreateIventPicture_0(ctx context.Context, marshal
 	return msg, metadata, err
 }
 
-func local_request_SpecialAppService_CreateIventPicture_0(ctx context.Context, marshaler runtime.Marshaler, server SpecialAppServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_SpecialAdminService_CreateIventPicture_0(ctx context.Context, marshaler runtime.Marshaler, server SpecialAdminServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
 		protoReq CreatePictureRequest
 		metadata runtime.ServerMetadata
@@ -254,7 +254,7 @@ func local_request_SpecialAppService_CreateIventPicture_0(ctx context.Context, m
 	return msg, metadata, err
 }
 
-func request_SpecialAppService_DeleteIventPicture_0(ctx context.Context, marshaler runtime.Marshaler, client SpecialAppServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_SpecialAdminService_DeleteIventPicture_0(ctx context.Context, marshaler runtime.Marshaler, client SpecialAdminServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
 		protoReq DeletePictureRequest
 		metadata runtime.ServerMetadata
@@ -275,7 +275,7 @@ func request_SpecialAppService_DeleteIventPicture_0(ctx context.Context, marshal
 	return msg, metadata, err
 }
 
-func local_request_SpecialAppService_DeleteIventPicture_0(ctx context.Context, marshaler runtime.Marshaler, server SpecialAppServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_SpecialAdminService_DeleteIventPicture_0(ctx context.Context, marshaler runtime.Marshaler, server SpecialAdminServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
 		protoReq DeletePictureRequest
 		metadata runtime.ServerMetadata
@@ -293,7 +293,7 @@ func local_request_SpecialAppService_DeleteIventPicture_0(ctx context.Context, m
 	return msg, metadata, err
 }
 
-func request_SpecialAppService_GetItemInfo_0(ctx context.Context, marshaler runtime.Marshaler, client SpecialAppServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_SpecialAdminService_GetItemInfo_0(ctx context.Context, marshaler runtime.Marshaler, client SpecialAdminServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
 		protoReq GetItemInfoRequest
 		metadata runtime.ServerMetadata
@@ -314,7 +314,7 @@ func request_SpecialAppService_GetItemInfo_0(ctx context.Context, marshaler runt
 	return msg, metadata, err
 }
 
-func local_request_SpecialAppService_GetItemInfo_0(ctx context.Context, marshaler runtime.Marshaler, server SpecialAppServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_SpecialAdminService_GetItemInfo_0(ctx context.Context, marshaler runtime.Marshaler, server SpecialAdminServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
 		protoReq GetItemInfoRequest
 		metadata runtime.ServerMetadata
@@ -332,7 +332,7 @@ func local_request_SpecialAppService_GetItemInfo_0(ctx context.Context, marshale
 	return msg, metadata, err
 }
 
-func request_SpecialAppService_GetItems_0(ctx context.Context, marshaler runtime.Marshaler, client SpecialAppServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_SpecialAdminService_GetItems_0(ctx context.Context, marshaler runtime.Marshaler, client SpecialAdminServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
 		protoReq GetItemsRequest
 		metadata runtime.ServerMetadata
@@ -344,7 +344,7 @@ func request_SpecialAppService_GetItems_0(ctx context.Context, marshaler runtime
 	return msg, metadata, err
 }
 
-func local_request_SpecialAppService_GetItems_0(ctx context.Context, marshaler runtime.Marshaler, server SpecialAppServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_SpecialAdminService_GetItems_0(ctx context.Context, marshaler runtime.Marshaler, server SpecialAdminServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
 		protoReq GetItemsRequest
 		metadata runtime.ServerMetadata
@@ -353,7 +353,7 @@ func local_request_SpecialAppService_GetItems_0(ctx context.Context, marshaler r
 	return msg, metadata, err
 }
 
-func request_SpecialAppService_CreateItem_0(ctx context.Context, marshaler runtime.Marshaler, client SpecialAppServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_SpecialAdminService_CreateItem_0(ctx context.Context, marshaler runtime.Marshaler, client SpecialAdminServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
 		protoReq CreateItemRequest
 		metadata runtime.ServerMetadata
@@ -368,7 +368,7 @@ func request_SpecialAppService_CreateItem_0(ctx context.Context, marshaler runti
 	return msg, metadata, err
 }
 
-func local_request_SpecialAppService_CreateItem_0(ctx context.Context, marshaler runtime.Marshaler, server SpecialAppServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_SpecialAdminService_CreateItem_0(ctx context.Context, marshaler runtime.Marshaler, server SpecialAdminServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
 		protoReq CreateItemRequest
 		metadata runtime.ServerMetadata
@@ -380,7 +380,7 @@ func local_request_SpecialAppService_CreateItem_0(ctx context.Context, marshaler
 	return msg, metadata, err
 }
 
-func request_SpecialAppService_UpdateItem_0(ctx context.Context, marshaler runtime.Marshaler, client SpecialAppServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_SpecialAdminService_UpdateItem_0(ctx context.Context, marshaler runtime.Marshaler, client SpecialAdminServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
 		protoReq UpdateItemRequest
 		metadata runtime.ServerMetadata
@@ -404,7 +404,7 @@ func request_SpecialAppService_UpdateItem_0(ctx context.Context, marshaler runti
 	return msg, metadata, err
 }
 
-func local_request_SpecialAppService_UpdateItem_0(ctx context.Context, marshaler runtime.Marshaler, server SpecialAppServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_SpecialAdminService_UpdateItem_0(ctx context.Context, marshaler runtime.Marshaler, server SpecialAdminServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
 		protoReq UpdateItemRequest
 		metadata runtime.ServerMetadata
@@ -425,7 +425,7 @@ func local_request_SpecialAppService_UpdateItem_0(ctx context.Context, marshaler
 	return msg, metadata, err
 }
 
-func request_SpecialAppService_DeleteItem_0(ctx context.Context, marshaler runtime.Marshaler, client SpecialAppServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_SpecialAdminService_DeleteItem_0(ctx context.Context, marshaler runtime.Marshaler, client SpecialAdminServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
 		protoReq DeleteItemRequest
 		metadata runtime.ServerMetadata
@@ -446,7 +446,7 @@ func request_SpecialAppService_DeleteItem_0(ctx context.Context, marshaler runti
 	return msg, metadata, err
 }
 
-func local_request_SpecialAppService_DeleteItem_0(ctx context.Context, marshaler runtime.Marshaler, server SpecialAppServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_SpecialAdminService_DeleteItem_0(ctx context.Context, marshaler runtime.Marshaler, server SpecialAdminServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
 		protoReq DeleteItemRequest
 		metadata runtime.ServerMetadata
@@ -464,7 +464,7 @@ func local_request_SpecialAppService_DeleteItem_0(ctx context.Context, marshaler
 	return msg, metadata, err
 }
 
-func request_SpecialAppService_CreateItemPicture_0(ctx context.Context, marshaler runtime.Marshaler, client SpecialAppServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_SpecialAdminService_CreateItemPicture_0(ctx context.Context, marshaler runtime.Marshaler, client SpecialAdminServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
 		protoReq CreatePictureRequest
 		metadata runtime.ServerMetadata
@@ -479,7 +479,7 @@ func request_SpecialAppService_CreateItemPicture_0(ctx context.Context, marshale
 	return msg, metadata, err
 }
 
-func local_request_SpecialAppService_CreateItemPicture_0(ctx context.Context, marshaler runtime.Marshaler, server SpecialAppServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_SpecialAdminService_CreateItemPicture_0(ctx context.Context, marshaler runtime.Marshaler, server SpecialAdminServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
 		protoReq CreatePictureRequest
 		metadata runtime.ServerMetadata
@@ -491,7 +491,7 @@ func local_request_SpecialAppService_CreateItemPicture_0(ctx context.Context, ma
 	return msg, metadata, err
 }
 
-func request_SpecialAppService_DeleteItemPicture_0(ctx context.Context, marshaler runtime.Marshaler, client SpecialAppServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_SpecialAdminService_DeleteItemPicture_0(ctx context.Context, marshaler runtime.Marshaler, client SpecialAdminServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
 		protoReq DeletePictureRequest
 		metadata runtime.ServerMetadata
@@ -512,7 +512,7 @@ func request_SpecialAppService_DeleteItemPicture_0(ctx context.Context, marshale
 	return msg, metadata, err
 }
 
-func local_request_SpecialAppService_DeleteItemPicture_0(ctx context.Context, marshaler runtime.Marshaler, server SpecialAppServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_SpecialAdminService_DeleteItemPicture_0(ctx context.Context, marshaler runtime.Marshaler, server SpecialAdminServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
 		protoReq DeletePictureRequest
 		metadata runtime.ServerMetadata
@@ -530,7 +530,7 @@ func local_request_SpecialAppService_DeleteItemPicture_0(ctx context.Context, ma
 	return msg, metadata, err
 }
 
-func request_SpecialAppService_GetOrderInfo_0(ctx context.Context, marshaler runtime.Marshaler, client SpecialAppServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_SpecialAdminService_GetOrderInfo_0(ctx context.Context, marshaler runtime.Marshaler, client SpecialAdminServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
 		protoReq GetOrderInfoRequest
 		metadata runtime.ServerMetadata
@@ -551,7 +551,7 @@ func request_SpecialAppService_GetOrderInfo_0(ctx context.Context, marshaler run
 	return msg, metadata, err
 }
 
-func local_request_SpecialAppService_GetOrderInfo_0(ctx context.Context, marshaler runtime.Marshaler, server SpecialAppServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_SpecialAdminService_GetOrderInfo_0(ctx context.Context, marshaler runtime.Marshaler, server SpecialAdminServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
 		protoReq GetOrderInfoRequest
 		metadata runtime.ServerMetadata
@@ -569,7 +569,7 @@ func local_request_SpecialAppService_GetOrderInfo_0(ctx context.Context, marshal
 	return msg, metadata, err
 }
 
-func request_SpecialAppService_GetOrders_0(ctx context.Context, marshaler runtime.Marshaler, client SpecialAppServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_SpecialAdminService_GetOrders_0(ctx context.Context, marshaler runtime.Marshaler, client SpecialAdminServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
 		protoReq GetOrdersRequest
 		metadata runtime.ServerMetadata
@@ -581,7 +581,7 @@ func request_SpecialAppService_GetOrders_0(ctx context.Context, marshaler runtim
 	return msg, metadata, err
 }
 
-func local_request_SpecialAppService_GetOrders_0(ctx context.Context, marshaler runtime.Marshaler, server SpecialAppServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_SpecialAdminService_GetOrders_0(ctx context.Context, marshaler runtime.Marshaler, server SpecialAdminServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
 		protoReq GetOrdersRequest
 		metadata runtime.ServerMetadata
@@ -590,7 +590,7 @@ func local_request_SpecialAppService_GetOrders_0(ctx context.Context, marshaler 
 	return msg, metadata, err
 }
 
-func request_SpecialAppService_UpdateOrder_0(ctx context.Context, marshaler runtime.Marshaler, client SpecialAppServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_SpecialAdminService_UpdateOrder_0(ctx context.Context, marshaler runtime.Marshaler, client SpecialAdminServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
 		protoReq UpdateOrderRequest
 		metadata runtime.ServerMetadata
@@ -614,7 +614,7 @@ func request_SpecialAppService_UpdateOrder_0(ctx context.Context, marshaler runt
 	return msg, metadata, err
 }
 
-func local_request_SpecialAppService_UpdateOrder_0(ctx context.Context, marshaler runtime.Marshaler, server SpecialAppServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_SpecialAdminService_UpdateOrder_0(ctx context.Context, marshaler runtime.Marshaler, server SpecialAdminServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
 		protoReq UpdateOrderRequest
 		metadata runtime.ServerMetadata
@@ -635,7 +635,7 @@ func local_request_SpecialAppService_UpdateOrder_0(ctx context.Context, marshale
 	return msg, metadata, err
 }
 
-func request_SpecialAppService_DeleteOrder_0(ctx context.Context, marshaler runtime.Marshaler, client SpecialAppServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_SpecialAdminService_DeleteOrder_0(ctx context.Context, marshaler runtime.Marshaler, client SpecialAdminServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
 		protoReq DeleteOrderRequest
 		metadata runtime.ServerMetadata
@@ -656,7 +656,7 @@ func request_SpecialAppService_DeleteOrder_0(ctx context.Context, marshaler runt
 	return msg, metadata, err
 }
 
-func local_request_SpecialAppService_DeleteOrder_0(ctx context.Context, marshaler runtime.Marshaler, server SpecialAppServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_SpecialAdminService_DeleteOrder_0(ctx context.Context, marshaler runtime.Marshaler, server SpecialAdminServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
 		protoReq DeleteOrderRequest
 		metadata runtime.ServerMetadata
@@ -674,399 +674,399 @@ func local_request_SpecialAppService_DeleteOrder_0(ctx context.Context, marshale
 	return msg, metadata, err
 }
 
-// RegisterSpecialAppServiceHandlerServer registers the http handlers for service SpecialAppService to "mux".
-// UnaryRPC     :call SpecialAppServiceServer directly.
+// RegisterSpecialAdminServiceHandlerServer registers the http handlers for service SpecialAdminService to "mux".
+// UnaryRPC     :call SpecialAdminServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
-// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterSpecialAppServiceHandlerFromEndpoint instead.
+// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterSpecialAdminServiceHandlerFromEndpoint instead.
 // GRPC interceptors will not work for this type of registration. To use interceptors, you must use the "runtime.WithMiddlewares" option in the "runtime.NewServeMux" call.
-func RegisterSpecialAppServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server SpecialAppServiceServer) error {
-	mux.Handle(http.MethodGet, pattern_SpecialAppService_GetUsers_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+func RegisterSpecialAdminServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server SpecialAdminServiceServer) error {
+	mux.Handle(http.MethodGet, pattern_SpecialAdminService_GetUsers_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/special_app_v1.SpecialAppService/GetUsers", runtime.WithHTTPPathPattern("/v1/users"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/special_app_v1.SpecialAdminService/GetUsers", runtime.WithHTTPPathPattern("/v1/users"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_SpecialAppService_GetUsers_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_SpecialAdminService_GetUsers_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_SpecialAppService_GetUsers_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SpecialAdminService_GetUsers_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_SpecialAppService_GetIventInfo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_SpecialAdminService_GetIventInfo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/special_app_v1.SpecialAppService/GetIventInfo", runtime.WithHTTPPathPattern("/v1/ivents/{id}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/special_app_v1.SpecialAdminService/GetIventInfo", runtime.WithHTTPPathPattern("/v1/ivents/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_SpecialAppService_GetIventInfo_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_SpecialAdminService_GetIventInfo_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_SpecialAppService_GetIventInfo_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SpecialAdminService_GetIventInfo_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_SpecialAppService_GetIvents_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_SpecialAdminService_GetIvents_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/special_app_v1.SpecialAppService/GetIvents", runtime.WithHTTPPathPattern("/v1/ivents"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/special_app_v1.SpecialAdminService/GetIvents", runtime.WithHTTPPathPattern("/v1/ivents"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_SpecialAppService_GetIvents_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_SpecialAdminService_GetIvents_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_SpecialAppService_GetIvents_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SpecialAdminService_GetIvents_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodPost, pattern_SpecialAppService_CreateIvent_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodPost, pattern_SpecialAdminService_CreateIvent_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/special_app_v1.SpecialAppService/CreateIvent", runtime.WithHTTPPathPattern("/v1/ivents"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/special_app_v1.SpecialAdminService/CreateIvent", runtime.WithHTTPPathPattern("/v1/ivents"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_SpecialAppService_CreateIvent_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_SpecialAdminService_CreateIvent_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_SpecialAppService_CreateIvent_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SpecialAdminService_CreateIvent_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodPatch, pattern_SpecialAppService_UpdateIvent_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodPatch, pattern_SpecialAdminService_UpdateIvent_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/special_app_v1.SpecialAppService/UpdateIvent", runtime.WithHTTPPathPattern("/v1/ivents/{id}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/special_app_v1.SpecialAdminService/UpdateIvent", runtime.WithHTTPPathPattern("/v1/ivents/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_SpecialAppService_UpdateIvent_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_SpecialAdminService_UpdateIvent_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_SpecialAppService_UpdateIvent_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SpecialAdminService_UpdateIvent_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodDelete, pattern_SpecialAppService_DeleteIvent_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodDelete, pattern_SpecialAdminService_DeleteIvent_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/special_app_v1.SpecialAppService/DeleteIvent", runtime.WithHTTPPathPattern("/v1/ivents/{id}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/special_app_v1.SpecialAdminService/DeleteIvent", runtime.WithHTTPPathPattern("/v1/ivents/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_SpecialAppService_DeleteIvent_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_SpecialAdminService_DeleteIvent_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_SpecialAppService_DeleteIvent_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SpecialAdminService_DeleteIvent_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodPost, pattern_SpecialAppService_CreateIventPicture_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodPost, pattern_SpecialAdminService_CreateIventPicture_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/special_app_v1.SpecialAppService/CreateIventPicture", runtime.WithHTTPPathPattern("/v1/ivent_pictures"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/special_app_v1.SpecialAdminService/CreateIventPicture", runtime.WithHTTPPathPattern("/v1/ivent_pictures"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_SpecialAppService_CreateIventPicture_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_SpecialAdminService_CreateIventPicture_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_SpecialAppService_CreateIventPicture_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SpecialAdminService_CreateIventPicture_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodDelete, pattern_SpecialAppService_DeleteIventPicture_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodDelete, pattern_SpecialAdminService_DeleteIventPicture_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/special_app_v1.SpecialAppService/DeleteIventPicture", runtime.WithHTTPPathPattern("/v1/ivent_pictures/{id}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/special_app_v1.SpecialAdminService/DeleteIventPicture", runtime.WithHTTPPathPattern("/v1/ivent_pictures/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_SpecialAppService_DeleteIventPicture_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_SpecialAdminService_DeleteIventPicture_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_SpecialAppService_DeleteIventPicture_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SpecialAdminService_DeleteIventPicture_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_SpecialAppService_GetItemInfo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_SpecialAdminService_GetItemInfo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/special_app_v1.SpecialAppService/GetItemInfo", runtime.WithHTTPPathPattern("/v1/items/{id}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/special_app_v1.SpecialAdminService/GetItemInfo", runtime.WithHTTPPathPattern("/v1/items/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_SpecialAppService_GetItemInfo_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_SpecialAdminService_GetItemInfo_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_SpecialAppService_GetItemInfo_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SpecialAdminService_GetItemInfo_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_SpecialAppService_GetItems_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_SpecialAdminService_GetItems_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/special_app_v1.SpecialAppService/GetItems", runtime.WithHTTPPathPattern("/v1/items"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/special_app_v1.SpecialAdminService/GetItems", runtime.WithHTTPPathPattern("/v1/items"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_SpecialAppService_GetItems_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_SpecialAdminService_GetItems_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_SpecialAppService_GetItems_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SpecialAdminService_GetItems_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodPost, pattern_SpecialAppService_CreateItem_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodPost, pattern_SpecialAdminService_CreateItem_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/special_app_v1.SpecialAppService/CreateItem", runtime.WithHTTPPathPattern("/v1/items"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/special_app_v1.SpecialAdminService/CreateItem", runtime.WithHTTPPathPattern("/v1/items"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_SpecialAppService_CreateItem_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_SpecialAdminService_CreateItem_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_SpecialAppService_CreateItem_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SpecialAdminService_CreateItem_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodPatch, pattern_SpecialAppService_UpdateItem_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodPatch, pattern_SpecialAdminService_UpdateItem_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/special_app_v1.SpecialAppService/UpdateItem", runtime.WithHTTPPathPattern("/v1/items/{id}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/special_app_v1.SpecialAdminService/UpdateItem", runtime.WithHTTPPathPattern("/v1/items/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_SpecialAppService_UpdateItem_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_SpecialAdminService_UpdateItem_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_SpecialAppService_UpdateItem_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SpecialAdminService_UpdateItem_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodDelete, pattern_SpecialAppService_DeleteItem_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodDelete, pattern_SpecialAdminService_DeleteItem_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/special_app_v1.SpecialAppService/DeleteItem", runtime.WithHTTPPathPattern("/v1/items/{id}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/special_app_v1.SpecialAdminService/DeleteItem", runtime.WithHTTPPathPattern("/v1/items/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_SpecialAppService_DeleteItem_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_SpecialAdminService_DeleteItem_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_SpecialAppService_DeleteItem_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SpecialAdminService_DeleteItem_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodPost, pattern_SpecialAppService_CreateItemPicture_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodPost, pattern_SpecialAdminService_CreateItemPicture_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/special_app_v1.SpecialAppService/CreateItemPicture", runtime.WithHTTPPathPattern("/v1/item_pictures"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/special_app_v1.SpecialAdminService/CreateItemPicture", runtime.WithHTTPPathPattern("/v1/item_pictures"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_SpecialAppService_CreateItemPicture_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_SpecialAdminService_CreateItemPicture_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_SpecialAppService_CreateItemPicture_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SpecialAdminService_CreateItemPicture_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodDelete, pattern_SpecialAppService_DeleteItemPicture_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodDelete, pattern_SpecialAdminService_DeleteItemPicture_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/special_app_v1.SpecialAppService/DeleteItemPicture", runtime.WithHTTPPathPattern("/v1/item_pictures/{id}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/special_app_v1.SpecialAdminService/DeleteItemPicture", runtime.WithHTTPPathPattern("/v1/item_pictures/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_SpecialAppService_DeleteItemPicture_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_SpecialAdminService_DeleteItemPicture_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_SpecialAppService_DeleteItemPicture_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SpecialAdminService_DeleteItemPicture_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_SpecialAppService_GetOrderInfo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_SpecialAdminService_GetOrderInfo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/special_app_v1.SpecialAppService/GetOrderInfo", runtime.WithHTTPPathPattern("/v1/orders/{id}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/special_app_v1.SpecialAdminService/GetOrderInfo", runtime.WithHTTPPathPattern("/v1/orders/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_SpecialAppService_GetOrderInfo_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_SpecialAdminService_GetOrderInfo_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_SpecialAppService_GetOrderInfo_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SpecialAdminService_GetOrderInfo_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_SpecialAppService_GetOrders_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_SpecialAdminService_GetOrders_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/special_app_v1.SpecialAppService/GetOrders", runtime.WithHTTPPathPattern("/v1/orders"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/special_app_v1.SpecialAdminService/GetOrders", runtime.WithHTTPPathPattern("/v1/orders"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_SpecialAppService_GetOrders_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_SpecialAdminService_GetOrders_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_SpecialAppService_GetOrders_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SpecialAdminService_GetOrders_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodPatch, pattern_SpecialAppService_UpdateOrder_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodPatch, pattern_SpecialAdminService_UpdateOrder_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/special_app_v1.SpecialAppService/UpdateOrder", runtime.WithHTTPPathPattern("/v1/orders/{id}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/special_app_v1.SpecialAdminService/UpdateOrder", runtime.WithHTTPPathPattern("/v1/orders/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_SpecialAppService_UpdateOrder_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_SpecialAdminService_UpdateOrder_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_SpecialAppService_UpdateOrder_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SpecialAdminService_UpdateOrder_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodDelete, pattern_SpecialAppService_DeleteOrder_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodDelete, pattern_SpecialAdminService_DeleteOrder_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/special_app_v1.SpecialAppService/DeleteOrder", runtime.WithHTTPPathPattern("/v1/orders/{id}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/special_app_v1.SpecialAdminService/DeleteOrder", runtime.WithHTTPPathPattern("/v1/orders/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_SpecialAppService_DeleteOrder_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_SpecialAdminService_DeleteOrder_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_SpecialAppService_DeleteOrder_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SpecialAdminService_DeleteOrder_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
 
 	return nil
 }
 
-// RegisterSpecialAppServiceHandlerFromEndpoint is same as RegisterSpecialAppServiceHandler but
+// RegisterSpecialAdminServiceHandlerFromEndpoint is same as RegisterSpecialAdminServiceHandler but
 // automatically dials to "endpoint" and closes the connection when "ctx" gets done.
-func RegisterSpecialAppServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
+func RegisterSpecialAdminServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
 	conn, err := grpc.NewClient(endpoint, opts...)
 	if err != nil {
 		return err
@@ -1085,387 +1085,387 @@ func RegisterSpecialAppServiceHandlerFromEndpoint(ctx context.Context, mux *runt
 			}
 		}()
 	}()
-	return RegisterSpecialAppServiceHandler(ctx, mux, conn)
+	return RegisterSpecialAdminServiceHandler(ctx, mux, conn)
 }
 
-// RegisterSpecialAppServiceHandler registers the http handlers for service SpecialAppService to "mux".
+// RegisterSpecialAdminServiceHandler registers the http handlers for service SpecialAdminService to "mux".
 // The handlers forward requests to the grpc endpoint over "conn".
-func RegisterSpecialAppServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
-	return RegisterSpecialAppServiceHandlerClient(ctx, mux, NewSpecialAppServiceClient(conn))
+func RegisterSpecialAdminServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
+	return RegisterSpecialAdminServiceHandlerClient(ctx, mux, NewSpecialAdminServiceClient(conn))
 }
 
-// RegisterSpecialAppServiceHandlerClient registers the http handlers for service SpecialAppService
-// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "SpecialAppServiceClient".
-// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "SpecialAppServiceClient"
+// RegisterSpecialAdminServiceHandlerClient registers the http handlers for service SpecialAdminService
+// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "SpecialAdminServiceClient".
+// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "SpecialAdminServiceClient"
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
-// "SpecialAppServiceClient" to call the correct interceptors. This client ignores the HTTP middlewares.
-func RegisterSpecialAppServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client SpecialAppServiceClient) error {
-	mux.Handle(http.MethodGet, pattern_SpecialAppService_GetUsers_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+// "SpecialAdminServiceClient" to call the correct interceptors. This client ignores the HTTP middlewares.
+func RegisterSpecialAdminServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client SpecialAdminServiceClient) error {
+	mux.Handle(http.MethodGet, pattern_SpecialAdminService_GetUsers_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/special_app_v1.SpecialAppService/GetUsers", runtime.WithHTTPPathPattern("/v1/users"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/special_app_v1.SpecialAdminService/GetUsers", runtime.WithHTTPPathPattern("/v1/users"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_SpecialAppService_GetUsers_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_SpecialAdminService_GetUsers_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_SpecialAppService_GetUsers_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SpecialAdminService_GetUsers_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_SpecialAppService_GetIventInfo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_SpecialAdminService_GetIventInfo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/special_app_v1.SpecialAppService/GetIventInfo", runtime.WithHTTPPathPattern("/v1/ivents/{id}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/special_app_v1.SpecialAdminService/GetIventInfo", runtime.WithHTTPPathPattern("/v1/ivents/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_SpecialAppService_GetIventInfo_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_SpecialAdminService_GetIventInfo_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_SpecialAppService_GetIventInfo_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SpecialAdminService_GetIventInfo_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_SpecialAppService_GetIvents_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_SpecialAdminService_GetIvents_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/special_app_v1.SpecialAppService/GetIvents", runtime.WithHTTPPathPattern("/v1/ivents"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/special_app_v1.SpecialAdminService/GetIvents", runtime.WithHTTPPathPattern("/v1/ivents"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_SpecialAppService_GetIvents_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_SpecialAdminService_GetIvents_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_SpecialAppService_GetIvents_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SpecialAdminService_GetIvents_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodPost, pattern_SpecialAppService_CreateIvent_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodPost, pattern_SpecialAdminService_CreateIvent_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/special_app_v1.SpecialAppService/CreateIvent", runtime.WithHTTPPathPattern("/v1/ivents"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/special_app_v1.SpecialAdminService/CreateIvent", runtime.WithHTTPPathPattern("/v1/ivents"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_SpecialAppService_CreateIvent_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_SpecialAdminService_CreateIvent_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_SpecialAppService_CreateIvent_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SpecialAdminService_CreateIvent_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodPatch, pattern_SpecialAppService_UpdateIvent_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodPatch, pattern_SpecialAdminService_UpdateIvent_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/special_app_v1.SpecialAppService/UpdateIvent", runtime.WithHTTPPathPattern("/v1/ivents/{id}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/special_app_v1.SpecialAdminService/UpdateIvent", runtime.WithHTTPPathPattern("/v1/ivents/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_SpecialAppService_UpdateIvent_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_SpecialAdminService_UpdateIvent_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_SpecialAppService_UpdateIvent_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SpecialAdminService_UpdateIvent_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodDelete, pattern_SpecialAppService_DeleteIvent_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodDelete, pattern_SpecialAdminService_DeleteIvent_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/special_app_v1.SpecialAppService/DeleteIvent", runtime.WithHTTPPathPattern("/v1/ivents/{id}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/special_app_v1.SpecialAdminService/DeleteIvent", runtime.WithHTTPPathPattern("/v1/ivents/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_SpecialAppService_DeleteIvent_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_SpecialAdminService_DeleteIvent_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_SpecialAppService_DeleteIvent_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SpecialAdminService_DeleteIvent_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodPost, pattern_SpecialAppService_CreateIventPicture_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodPost, pattern_SpecialAdminService_CreateIventPicture_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/special_app_v1.SpecialAppService/CreateIventPicture", runtime.WithHTTPPathPattern("/v1/ivent_pictures"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/special_app_v1.SpecialAdminService/CreateIventPicture", runtime.WithHTTPPathPattern("/v1/ivent_pictures"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_SpecialAppService_CreateIventPicture_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_SpecialAdminService_CreateIventPicture_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_SpecialAppService_CreateIventPicture_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SpecialAdminService_CreateIventPicture_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodDelete, pattern_SpecialAppService_DeleteIventPicture_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodDelete, pattern_SpecialAdminService_DeleteIventPicture_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/special_app_v1.SpecialAppService/DeleteIventPicture", runtime.WithHTTPPathPattern("/v1/ivent_pictures/{id}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/special_app_v1.SpecialAdminService/DeleteIventPicture", runtime.WithHTTPPathPattern("/v1/ivent_pictures/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_SpecialAppService_DeleteIventPicture_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_SpecialAdminService_DeleteIventPicture_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_SpecialAppService_DeleteIventPicture_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SpecialAdminService_DeleteIventPicture_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_SpecialAppService_GetItemInfo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_SpecialAdminService_GetItemInfo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/special_app_v1.SpecialAppService/GetItemInfo", runtime.WithHTTPPathPattern("/v1/items/{id}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/special_app_v1.SpecialAdminService/GetItemInfo", runtime.WithHTTPPathPattern("/v1/items/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_SpecialAppService_GetItemInfo_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_SpecialAdminService_GetItemInfo_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_SpecialAppService_GetItemInfo_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SpecialAdminService_GetItemInfo_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_SpecialAppService_GetItems_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_SpecialAdminService_GetItems_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/special_app_v1.SpecialAppService/GetItems", runtime.WithHTTPPathPattern("/v1/items"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/special_app_v1.SpecialAdminService/GetItems", runtime.WithHTTPPathPattern("/v1/items"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_SpecialAppService_GetItems_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_SpecialAdminService_GetItems_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_SpecialAppService_GetItems_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SpecialAdminService_GetItems_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodPost, pattern_SpecialAppService_CreateItem_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodPost, pattern_SpecialAdminService_CreateItem_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/special_app_v1.SpecialAppService/CreateItem", runtime.WithHTTPPathPattern("/v1/items"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/special_app_v1.SpecialAdminService/CreateItem", runtime.WithHTTPPathPattern("/v1/items"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_SpecialAppService_CreateItem_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_SpecialAdminService_CreateItem_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_SpecialAppService_CreateItem_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SpecialAdminService_CreateItem_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodPatch, pattern_SpecialAppService_UpdateItem_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodPatch, pattern_SpecialAdminService_UpdateItem_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/special_app_v1.SpecialAppService/UpdateItem", runtime.WithHTTPPathPattern("/v1/items/{id}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/special_app_v1.SpecialAdminService/UpdateItem", runtime.WithHTTPPathPattern("/v1/items/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_SpecialAppService_UpdateItem_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_SpecialAdminService_UpdateItem_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_SpecialAppService_UpdateItem_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SpecialAdminService_UpdateItem_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodDelete, pattern_SpecialAppService_DeleteItem_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodDelete, pattern_SpecialAdminService_DeleteItem_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/special_app_v1.SpecialAppService/DeleteItem", runtime.WithHTTPPathPattern("/v1/items/{id}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/special_app_v1.SpecialAdminService/DeleteItem", runtime.WithHTTPPathPattern("/v1/items/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_SpecialAppService_DeleteItem_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_SpecialAdminService_DeleteItem_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_SpecialAppService_DeleteItem_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SpecialAdminService_DeleteItem_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodPost, pattern_SpecialAppService_CreateItemPicture_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodPost, pattern_SpecialAdminService_CreateItemPicture_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/special_app_v1.SpecialAppService/CreateItemPicture", runtime.WithHTTPPathPattern("/v1/item_pictures"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/special_app_v1.SpecialAdminService/CreateItemPicture", runtime.WithHTTPPathPattern("/v1/item_pictures"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_SpecialAppService_CreateItemPicture_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_SpecialAdminService_CreateItemPicture_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_SpecialAppService_CreateItemPicture_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SpecialAdminService_CreateItemPicture_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodDelete, pattern_SpecialAppService_DeleteItemPicture_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodDelete, pattern_SpecialAdminService_DeleteItemPicture_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/special_app_v1.SpecialAppService/DeleteItemPicture", runtime.WithHTTPPathPattern("/v1/item_pictures/{id}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/special_app_v1.SpecialAdminService/DeleteItemPicture", runtime.WithHTTPPathPattern("/v1/item_pictures/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_SpecialAppService_DeleteItemPicture_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_SpecialAdminService_DeleteItemPicture_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_SpecialAppService_DeleteItemPicture_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SpecialAdminService_DeleteItemPicture_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_SpecialAppService_GetOrderInfo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_SpecialAdminService_GetOrderInfo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/special_app_v1.SpecialAppService/GetOrderInfo", runtime.WithHTTPPathPattern("/v1/orders/{id}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/special_app_v1.SpecialAdminService/GetOrderInfo", runtime.WithHTTPPathPattern("/v1/orders/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_SpecialAppService_GetOrderInfo_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_SpecialAdminService_GetOrderInfo_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_SpecialAppService_GetOrderInfo_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SpecialAdminService_GetOrderInfo_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_SpecialAppService_GetOrders_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_SpecialAdminService_GetOrders_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/special_app_v1.SpecialAppService/GetOrders", runtime.WithHTTPPathPattern("/v1/orders"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/special_app_v1.SpecialAdminService/GetOrders", runtime.WithHTTPPathPattern("/v1/orders"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_SpecialAppService_GetOrders_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_SpecialAdminService_GetOrders_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_SpecialAppService_GetOrders_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SpecialAdminService_GetOrders_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodPatch, pattern_SpecialAppService_UpdateOrder_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodPatch, pattern_SpecialAdminService_UpdateOrder_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/special_app_v1.SpecialAppService/UpdateOrder", runtime.WithHTTPPathPattern("/v1/orders/{id}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/special_app_v1.SpecialAdminService/UpdateOrder", runtime.WithHTTPPathPattern("/v1/orders/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_SpecialAppService_UpdateOrder_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_SpecialAdminService_UpdateOrder_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_SpecialAppService_UpdateOrder_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SpecialAdminService_UpdateOrder_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodDelete, pattern_SpecialAppService_DeleteOrder_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodDelete, pattern_SpecialAdminService_DeleteOrder_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/special_app_v1.SpecialAppService/DeleteOrder", runtime.WithHTTPPathPattern("/v1/orders/{id}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/special_app_v1.SpecialAdminService/DeleteOrder", runtime.WithHTTPPathPattern("/v1/orders/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_SpecialAppService_DeleteOrder_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_SpecialAdminService_DeleteOrder_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_SpecialAppService_DeleteOrder_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SpecialAdminService_DeleteOrder_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
 	return nil
 }
 
 var (
-	pattern_SpecialAppService_GetUsers_0           = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "users"}, ""))
-	pattern_SpecialAppService_GetIventInfo_0       = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"v1", "ivents", "id"}, ""))
-	pattern_SpecialAppService_GetIvents_0          = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "ivents"}, ""))
-	pattern_SpecialAppService_CreateIvent_0        = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "ivents"}, ""))
-	pattern_SpecialAppService_UpdateIvent_0        = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"v1", "ivents", "id"}, ""))
-	pattern_SpecialAppService_DeleteIvent_0        = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"v1", "ivents", "id"}, ""))
-	pattern_SpecialAppService_CreateIventPicture_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "ivent_pictures"}, ""))
-	pattern_SpecialAppService_DeleteIventPicture_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"v1", "ivent_pictures", "id"}, ""))
-	pattern_SpecialAppService_GetItemInfo_0        = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"v1", "items", "id"}, ""))
-	pattern_SpecialAppService_GetItems_0           = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "items"}, ""))
-	pattern_SpecialAppService_CreateItem_0         = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "items"}, ""))
-	pattern_SpecialAppService_UpdateItem_0         = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"v1", "items", "id"}, ""))
-	pattern_SpecialAppService_DeleteItem_0         = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"v1", "items", "id"}, ""))
-	pattern_SpecialAppService_CreateItemPicture_0  = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "item_pictures"}, ""))
-	pattern_SpecialAppService_DeleteItemPicture_0  = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"v1", "item_pictures", "id"}, ""))
-	pattern_SpecialAppService_GetOrderInfo_0       = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"v1", "orders", "id"}, ""))
-	pattern_SpecialAppService_GetOrders_0          = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "orders"}, ""))
-	pattern_SpecialAppService_UpdateOrder_0        = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"v1", "orders", "id"}, ""))
-	pattern_SpecialAppService_DeleteOrder_0        = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"v1", "orders", "id"}, ""))
+	pattern_SpecialAdminService_GetUsers_0           = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "users"}, ""))
+	pattern_SpecialAdminService_GetIventInfo_0       = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"v1", "ivents", "id"}, ""))
+	pattern_SpecialAdminService_GetIvents_0          = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "ivents"}, ""))
+	pattern_SpecialAdminService_CreateIvent_0        = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "ivents"}, ""))
+	pattern_SpecialAdminService_UpdateIvent_0        = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"v1", "ivents", "id"}, ""))
+	pattern_SpecialAdminService_DeleteIvent_0        = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"v1", "ivents", "id"}, ""))
+	pattern_SpecialAdminService_CreateIventPicture_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "ivent_pictures"}, ""))
+	pattern_SpecialAdminService_DeleteIventPicture_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"v1", "ivent_pictures", "id"}, ""))
+	pattern_SpecialAdminService_GetItemInfo_0        = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"v1", "items", "id"}, ""))
+	pattern_SpecialAdminService_GetItems_0           = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "items"}, ""))
+	pattern_SpecialAdminService_CreateItem_0         = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "items"}, ""))
+	pattern_SpecialAdminService_UpdateItem_0         = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"v1", "items", "id"}, ""))
+	pattern_SpecialAdminService_DeleteItem_0         = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"v1", "items", "id"}, ""))
+	pattern_SpecialAdminService_CreateItemPicture_0  = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "item_pictures"}, ""))
+	pattern_SpecialAdminService_DeleteItemPicture_0  = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"v1", "item_pictures", "id"}, ""))
+	pattern_SpecialAdminService_GetOrderInfo_0       = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"v1", "orders", "id"}, ""))
+	pattern_SpecialAdminService_GetOrders_0          = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "orders"}, ""))
+	pattern_SpecialAdminService_UpdateOrder_0        = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"v1", "orders", "id"}, ""))
+	pattern_SpecialAdminService_DeleteOrder_0        = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"v1", "orders", "id"}, ""))
 )
 
 var (
-	forward_SpecialAppService_GetUsers_0           = runtime.ForwardResponseMessage
-	forward_SpecialAppService_GetIventInfo_0       = runtime.ForwardResponseMessage
-	forward_SpecialAppService_GetIvents_0          = runtime.ForwardResponseMessage
-	forward_SpecialAppService_CreateIvent_0        = runtime.ForwardResponseMessage
-	forward_SpecialAppService_UpdateIvent_0        = runtime.ForwardResponseMessage
-	forward_SpecialAppService_DeleteIvent_0        = runtime.ForwardResponseMessage
-	forward_SpecialAppService_CreateIventPicture_0 = runtime.ForwardResponseMessage
-	forward_SpecialAppService_DeleteIventPicture_0 = runtime.ForwardResponseMessage
-	forward_SpecialAppService_GetItemInfo_0        = runtime.ForwardResponseMessage
-	forward_SpecialAppService_GetItems_0           = runtime.ForwardResponseMessage
-	forward_SpecialAppService_CreateItem_0         = runtime.ForwardResponseMessage
-	forward_SpecialAppService_UpdateItem_0         = runtime.ForwardResponseMessage
-	forward_SpecialAppService_DeleteItem_0         = runtime.ForwardResponseMessage
-	forward_SpecialAppService_CreateItemPicture_0  = runtime.ForwardResponseMessage
-	forward_SpecialAppService_DeleteItemPicture_0  = runtime.ForwardResponseMessage
-	forward_SpecialAppService_GetOrderInfo_0       = runtime.ForwardResponseMessage
-	forward_SpecialAppService_GetOrders_0          = runtime.ForwardResponseMessage
-	forward_SpecialAppService_UpdateOrder_0        = runtime.ForwardResponseMessage
-	forward_SpecialAppService_DeleteOrder_0        = runtime.ForwardResponseMessage
+	forward_SpecialAdminService_GetUsers_0           = runtime.ForwardResponseMessage
+	forward_SpecialAdminService_GetIventInfo_0       = runtime.ForwardResponseMessage
+	forward_SpecialAdminService_GetIvents_0          = runtime.ForwardResponseMessage
+	forward_SpecialAdminService_CreateIvent_0        = runtime.ForwardResponseMessage
+	forward_SpecialAdminService_UpdateIvent_0        = runtime.ForwardResponseMessage
+	forward_SpecialAdminService_DeleteIvent_0        = runtime.ForwardResponseMessage
+	forward_SpecialAdminService_CreateIventPicture_0 = runtime.ForwardResponseMessage
+	forward_SpecialAdminService_DeleteIventPicture_0 = runtime.ForwardResponseMessage
+	forward_SpecialAdminService_GetItemInfo_0        = runtime.ForwardResponseMessage
+	forward_SpecialAdminService_GetItems_0           = runtime.ForwardResponseMessage
+	forward_SpecialAdminService_CreateItem_0         = runtime.ForwardResponseMessage
+	forward_SpecialAdminService_UpdateItem_0         = runtime.ForwardResponseMessage
+	forward_SpecialAdminService_DeleteItem_0         = runtime.ForwardResponseMessage
+	forward_SpecialAdminService_CreateItemPicture_0  = runtime.ForwardResponseMessage
+	forward_SpecialAdminService_DeleteItemPicture_0  = runtime.ForwardResponseMessage
+	forward_SpecialAdminService_GetOrderInfo_0       = runtime.ForwardResponseMessage
+	forward_SpecialAdminService_GetOrders_0          = runtime.ForwardResponseMessage
+	forward_SpecialAdminService_UpdateOrder_0        = runtime.ForwardResponseMessage
+	forward_SpecialAdminService_DeleteOrder_0        = runtime.ForwardResponseMessage
 )

@@ -6,9 +6,9 @@ import "google/api/annotations.proto";
 
 package special_app_v1;
 
-option go_package = "special_app/pkg/proto/v1;special_app_v1";
+option go_package = "special_admin/pkg/proto/v1;special_admin_v1";
 
-service SpecialAppService {
+service SpecialAdminService {
   rpc GetUsers(GetUsersRequest) returns (GetUsersResponse) {
     option (google.api.http) = {
       get: "/v1/users"

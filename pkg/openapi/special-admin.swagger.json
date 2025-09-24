@@ -6,7 +6,7 @@
   },
   "tags": [
     {
-      "name": "SpecialAppService"
+      "name": "SpecialAdminService"
     }
   ],
   "consumes": [
@@ -18,7 +18,7 @@
   "paths": {
     "/v1/item_pictures": {
       "post": {
-        "operationId": "SpecialAppService_CreateItemPicture",
+        "operationId": "SpecialAdminService_CreateItemPicture",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -44,13 +44,13 @@
           }
         ],
         "tags": [
-          "SpecialAppService"
+          "SpecialAdminService"
         ]
       }
     },
     "/v1/item_pictures/{id}": {
       "delete": {
-        "operationId": "SpecialAppService_DeleteItemPicture",
+        "operationId": "SpecialAdminService_DeleteItemPicture",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -75,13 +75,13 @@
           }
         ],
         "tags": [
-          "SpecialAppService"
+          "SpecialAdminService"
         ]
       }
     },
     "/v1/items": {
       "get": {
-        "operationId": "SpecialAppService_GetItems",
+        "operationId": "SpecialAdminService_GetItems",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -97,11 +97,11 @@
           }
         },
         "tags": [
-          "SpecialAppService"
+          "SpecialAdminService"
         ]
       },
       "post": {
-        "operationId": "SpecialAppService_CreateItem",
+        "operationId": "SpecialAdminService_CreateItem",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -127,13 +127,13 @@
           }
         ],
         "tags": [
-          "SpecialAppService"
+          "SpecialAdminService"
         ]
       }
     },
     "/v1/items/{id}": {
       "get": {
-        "operationId": "SpecialAppService_GetItemInfo",
+        "operationId": "SpecialAdminService_GetItemInfo",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -157,11 +157,11 @@
           }
         ],
         "tags": [
-          "SpecialAppService"
+          "SpecialAdminService"
         ]
       },
       "delete": {
-        "operationId": "SpecialAppService_DeleteItem",
+        "operationId": "SpecialAdminService_DeleteItem",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -186,11 +186,11 @@
           }
         ],
         "tags": [
-          "SpecialAppService"
+          "SpecialAdminService"
         ]
       },
       "patch": {
-        "operationId": "SpecialAppService_UpdateItem",
+        "operationId": "SpecialAdminService_UpdateItem",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -217,18 +217,18 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/SpecialAppServiceUpdateItemBody"
+              "$ref": "#/definitions/SpecialAdminServiceUpdateItemBody"
             }
           }
         ],
         "tags": [
-          "SpecialAppService"
+          "SpecialAdminService"
         ]
       }
     },
     "/v1/ivent_pictures": {
       "post": {
-        "operationId": "SpecialAppService_CreateIventPicture",
+        "operationId": "SpecialAdminService_CreateIventPicture",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -254,13 +254,13 @@
           }
         ],
         "tags": [
-          "SpecialAppService"
+          "SpecialAdminService"
         ]
       }
     },
     "/v1/ivent_pictures/{id}": {
       "delete": {
-        "operationId": "SpecialAppService_DeleteIventPicture",
+        "operationId": "SpecialAdminService_DeleteIventPicture",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -284,13 +284,13 @@
           }
         ],
         "tags": [
-          "SpecialAppService"
+          "SpecialAdminService"
         ]
       }
     },
     "/v1/ivents": {
       "get": {
-        "operationId": "SpecialAppService_GetIvents",
+        "operationId": "SpecialAdminService_GetIvents",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -306,11 +306,11 @@
           }
         },
         "tags": [
-          "SpecialAppService"
+          "SpecialAdminService"
         ]
       },
       "post": {
-        "operationId": "SpecialAppService_CreateIvent",
+        "operationId": "SpecialAdminService_CreateIvent",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -336,13 +336,13 @@
           }
         ],
         "tags": [
-          "SpecialAppService"
+          "SpecialAdminService"
         ]
       }
     },
     "/v1/ivents/{id}": {
       "get": {
-        "operationId": "SpecialAppService_GetIventInfo",
+        "operationId": "SpecialAdminService_GetIventInfo",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -366,11 +366,11 @@
           }
         ],
         "tags": [
-          "SpecialAppService"
+          "SpecialAdminService"
         ]
       },
       "delete": {
-        "operationId": "SpecialAppService_DeleteIvent",
+        "operationId": "SpecialAdminService_DeleteIvent",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -395,11 +395,11 @@
           }
         ],
         "tags": [
-          "SpecialAppService"
+          "SpecialAdminService"
         ]
       },
       "patch": {
-        "operationId": "SpecialAppService_UpdateIvent",
+        "operationId": "SpecialAdminService_UpdateIvent",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -426,18 +426,18 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/SpecialAppServiceUpdateIventBody"
+              "$ref": "#/definitions/SpecialAdminServiceUpdateIventBody"
             }
           }
         ],
         "tags": [
-          "SpecialAppService"
+          "SpecialAdminService"
         ]
       }
     },
     "/v1/orders": {
       "get": {
-        "operationId": "SpecialAppService_GetOrders",
+        "operationId": "SpecialAdminService_GetOrders",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -453,13 +453,13 @@
           }
         },
         "tags": [
-          "SpecialAppService"
+          "SpecialAdminService"
         ]
       }
     },
     "/v1/orders/{id}": {
       "get": {
-        "operationId": "SpecialAppService_GetOrderInfo",
+        "operationId": "SpecialAdminService_GetOrderInfo",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -483,11 +483,11 @@
           }
         ],
         "tags": [
-          "SpecialAppService"
+          "SpecialAdminService"
         ]
       },
       "delete": {
-        "operationId": "SpecialAppService_DeleteOrder",
+        "operationId": "SpecialAdminService_DeleteOrder",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -512,11 +512,11 @@
           }
         ],
         "tags": [
-          "SpecialAppService"
+          "SpecialAdminService"
         ]
       },
       "patch": {
-        "operationId": "SpecialAppService_UpdateOrder",
+        "operationId": "SpecialAdminService_UpdateOrder",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -543,18 +543,18 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/SpecialAppServiceUpdateOrderBody"
+              "$ref": "#/definitions/SpecialAdminServiceUpdateOrderBody"
             }
           }
         ],
         "tags": [
-          "SpecialAppService"
+          "SpecialAdminService"
         ]
       }
     },
     "/v1/users": {
       "get": {
-        "operationId": "SpecialAppService_GetUsers",
+        "operationId": "SpecialAdminService_GetUsers",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -570,13 +570,13 @@
           }
         },
         "tags": [
-          "SpecialAppService"
+          "SpecialAdminService"
         ]
       }
     }
   },
   "definitions": {
-    "SpecialAppServiceUpdateItemBody": {
+    "SpecialAdminServiceUpdateItemBody": {
       "type": "object",
       "properties": {
         "title": {
@@ -594,7 +594,7 @@
         }
       }
     },
-    "SpecialAppServiceUpdateIventBody": {
+    "SpecialAdminServiceUpdateIventBody": {
       "type": "object",
       "properties": {
         "title": {
@@ -624,7 +624,7 @@
         }
       }
     },
-    "SpecialAppServiceUpdateOrderBody": {
+    "SpecialAdminServiceUpdateOrderBody": {
       "type": "object",
       "properties": {
         "status": {

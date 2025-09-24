@@ -4,7 +4,7 @@
 // - protoc             (unknown)
 // source: special-admin.proto
 
-package special_app_v1
+package special_admin_v1
 
 import (
 	context "context"
@@ -20,31 +20,31 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	SpecialAppService_GetUsers_FullMethodName           = "/special_app_v1.SpecialAppService/GetUsers"
-	SpecialAppService_GetIventInfo_FullMethodName       = "/special_app_v1.SpecialAppService/GetIventInfo"
-	SpecialAppService_GetIvents_FullMethodName          = "/special_app_v1.SpecialAppService/GetIvents"
-	SpecialAppService_CreateIvent_FullMethodName        = "/special_app_v1.SpecialAppService/CreateIvent"
-	SpecialAppService_UpdateIvent_FullMethodName        = "/special_app_v1.SpecialAppService/UpdateIvent"
-	SpecialAppService_DeleteIvent_FullMethodName        = "/special_app_v1.SpecialAppService/DeleteIvent"
-	SpecialAppService_CreateIventPicture_FullMethodName = "/special_app_v1.SpecialAppService/CreateIventPicture"
-	SpecialAppService_DeleteIventPicture_FullMethodName = "/special_app_v1.SpecialAppService/DeleteIventPicture"
-	SpecialAppService_GetItemInfo_FullMethodName        = "/special_app_v1.SpecialAppService/GetItemInfo"
-	SpecialAppService_GetItems_FullMethodName           = "/special_app_v1.SpecialAppService/GetItems"
-	SpecialAppService_CreateItem_FullMethodName         = "/special_app_v1.SpecialAppService/CreateItem"
-	SpecialAppService_UpdateItem_FullMethodName         = "/special_app_v1.SpecialAppService/UpdateItem"
-	SpecialAppService_DeleteItem_FullMethodName         = "/special_app_v1.SpecialAppService/DeleteItem"
-	SpecialAppService_CreateItemPicture_FullMethodName  = "/special_app_v1.SpecialAppService/CreateItemPicture"
-	SpecialAppService_DeleteItemPicture_FullMethodName  = "/special_app_v1.SpecialAppService/DeleteItemPicture"
-	SpecialAppService_GetOrderInfo_FullMethodName       = "/special_app_v1.SpecialAppService/GetOrderInfo"
-	SpecialAppService_GetOrders_FullMethodName          = "/special_app_v1.SpecialAppService/GetOrders"
-	SpecialAppService_UpdateOrder_FullMethodName        = "/special_app_v1.SpecialAppService/UpdateOrder"
-	SpecialAppService_DeleteOrder_FullMethodName        = "/special_app_v1.SpecialAppService/DeleteOrder"
+	SpecialAdminService_GetUsers_FullMethodName           = "/special_app_v1.SpecialAdminService/GetUsers"
+	SpecialAdminService_GetIventInfo_FullMethodName       = "/special_app_v1.SpecialAdminService/GetIventInfo"
+	SpecialAdminService_GetIvents_FullMethodName          = "/special_app_v1.SpecialAdminService/GetIvents"
+	SpecialAdminService_CreateIvent_FullMethodName        = "/special_app_v1.SpecialAdminService/CreateIvent"
+	SpecialAdminService_UpdateIvent_FullMethodName        = "/special_app_v1.SpecialAdminService/UpdateIvent"
+	SpecialAdminService_DeleteIvent_FullMethodName        = "/special_app_v1.SpecialAdminService/DeleteIvent"
+	SpecialAdminService_CreateIventPicture_FullMethodName = "/special_app_v1.SpecialAdminService/CreateIventPicture"
+	SpecialAdminService_DeleteIventPicture_FullMethodName = "/special_app_v1.SpecialAdminService/DeleteIventPicture"
+	SpecialAdminService_GetItemInfo_FullMethodName        = "/special_app_v1.SpecialAdminService/GetItemInfo"
+	SpecialAdminService_GetItems_FullMethodName           = "/special_app_v1.SpecialAdminService/GetItems"
+	SpecialAdminService_CreateItem_FullMethodName         = "/special_app_v1.SpecialAdminService/CreateItem"
+	SpecialAdminService_UpdateItem_FullMethodName         = "/special_app_v1.SpecialAdminService/UpdateItem"
+	SpecialAdminService_DeleteItem_FullMethodName         = "/special_app_v1.SpecialAdminService/DeleteItem"
+	SpecialAdminService_CreateItemPicture_FullMethodName  = "/special_app_v1.SpecialAdminService/CreateItemPicture"
+	SpecialAdminService_DeleteItemPicture_FullMethodName  = "/special_app_v1.SpecialAdminService/DeleteItemPicture"
+	SpecialAdminService_GetOrderInfo_FullMethodName       = "/special_app_v1.SpecialAdminService/GetOrderInfo"
+	SpecialAdminService_GetOrders_FullMethodName          = "/special_app_v1.SpecialAdminService/GetOrders"
+	SpecialAdminService_UpdateOrder_FullMethodName        = "/special_app_v1.SpecialAdminService/UpdateOrder"
+	SpecialAdminService_DeleteOrder_FullMethodName        = "/special_app_v1.SpecialAdminService/DeleteOrder"
 )
 
-// SpecialAppServiceClient is the client API for SpecialAppService service.
+// SpecialAdminServiceClient is the client API for SpecialAdminService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type SpecialAppServiceClient interface {
+type SpecialAdminServiceClient interface {
 	GetUsers(ctx context.Context, in *GetUsersRequest, opts ...grpc.CallOption) (*GetUsersResponse, error)
 	GetIventInfo(ctx context.Context, in *GetIventInfoRequest, opts ...grpc.CallOption) (*GetIventInfoResponse, error)
 	GetIvents(ctx context.Context, in *GetIventsRequest, opts ...grpc.CallOption) (*GetIventsResponse, error)
@@ -66,208 +66,208 @@ type SpecialAppServiceClient interface {
 	DeleteOrder(ctx context.Context, in *DeleteOrderRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
 }
 
-type specialAppServiceClient struct {
+type specialAdminServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewSpecialAppServiceClient(cc grpc.ClientConnInterface) SpecialAppServiceClient {
-	return &specialAppServiceClient{cc}
+func NewSpecialAdminServiceClient(cc grpc.ClientConnInterface) SpecialAdminServiceClient {
+	return &specialAdminServiceClient{cc}
 }
 
-func (c *specialAppServiceClient) GetUsers(ctx context.Context, in *GetUsersRequest, opts ...grpc.CallOption) (*GetUsersResponse, error) {
+func (c *specialAdminServiceClient) GetUsers(ctx context.Context, in *GetUsersRequest, opts ...grpc.CallOption) (*GetUsersResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GetUsersResponse)
-	err := c.cc.Invoke(ctx, SpecialAppService_GetUsers_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, SpecialAdminService_GetUsers_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *specialAppServiceClient) GetIventInfo(ctx context.Context, in *GetIventInfoRequest, opts ...grpc.CallOption) (*GetIventInfoResponse, error) {
+func (c *specialAdminServiceClient) GetIventInfo(ctx context.Context, in *GetIventInfoRequest, opts ...grpc.CallOption) (*GetIventInfoResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GetIventInfoResponse)
-	err := c.cc.Invoke(ctx, SpecialAppService_GetIventInfo_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, SpecialAdminService_GetIventInfo_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *specialAppServiceClient) GetIvents(ctx context.Context, in *GetIventsRequest, opts ...grpc.CallOption) (*GetIventsResponse, error) {
+func (c *specialAdminServiceClient) GetIvents(ctx context.Context, in *GetIventsRequest, opts ...grpc.CallOption) (*GetIventsResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GetIventsResponse)
-	err := c.cc.Invoke(ctx, SpecialAppService_GetIvents_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, SpecialAdminService_GetIvents_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *specialAppServiceClient) CreateIvent(ctx context.Context, in *CreateIventRequest, opts ...grpc.CallOption) (*GetIventInfoResponse, error) {
+func (c *specialAdminServiceClient) CreateIvent(ctx context.Context, in *CreateIventRequest, opts ...grpc.CallOption) (*GetIventInfoResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GetIventInfoResponse)
-	err := c.cc.Invoke(ctx, SpecialAppService_CreateIvent_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, SpecialAdminService_CreateIvent_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *specialAppServiceClient) UpdateIvent(ctx context.Context, in *UpdateIventRequest, opts ...grpc.CallOption) (*GetIventInfoResponse, error) {
+func (c *specialAdminServiceClient) UpdateIvent(ctx context.Context, in *UpdateIventRequest, opts ...grpc.CallOption) (*GetIventInfoResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GetIventInfoResponse)
-	err := c.cc.Invoke(ctx, SpecialAppService_UpdateIvent_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, SpecialAdminService_UpdateIvent_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *specialAppServiceClient) DeleteIvent(ctx context.Context, in *DeleteIventRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+func (c *specialAdminServiceClient) DeleteIvent(ctx context.Context, in *DeleteIventRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(emptypb.Empty)
-	err := c.cc.Invoke(ctx, SpecialAppService_DeleteIvent_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, SpecialAdminService_DeleteIvent_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *specialAppServiceClient) CreateIventPicture(ctx context.Context, in *CreatePictureRequest, opts ...grpc.CallOption) (*GetIventInfoResponse, error) {
+func (c *specialAdminServiceClient) CreateIventPicture(ctx context.Context, in *CreatePictureRequest, opts ...grpc.CallOption) (*GetIventInfoResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GetIventInfoResponse)
-	err := c.cc.Invoke(ctx, SpecialAppService_CreateIventPicture_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, SpecialAdminService_CreateIventPicture_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *specialAppServiceClient) DeleteIventPicture(ctx context.Context, in *DeletePictureRequest, opts ...grpc.CallOption) (*GetIventInfoResponse, error) {
+func (c *specialAdminServiceClient) DeleteIventPicture(ctx context.Context, in *DeletePictureRequest, opts ...grpc.CallOption) (*GetIventInfoResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GetIventInfoResponse)
-	err := c.cc.Invoke(ctx, SpecialAppService_DeleteIventPicture_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, SpecialAdminService_DeleteIventPicture_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *specialAppServiceClient) GetItemInfo(ctx context.Context, in *GetItemInfoRequest, opts ...grpc.CallOption) (*GetItemInfoResponse, error) {
+func (c *specialAdminServiceClient) GetItemInfo(ctx context.Context, in *GetItemInfoRequest, opts ...grpc.CallOption) (*GetItemInfoResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GetItemInfoResponse)
-	err := c.cc.Invoke(ctx, SpecialAppService_GetItemInfo_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, SpecialAdminService_GetItemInfo_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *specialAppServiceClient) GetItems(ctx context.Context, in *GetItemsRequest, opts ...grpc.CallOption) (*GetItemsResponse, error) {
+func (c *specialAdminServiceClient) GetItems(ctx context.Context, in *GetItemsRequest, opts ...grpc.CallOption) (*GetItemsResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GetItemsResponse)
-	err := c.cc.Invoke(ctx, SpecialAppService_GetItems_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, SpecialAdminService_GetItems_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *specialAppServiceClient) CreateItem(ctx context.Context, in *CreateItemRequest, opts ...grpc.CallOption) (*GetItemInfoResponse, error) {
+func (c *specialAdminServiceClient) CreateItem(ctx context.Context, in *CreateItemRequest, opts ...grpc.CallOption) (*GetItemInfoResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GetItemInfoResponse)
-	err := c.cc.Invoke(ctx, SpecialAppService_CreateItem_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, SpecialAdminService_CreateItem_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *specialAppServiceClient) UpdateItem(ctx context.Context, in *UpdateItemRequest, opts ...grpc.CallOption) (*GetItemInfoResponse, error) {
+func (c *specialAdminServiceClient) UpdateItem(ctx context.Context, in *UpdateItemRequest, opts ...grpc.CallOption) (*GetItemInfoResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GetItemInfoResponse)
-	err := c.cc.Invoke(ctx, SpecialAppService_UpdateItem_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, SpecialAdminService_UpdateItem_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *specialAppServiceClient) DeleteItem(ctx context.Context, in *DeleteItemRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+func (c *specialAdminServiceClient) DeleteItem(ctx context.Context, in *DeleteItemRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(emptypb.Empty)
-	err := c.cc.Invoke(ctx, SpecialAppService_DeleteItem_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, SpecialAdminService_DeleteItem_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *specialAppServiceClient) CreateItemPicture(ctx context.Context, in *CreatePictureRequest, opts ...grpc.CallOption) (*GetItemInfoResponse, error) {
+func (c *specialAdminServiceClient) CreateItemPicture(ctx context.Context, in *CreatePictureRequest, opts ...grpc.CallOption) (*GetItemInfoResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GetItemInfoResponse)
-	err := c.cc.Invoke(ctx, SpecialAppService_CreateItemPicture_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, SpecialAdminService_CreateItemPicture_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *specialAppServiceClient) DeleteItemPicture(ctx context.Context, in *DeletePictureRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+func (c *specialAdminServiceClient) DeleteItemPicture(ctx context.Context, in *DeletePictureRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(emptypb.Empty)
-	err := c.cc.Invoke(ctx, SpecialAppService_DeleteItemPicture_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, SpecialAdminService_DeleteItemPicture_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *specialAppServiceClient) GetOrderInfo(ctx context.Context, in *GetOrderInfoRequest, opts ...grpc.CallOption) (*GetOrderInfoResponse, error) {
+func (c *specialAdminServiceClient) GetOrderInfo(ctx context.Context, in *GetOrderInfoRequest, opts ...grpc.CallOption) (*GetOrderInfoResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GetOrderInfoResponse)
-	err := c.cc.Invoke(ctx, SpecialAppService_GetOrderInfo_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, SpecialAdminService_GetOrderInfo_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *specialAppServiceClient) GetOrders(ctx context.Context, in *GetOrdersRequest, opts ...grpc.CallOption) (*GetOrdersResponse, error) {
+func (c *specialAdminServiceClient) GetOrders(ctx context.Context, in *GetOrdersRequest, opts ...grpc.CallOption) (*GetOrdersResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GetOrdersResponse)
-	err := c.cc.Invoke(ctx, SpecialAppService_GetOrders_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, SpecialAdminService_GetOrders_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *specialAppServiceClient) UpdateOrder(ctx context.Context, in *UpdateOrderRequest, opts ...grpc.CallOption) (*GetOrderInfoResponse, error) {
+func (c *specialAdminServiceClient) UpdateOrder(ctx context.Context, in *UpdateOrderRequest, opts ...grpc.CallOption) (*GetOrderInfoResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GetOrderInfoResponse)
-	err := c.cc.Invoke(ctx, SpecialAppService_UpdateOrder_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, SpecialAdminService_UpdateOrder_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *specialAppServiceClient) DeleteOrder(ctx context.Context, in *DeleteOrderRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+func (c *specialAdminServiceClient) DeleteOrder(ctx context.Context, in *DeleteOrderRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(emptypb.Empty)
-	err := c.cc.Invoke(ctx, SpecialAppService_DeleteOrder_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, SpecialAdminService_DeleteOrder_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// SpecialAppServiceServer is the server API for SpecialAppService service.
-// All implementations must embed UnimplementedSpecialAppServiceServer
+// SpecialAdminServiceServer is the server API for SpecialAdminService service.
+// All implementations must embed UnimplementedSpecialAdminServiceServer
 // for forward compatibility.
-type SpecialAppServiceServer interface {
+type SpecialAdminServiceServer interface {
 	GetUsers(context.Context, *GetUsersRequest) (*GetUsersResponse, error)
 	GetIventInfo(context.Context, *GetIventInfoRequest) (*GetIventInfoResponse, error)
 	GetIvents(context.Context, *GetIventsRequest) (*GetIventsResponse, error)
@@ -287,518 +287,518 @@ type SpecialAppServiceServer interface {
 	GetOrders(context.Context, *GetOrdersRequest) (*GetOrdersResponse, error)
 	UpdateOrder(context.Context, *UpdateOrderRequest) (*GetOrderInfoResponse, error)
 	DeleteOrder(context.Context, *DeleteOrderRequest) (*emptypb.Empty, error)
-	mustEmbedUnimplementedSpecialAppServiceServer()
+	mustEmbedUnimplementedSpecialAdminServiceServer()
 }
 
-// UnimplementedSpecialAppServiceServer must be embedded to have
+// UnimplementedSpecialAdminServiceServer must be embedded to have
 // forward compatible implementations.
 //
 // NOTE: this should be embedded by value instead of pointer to avoid a nil
 // pointer dereference when methods are called.
-type UnimplementedSpecialAppServiceServer struct{}
+type UnimplementedSpecialAdminServiceServer struct{}
 
-func (UnimplementedSpecialAppServiceServer) GetUsers(context.Context, *GetUsersRequest) (*GetUsersResponse, error) {
+func (UnimplementedSpecialAdminServiceServer) GetUsers(context.Context, *GetUsersRequest) (*GetUsersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUsers not implemented")
 }
-func (UnimplementedSpecialAppServiceServer) GetIventInfo(context.Context, *GetIventInfoRequest) (*GetIventInfoResponse, error) {
+func (UnimplementedSpecialAdminServiceServer) GetIventInfo(context.Context, *GetIventInfoRequest) (*GetIventInfoResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetIventInfo not implemented")
 }
-func (UnimplementedSpecialAppServiceServer) GetIvents(context.Context, *GetIventsRequest) (*GetIventsResponse, error) {
+func (UnimplementedSpecialAdminServiceServer) GetIvents(context.Context, *GetIventsRequest) (*GetIventsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetIvents not implemented")
 }
-func (UnimplementedSpecialAppServiceServer) CreateIvent(context.Context, *CreateIventRequest) (*GetIventInfoResponse, error) {
+func (UnimplementedSpecialAdminServiceServer) CreateIvent(context.Context, *CreateIventRequest) (*GetIventInfoResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateIvent not implemented")
 }
-func (UnimplementedSpecialAppServiceServer) UpdateIvent(context.Context, *UpdateIventRequest) (*GetIventInfoResponse, error) {
+func (UnimplementedSpecialAdminServiceServer) UpdateIvent(context.Context, *UpdateIventRequest) (*GetIventInfoResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateIvent not implemented")
 }
-func (UnimplementedSpecialAppServiceServer) DeleteIvent(context.Context, *DeleteIventRequest) (*emptypb.Empty, error) {
+func (UnimplementedSpecialAdminServiceServer) DeleteIvent(context.Context, *DeleteIventRequest) (*emptypb.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteIvent not implemented")
 }
-func (UnimplementedSpecialAppServiceServer) CreateIventPicture(context.Context, *CreatePictureRequest) (*GetIventInfoResponse, error) {
+func (UnimplementedSpecialAdminServiceServer) CreateIventPicture(context.Context, *CreatePictureRequest) (*GetIventInfoResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateIventPicture not implemented")
 }
-func (UnimplementedSpecialAppServiceServer) DeleteIventPicture(context.Context, *DeletePictureRequest) (*GetIventInfoResponse, error) {
+func (UnimplementedSpecialAdminServiceServer) DeleteIventPicture(context.Context, *DeletePictureRequest) (*GetIventInfoResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteIventPicture not implemented")
 }
-func (UnimplementedSpecialAppServiceServer) GetItemInfo(context.Context, *GetItemInfoRequest) (*GetItemInfoResponse, error) {
+func (UnimplementedSpecialAdminServiceServer) GetItemInfo(context.Context, *GetItemInfoRequest) (*GetItemInfoResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetItemInfo not implemented")
 }
-func (UnimplementedSpecialAppServiceServer) GetItems(context.Context, *GetItemsRequest) (*GetItemsResponse, error) {
+func (UnimplementedSpecialAdminServiceServer) GetItems(context.Context, *GetItemsRequest) (*GetItemsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetItems not implemented")
 }
-func (UnimplementedSpecialAppServiceServer) CreateItem(context.Context, *CreateItemRequest) (*GetItemInfoResponse, error) {
+func (UnimplementedSpecialAdminServiceServer) CreateItem(context.Context, *CreateItemRequest) (*GetItemInfoResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateItem not implemented")
 }
-func (UnimplementedSpecialAppServiceServer) UpdateItem(context.Context, *UpdateItemRequest) (*GetItemInfoResponse, error) {
+func (UnimplementedSpecialAdminServiceServer) UpdateItem(context.Context, *UpdateItemRequest) (*GetItemInfoResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateItem not implemented")
 }
-func (UnimplementedSpecialAppServiceServer) DeleteItem(context.Context, *DeleteItemRequest) (*emptypb.Empty, error) {
+func (UnimplementedSpecialAdminServiceServer) DeleteItem(context.Context, *DeleteItemRequest) (*emptypb.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteItem not implemented")
 }
-func (UnimplementedSpecialAppServiceServer) CreateItemPicture(context.Context, *CreatePictureRequest) (*GetItemInfoResponse, error) {
+func (UnimplementedSpecialAdminServiceServer) CreateItemPicture(context.Context, *CreatePictureRequest) (*GetItemInfoResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateItemPicture not implemented")
 }
-func (UnimplementedSpecialAppServiceServer) DeleteItemPicture(context.Context, *DeletePictureRequest) (*emptypb.Empty, error) {
+func (UnimplementedSpecialAdminServiceServer) DeleteItemPicture(context.Context, *DeletePictureRequest) (*emptypb.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteItemPicture not implemented")
 }
-func (UnimplementedSpecialAppServiceServer) GetOrderInfo(context.Context, *GetOrderInfoRequest) (*GetOrderInfoResponse, error) {
+func (UnimplementedSpecialAdminServiceServer) GetOrderInfo(context.Context, *GetOrderInfoRequest) (*GetOrderInfoResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetOrderInfo not implemented")
 }
-func (UnimplementedSpecialAppServiceServer) GetOrders(context.Context, *GetOrdersRequest) (*GetOrdersResponse, error) {
+func (UnimplementedSpecialAdminServiceServer) GetOrders(context.Context, *GetOrdersRequest) (*GetOrdersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetOrders not implemented")
 }
-func (UnimplementedSpecialAppServiceServer) UpdateOrder(context.Context, *UpdateOrderRequest) (*GetOrderInfoResponse, error) {
+func (UnimplementedSpecialAdminServiceServer) UpdateOrder(context.Context, *UpdateOrderRequest) (*GetOrderInfoResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateOrder not implemented")
 }
-func (UnimplementedSpecialAppServiceServer) DeleteOrder(context.Context, *DeleteOrderRequest) (*emptypb.Empty, error) {
+func (UnimplementedSpecialAdminServiceServer) DeleteOrder(context.Context, *DeleteOrderRequest) (*emptypb.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteOrder not implemented")
 }
-func (UnimplementedSpecialAppServiceServer) mustEmbedUnimplementedSpecialAppServiceServer() {}
-func (UnimplementedSpecialAppServiceServer) testEmbeddedByValue()                           {}
+func (UnimplementedSpecialAdminServiceServer) mustEmbedUnimplementedSpecialAdminServiceServer() {}
+func (UnimplementedSpecialAdminServiceServer) testEmbeddedByValue()                             {}
 
-// UnsafeSpecialAppServiceServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to SpecialAppServiceServer will
+// UnsafeSpecialAdminServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to SpecialAdminServiceServer will
 // result in compilation errors.
-type UnsafeSpecialAppServiceServer interface {
-	mustEmbedUnimplementedSpecialAppServiceServer()
+type UnsafeSpecialAdminServiceServer interface {
+	mustEmbedUnimplementedSpecialAdminServiceServer()
 }
 
-func RegisterSpecialAppServiceServer(s grpc.ServiceRegistrar, srv SpecialAppServiceServer) {
-	// If the following call pancis, it indicates UnimplementedSpecialAppServiceServer was
+func RegisterSpecialAdminServiceServer(s grpc.ServiceRegistrar, srv SpecialAdminServiceServer) {
+	// If the following call pancis, it indicates UnimplementedSpecialAdminServiceServer was
 	// embedded by pointer and is nil.  This will cause panics if an
 	// unimplemented method is ever invoked, so we test this at initialization
 	// time to prevent it from happening at runtime later due to I/O.
 	if t, ok := srv.(interface{ testEmbeddedByValue() }); ok {
 		t.testEmbeddedByValue()
 	}
-	s.RegisterService(&SpecialAppService_ServiceDesc, srv)
+	s.RegisterService(&SpecialAdminService_ServiceDesc, srv)
 }
 
-func _SpecialAppService_GetUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _SpecialAdminService_GetUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetUsersRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SpecialAppServiceServer).GetUsers(ctx, in)
+		return srv.(SpecialAdminServiceServer).GetUsers(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: SpecialAppService_GetUsers_FullMethodName,
+		FullMethod: SpecialAdminService_GetUsers_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SpecialAppServiceServer).GetUsers(ctx, req.(*GetUsersRequest))
+		return srv.(SpecialAdminServiceServer).GetUsers(ctx, req.(*GetUsersRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _SpecialAppService_GetIventInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _SpecialAdminService_GetIventInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetIventInfoRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SpecialAppServiceServer).GetIventInfo(ctx, in)
+		return srv.(SpecialAdminServiceServer).GetIventInfo(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: SpecialAppService_GetIventInfo_FullMethodName,
+		FullMethod: SpecialAdminService_GetIventInfo_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SpecialAppServiceServer).GetIventInfo(ctx, req.(*GetIventInfoRequest))
+		return srv.(SpecialAdminServiceServer).GetIventInfo(ctx, req.(*GetIventInfoRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _SpecialAppService_GetIvents_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _SpecialAdminService_GetIvents_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetIventsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SpecialAppServiceServer).GetIvents(ctx, in)
+		return srv.(SpecialAdminServiceServer).GetIvents(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: SpecialAppService_GetIvents_FullMethodName,
+		FullMethod: SpecialAdminService_GetIvents_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SpecialAppServiceServer).GetIvents(ctx, req.(*GetIventsRequest))
+		return srv.(SpecialAdminServiceServer).GetIvents(ctx, req.(*GetIventsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _SpecialAppService_CreateIvent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _SpecialAdminService_CreateIvent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateIventRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SpecialAppServiceServer).CreateIvent(ctx, in)
+		return srv.(SpecialAdminServiceServer).CreateIvent(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: SpecialAppService_CreateIvent_FullMethodName,
+		FullMethod: SpecialAdminService_CreateIvent_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SpecialAppServiceServer).CreateIvent(ctx, req.(*CreateIventRequest))
+		return srv.(SpecialAdminServiceServer).CreateIvent(ctx, req.(*CreateIventRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _SpecialAppService_UpdateIvent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _SpecialAdminService_UpdateIvent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateIventRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SpecialAppServiceServer).UpdateIvent(ctx, in)
+		return srv.(SpecialAdminServiceServer).UpdateIvent(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: SpecialAppService_UpdateIvent_FullMethodName,
+		FullMethod: SpecialAdminService_UpdateIvent_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SpecialAppServiceServer).UpdateIvent(ctx, req.(*UpdateIventRequest))
+		return srv.(SpecialAdminServiceServer).UpdateIvent(ctx, req.(*UpdateIventRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _SpecialAppService_DeleteIvent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _SpecialAdminService_DeleteIvent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteIventRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SpecialAppServiceServer).DeleteIvent(ctx, in)
+		return srv.(SpecialAdminServiceServer).DeleteIvent(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: SpecialAppService_DeleteIvent_FullMethodName,
+		FullMethod: SpecialAdminService_DeleteIvent_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SpecialAppServiceServer).DeleteIvent(ctx, req.(*DeleteIventRequest))
+		return srv.(SpecialAdminServiceServer).DeleteIvent(ctx, req.(*DeleteIventRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _SpecialAppService_CreateIventPicture_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _SpecialAdminService_CreateIventPicture_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreatePictureRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SpecialAppServiceServer).CreateIventPicture(ctx, in)
+		return srv.(SpecialAdminServiceServer).CreateIventPicture(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: SpecialAppService_CreateIventPicture_FullMethodName,
+		FullMethod: SpecialAdminService_CreateIventPicture_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SpecialAppServiceServer).CreateIventPicture(ctx, req.(*CreatePictureRequest))
+		return srv.(SpecialAdminServiceServer).CreateIventPicture(ctx, req.(*CreatePictureRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _SpecialAppService_DeleteIventPicture_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _SpecialAdminService_DeleteIventPicture_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeletePictureRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SpecialAppServiceServer).DeleteIventPicture(ctx, in)
+		return srv.(SpecialAdminServiceServer).DeleteIventPicture(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: SpecialAppService_DeleteIventPicture_FullMethodName,
+		FullMethod: SpecialAdminService_DeleteIventPicture_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SpecialAppServiceServer).DeleteIventPicture(ctx, req.(*DeletePictureRequest))
+		return srv.(SpecialAdminServiceServer).DeleteIventPicture(ctx, req.(*DeletePictureRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _SpecialAppService_GetItemInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _SpecialAdminService_GetItemInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetItemInfoRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SpecialAppServiceServer).GetItemInfo(ctx, in)
+		return srv.(SpecialAdminServiceServer).GetItemInfo(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: SpecialAppService_GetItemInfo_FullMethodName,
+		FullMethod: SpecialAdminService_GetItemInfo_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SpecialAppServiceServer).GetItemInfo(ctx, req.(*GetItemInfoRequest))
+		return srv.(SpecialAdminServiceServer).GetItemInfo(ctx, req.(*GetItemInfoRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _SpecialAppService_GetItems_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _SpecialAdminService_GetItems_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetItemsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SpecialAppServiceServer).GetItems(ctx, in)
+		return srv.(SpecialAdminServiceServer).GetItems(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: SpecialAppService_GetItems_FullMethodName,
+		FullMethod: SpecialAdminService_GetItems_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SpecialAppServiceServer).GetItems(ctx, req.(*GetItemsRequest))
+		return srv.(SpecialAdminServiceServer).GetItems(ctx, req.(*GetItemsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _SpecialAppService_CreateItem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _SpecialAdminService_CreateItem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateItemRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SpecialAppServiceServer).CreateItem(ctx, in)
+		return srv.(SpecialAdminServiceServer).CreateItem(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: SpecialAppService_CreateItem_FullMethodName,
+		FullMethod: SpecialAdminService_CreateItem_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SpecialAppServiceServer).CreateItem(ctx, req.(*CreateItemRequest))
+		return srv.(SpecialAdminServiceServer).CreateItem(ctx, req.(*CreateItemRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _SpecialAppService_UpdateItem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _SpecialAdminService_UpdateItem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateItemRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SpecialAppServiceServer).UpdateItem(ctx, in)
+		return srv.(SpecialAdminServiceServer).UpdateItem(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: SpecialAppService_UpdateItem_FullMethodName,
+		FullMethod: SpecialAdminService_UpdateItem_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SpecialAppServiceServer).UpdateItem(ctx, req.(*UpdateItemRequest))
+		return srv.(SpecialAdminServiceServer).UpdateItem(ctx, req.(*UpdateItemRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _SpecialAppService_DeleteItem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _SpecialAdminService_DeleteItem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteItemRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SpecialAppServiceServer).DeleteItem(ctx, in)
+		return srv.(SpecialAdminServiceServer).DeleteItem(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: SpecialAppService_DeleteItem_FullMethodName,
+		FullMethod: SpecialAdminService_DeleteItem_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SpecialAppServiceServer).DeleteItem(ctx, req.(*DeleteItemRequest))
+		return srv.(SpecialAdminServiceServer).DeleteItem(ctx, req.(*DeleteItemRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _SpecialAppService_CreateItemPicture_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _SpecialAdminService_CreateItemPicture_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreatePictureRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SpecialAppServiceServer).CreateItemPicture(ctx, in)
+		return srv.(SpecialAdminServiceServer).CreateItemPicture(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: SpecialAppService_CreateItemPicture_FullMethodName,
+		FullMethod: SpecialAdminService_CreateItemPicture_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SpecialAppServiceServer).CreateItemPicture(ctx, req.(*CreatePictureRequest))
+		return srv.(SpecialAdminServiceServer).CreateItemPicture(ctx, req.(*CreatePictureRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _SpecialAppService_DeleteItemPicture_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _SpecialAdminService_DeleteItemPicture_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeletePictureRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SpecialAppServiceServer).DeleteItemPicture(ctx, in)
+		return srv.(SpecialAdminServiceServer).DeleteItemPicture(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: SpecialAppService_DeleteItemPicture_FullMethodName,
+		FullMethod: SpecialAdminService_DeleteItemPicture_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SpecialAppServiceServer).DeleteItemPicture(ctx, req.(*DeletePictureRequest))
+		return srv.(SpecialAdminServiceServer).DeleteItemPicture(ctx, req.(*DeletePictureRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _SpecialAppService_GetOrderInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _SpecialAdminService_GetOrderInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetOrderInfoRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SpecialAppServiceServer).GetOrderInfo(ctx, in)
+		return srv.(SpecialAdminServiceServer).GetOrderInfo(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: SpecialAppService_GetOrderInfo_FullMethodName,
+		FullMethod: SpecialAdminService_GetOrderInfo_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SpecialAppServiceServer).GetOrderInfo(ctx, req.(*GetOrderInfoRequest))
+		return srv.(SpecialAdminServiceServer).GetOrderInfo(ctx, req.(*GetOrderInfoRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _SpecialAppService_GetOrders_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _SpecialAdminService_GetOrders_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetOrdersRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SpecialAppServiceServer).GetOrders(ctx, in)
+		return srv.(SpecialAdminServiceServer).GetOrders(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: SpecialAppService_GetOrders_FullMethodName,
+		FullMethod: SpecialAdminService_GetOrders_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SpecialAppServiceServer).GetOrders(ctx, req.(*GetOrdersRequest))
+		return srv.(SpecialAdminServiceServer).GetOrders(ctx, req.(*GetOrdersRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _SpecialAppService_UpdateOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _SpecialAdminService_UpdateOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateOrderRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SpecialAppServiceServer).UpdateOrder(ctx, in)
+		return srv.(SpecialAdminServiceServer).UpdateOrder(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: SpecialAppService_UpdateOrder_FullMethodName,
+		FullMethod: SpecialAdminService_UpdateOrder_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SpecialAppServiceServer).UpdateOrder(ctx, req.(*UpdateOrderRequest))
+		return srv.(SpecialAdminServiceServer).UpdateOrder(ctx, req.(*UpdateOrderRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _SpecialAppService_DeleteOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _SpecialAdminService_DeleteOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteOrderRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SpecialAppServiceServer).DeleteOrder(ctx, in)
+		return srv.(SpecialAdminServiceServer).DeleteOrder(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: SpecialAppService_DeleteOrder_FullMethodName,
+		FullMethod: SpecialAdminService_DeleteOrder_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SpecialAppServiceServer).DeleteOrder(ctx, req.(*DeleteOrderRequest))
+		return srv.(SpecialAdminServiceServer).DeleteOrder(ctx, req.(*DeleteOrderRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// SpecialAppService_ServiceDesc is the grpc.ServiceDesc for SpecialAppService service.
+// SpecialAdminService_ServiceDesc is the grpc.ServiceDesc for SpecialAdminService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var SpecialAppService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "special_app_v1.SpecialAppService",
-	HandlerType: (*SpecialAppServiceServer)(nil),
+var SpecialAdminService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "special_app_v1.SpecialAdminService",
+	HandlerType: (*SpecialAdminServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "GetUsers",
-			Handler:    _SpecialAppService_GetUsers_Handler,
+			Handler:    _SpecialAdminService_GetUsers_Handler,
 		},
 		{
 			MethodName: "GetIventInfo",
-			Handler:    _SpecialAppService_GetIventInfo_Handler,
+			Handler:    _SpecialAdminService_GetIventInfo_Handler,
 		},
 		{
 			MethodName: "GetIvents",
-			Handler:    _SpecialAppService_GetIvents_Handler,
+			Handler:    _SpecialAdminService_GetIvents_Handler,
 		},
 		{
 			MethodName: "CreateIvent",
-			Handler:    _SpecialAppService_CreateIvent_Handler,
+			Handler:    _SpecialAdminService_CreateIvent_Handler,
 		},
 		{
 			MethodName: "UpdateIvent",
-			Handler:    _SpecialAppService_UpdateIvent_Handler,
+			Handler:    _SpecialAdminService_UpdateIvent_Handler,
 		},
 		{
 			MethodName: "DeleteIvent",
-			Handler:    _SpecialAppService_DeleteIvent_Handler,
+			Handler:    _SpecialAdminService_DeleteIvent_Handler,
 		},
 		{
 			MethodName: "CreateIventPicture",
-			Handler:    _SpecialAppService_CreateIventPicture_Handler,
+			Handler:    _SpecialAdminService_CreateIventPicture_Handler,
 		},
 		{
 			MethodName: "DeleteIventPicture",
-			Handler:    _SpecialAppService_DeleteIventPicture_Handler,
+			Handler:    _SpecialAdminService_DeleteIventPicture_Handler,
 		},
 		{
 			MethodName: "GetItemInfo",
-			Handler:    _SpecialAppService_GetItemInfo_Handler,
+			Handler:    _SpecialAdminService_GetItemInfo_Handler,
 		},
 		{
 			MethodName: "GetItems",
-			Handler:    _SpecialAppService_GetItems_Handler,
+			Handler:    _SpecialAdminService_GetItems_Handler,
 		},
 		{
 			MethodName: "CreateItem",
-			Handler:    _SpecialAppService_CreateItem_Handler,
+			Handler:    _SpecialAdminService_CreateItem_Handler,
 		},
 		{
 			MethodName: "UpdateItem",
-			Handler:    _SpecialAppService_UpdateItem_Handler,
+			Handler:    _SpecialAdminService_UpdateItem_Handler,
 		},
 		{
 			MethodName: "DeleteItem",
-			Handler:    _SpecialAppService_DeleteItem_Handler,
+			Handler:    _SpecialAdminService_DeleteItem_Handler,
 		},
 		{
 			MethodName: "CreateItemPicture",
-			Handler:    _SpecialAppService_CreateItemPicture_Handler,
+			Handler:    _SpecialAdminService_CreateItemPicture_Handler,
 		},
 		{
 			MethodName: "DeleteItemPicture",
-			Handler:    _SpecialAppService_DeleteItemPicture_Handler,
+			Handler:    _SpecialAdminService_DeleteItemPicture_Handler,
 		},
 		{
 			MethodName: "GetOrderInfo",
-			Handler:    _SpecialAppService_GetOrderInfo_Handler,
+			Handler:    _SpecialAdminService_GetOrderInfo_Handler,
 		},
 		{
 			MethodName: "GetOrders",
-			Handler:    _SpecialAppService_GetOrders_Handler,
+			Handler:    _SpecialAdminService_GetOrders_Handler,
 		},
 		{
 			MethodName: "UpdateOrder",
-			Handler:    _SpecialAppService_UpdateOrder_Handler,
+			Handler:    _SpecialAdminService_UpdateOrder_Handler,
 		},
 		{
 			MethodName: "DeleteOrder",
-			Handler:    _SpecialAppService_DeleteOrder_Handler,
+			Handler:    _SpecialAdminService_DeleteOrder_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
