@@ -35,7 +35,7 @@ type UserIvent struct {
 	UserID         string    `gorm:"column:user_id"`
 	IventID        uuid.UUID `gorm:"column:ivent_id"`
 	NumberOfGuests int64     `gorm:"column:number_of_guests"`
-	Ivent          Ivent     `gorm:"foreignKey:IventID"`
+	User           User      `gorm:"foreignKey:UserID"`
 }
 
 type IventPicture struct {
