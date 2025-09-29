@@ -1162,7 +1162,7 @@ type UpdateItemRequest struct {
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Title         *string                `protobuf:"bytes,2,opt,name=title,proto3,oneof" json:"title,omitempty"`
 	Description   *string                `protobuf:"bytes,3,opt,name=description,proto3,oneof" json:"description,omitempty"`
-	Price         *int64                 `protobuf:"varint,4,opt,name=price,proto3,oneof" json:"price,omitempty"`
+	Price         int64                  `protobuf:"varint,4,opt,name=price,proto3" json:"price,omitempty"`
 	LittlePicture *LittlePictureInfo     `protobuf:"bytes,5,opt,name=little_picture,json=littlePicture,proto3,oneof" json:"little_picture,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -1220,8 +1220,8 @@ func (x *UpdateItemRequest) GetDescription() string {
 }
 
 func (x *UpdateItemRequest) GetPrice() int64 {
-	if x != nil && x.Price != nil {
-		return *x.Price
+	if x != nil {
+		return x.Price
 	}
 	return 0
 }
@@ -2052,16 +2052,15 @@ const file_special_admin_proto_rawDesc = "" +
 	"\x05title\x18\x01 \x01(\tR\x05title\x12 \n" +
 	"\vdescription\x18\x02 \x01(\tR\vdescription\x12\x14\n" +
 	"\x05price\x18\x03 \x01(\x03R\x05price\x12H\n" +
-	"\x0elittle_picture\x18\x04 \x01(\v2!.special_app_v1.LittlePictureInfoR\rlittlePicture\"\x86\x02\n" +
+	"\x0elittle_picture\x18\x04 \x01(\v2!.special_app_v1.LittlePictureInfoR\rlittlePicture\"\xf7\x01\n" +
 	"\x11UpdateItemRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x19\n" +
 	"\x05title\x18\x02 \x01(\tH\x00R\x05title\x88\x01\x01\x12%\n" +
-	"\vdescription\x18\x03 \x01(\tH\x01R\vdescription\x88\x01\x01\x12\x19\n" +
-	"\x05price\x18\x04 \x01(\x03H\x02R\x05price\x88\x01\x01\x12M\n" +
-	"\x0elittle_picture\x18\x05 \x01(\v2!.special_app_v1.LittlePictureInfoH\x03R\rlittlePicture\x88\x01\x01B\b\n" +
+	"\vdescription\x18\x03 \x01(\tH\x01R\vdescription\x88\x01\x01\x12\x14\n" +
+	"\x05price\x18\x04 \x01(\x03R\x05price\x12M\n" +
+	"\x0elittle_picture\x18\x05 \x01(\v2!.special_app_v1.LittlePictureInfoH\x02R\rlittlePicture\x88\x01\x01B\b\n" +
 	"\x06_titleB\x0e\n" +
-	"\f_descriptionB\b\n" +
-	"\x06_priceB\x11\n" +
+	"\f_descriptionB\x11\n" +
 	"\x0f_little_picture\"#\n" +
 	"\x11DeleteItemRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\"\xf6\x01\n" +

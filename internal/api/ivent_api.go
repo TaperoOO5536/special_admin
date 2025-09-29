@@ -105,12 +105,12 @@ func (h *IventServiceHandler) CreateIvent(ctx context.Context, req *pb.CreateIve
 		MimeType:      req.LittlePicture.MimeType,
 	}
 
-	ivent, err := h.iventService.CreateIvent(ctx, ivent)
+	createdIvent, err := h.iventService.CreateIvent(ctx, ivent)
 	if err != nil {
 		return nil, status.Errorf(codes.InvalidArgument, "failed to create ivent: %v", err)
 	}
 	
-	return IventToGetIventInfoResponse(ivent), nil
+	return IventToGetIventInfoResponse(createdIvent), nil
 }
 
 func (h *IventServiceHandler) GetIventInfo(ctx context.Context, req *pb.GetIventInfoRequest) (*pb.GetIventInfoResponse, error) {
@@ -164,11 +164,11 @@ func (h *IventServiceHandler) GetIvents(ctx context.Context, req *pb.GetIventsRe
 	
 func (h *IventServiceHandler) UpdateIvent(ctx context.Context, req *pb.UpdateIventRequest) (*pb.GetIventInfoResponse, error) {
 	if req.Id == "" {
-		err := status.Error(codes.InvalidArgument, "user ivent id is required")
+		err := status.Error(codes.InvalidArgument, "ivent id is required")
 		return nil, err
 	}
-	if *req.Title == "" && *req.Description == "" && req.Datetime == nil &&
-		req.Price == nil && *req.TotalSeats == 0 && req.OccupiedSeats == nil &&
+	if req.Title == nil && req.Description == nil && req.Datetime == nil &&
+		req.Price == nil && req.TotalSeats == nil && req.OccupiedSeats == nil &&
 		req.LittlePicture == nil {
 		err := status.Error(codes.InvalidArgument, "at least one argument is required")
 		return nil, err
