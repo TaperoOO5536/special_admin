@@ -15,7 +15,7 @@ type IventRepository interface {
 	GetIventInfo(ctx context.Context, id uuid.UUID) (*models.Ivent, error)
 	GetIvents(ctx context.Context) ([]*models.Ivent, error)
 	CreateIvent(ctx context.Context, ivent *models.Ivent) (*models.Ivent, error)
-	UpdateIvent(ctx context.Context, ivent *models.Ivent) (*models.Ivent, error)
+	UpdateIvent(ctx context.Context, ivent *models.Ivent, isPriceUpdated bool, isOccupiedSeats bool) (*models.Ivent, error)
 	DeleteIvent(ctx context.Context, id uuid.UUID) (error)
 }
 
@@ -55,10 +55,15 @@ func (r *iventRepository) CreateIvent(ctx context.Context, ivent *models.Ivent) 
 	if err := r.db.Create(ivent).Error; err != nil {
 		return nil, err
 	}
+
+	ivent, err := r.GetIventInfo(ctx, ivent.ID)
+	if err != nil {
+		return nil, err
+	}
 	return ivent, nil
 }
 
-func (r *iventRepository) UpdateIvent(ctx context.Context, ivent *models.Ivent) (*models.Ivent, error) {
+func (r *iventRepository) UpdateIvent(ctx context.Context, ivent *models.Ivent, isPriceUpdated bool, isOccupiedSeats bool) (*models.Ivent, error) {
 	existingIvent, err := r.GetIventInfo(ctx, ivent.ID)
 	if err != nil {
 		return nil, err
@@ -73,9 +78,6 @@ func (r *iventRepository) UpdateIvent(ctx context.Context, ivent *models.Ivent) 
 	if !ivent.DateTime.IsZero() {
 		existingIvent.DateTime = ivent.DateTime
 	}
-	if ivent.Price != 0 {
-		existingIvent.Price = ivent.Price
-	}
 	if ivent.TotalSeats != 0 {
 		existingIvent.TotalSeats = ivent.TotalSeats
 	}
@@ -85,8 +87,18 @@ func (r *iventRepository) UpdateIvent(ctx context.Context, ivent *models.Ivent) 
 	if ivent.LittlePicture != nil {
 		existingIvent.LittlePicture = ivent.LittlePicture
 	}
+	if isPriceUpdated {
+		existingIvent.Price = ivent.Price
+	}
+	if isOccupiedSeats {
+		existingIvent.OccupiedSeats = ivent.OccupiedSeats
+	}
 
 	if err := r.db.Save(existingIvent).Error; err != nil {
+		return nil, err
+	}
+	ivent, err = r.GetIventInfo(ctx, ivent.ID)
+	if err != nil {
 		return nil, err
 	}
 	return ivent, nil

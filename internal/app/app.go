@@ -49,12 +49,18 @@ func (a *App) Start(ctx context.Context) error {
 	db := config.NewDBClient(a.config.Dsn)
 
 	userRepo := repository.NewUserRepository(db)
+	iventRepo := repository.NewIventRepository(db)
+	iventPictureRepo := repository.NewIventPictureRepository(db, iventRepo)
 
-	userServive := service.NewUserService(userRepo)
+	userService := service.NewUserService(userRepo)
+	iventService := service.NewIventService(iventRepo)
+	iventPictureService := service.NewIventPictureService(iventPictureRepo)
 
-	userServiceHandler := api.NewUserServiceHandler(userServive)
+	userServiceHandler := api.NewUserServiceHandler(userService)
+	iventServiceHandler := api.NewIventServiceHandler(iventService)
+	iventPictureServiceHandler := api.NewIventPictureServiceHandler(iventPictureService)
 
-	handler := api.NewHandler(userServiceHandler)
+	handler := api.NewHandler(userServiceHandler, iventServiceHandler, iventPictureServiceHandler)
 
 	grpcServer := grpc.NewServer()
 

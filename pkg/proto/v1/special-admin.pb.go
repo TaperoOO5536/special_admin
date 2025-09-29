@@ -12,6 +12,7 @@ import (
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	emptypb "google.golang.org/protobuf/types/known/emptypb"
 	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
+	wrapperspb "google.golang.org/protobuf/types/known/wrapperspb"
 	reflect "reflect"
 	sync "sync"
 	unsafe "unsafe"
@@ -138,7 +139,8 @@ func (x *PictureInfo) GetMimeType() string {
 
 type CreatePictureRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Picture       *PictureInfo           `protobuf:"bytes,1,opt,name=picture,proto3" json:"picture,omitempty"`
+	ParentId      string                 `protobuf:"bytes,1,opt,name=parent_id,json=parentId,proto3" json:"parent_id,omitempty"`
+	Picture       *LittlePictureInfo     `protobuf:"bytes,2,opt,name=picture,proto3" json:"picture,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -173,7 +175,14 @@ func (*CreatePictureRequest) Descriptor() ([]byte, []int) {
 	return file_special_admin_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *CreatePictureRequest) GetPicture() *PictureInfo {
+func (x *CreatePictureRequest) GetParentId() string {
+	if x != nil {
+		return x.ParentId
+	}
+	return ""
+}
+
+func (x *CreatePictureRequest) GetPicture() *LittlePictureInfo {
 	if x != nil {
 		return x.Picture
 	}
@@ -457,9 +466,9 @@ type CreateIventRequest struct {
 	Title         string                 `protobuf:"bytes,1,opt,name=title,proto3" json:"title,omitempty"`
 	Description   string                 `protobuf:"bytes,2,opt,name=description,proto3" json:"description,omitempty"`
 	Datetime      *timestamppb.Timestamp `protobuf:"bytes,3,opt,name=datetime,proto3" json:"datetime,omitempty"`
-	Price         int64                  `protobuf:"varint,4,opt,name=price,proto3" json:"price,omitempty"`
+	Price         *wrapperspb.Int64Value `protobuf:"bytes,4,opt,name=price,proto3" json:"price,omitempty"`
 	TotalSeats    int64                  `protobuf:"varint,5,opt,name=total_seats,json=totalSeats,proto3" json:"total_seats,omitempty"`
-	OccupiedSeats int64                  `protobuf:"varint,6,opt,name=occupied_seats,json=occupiedSeats,proto3" json:"occupied_seats,omitempty"`
+	OccupiedSeats *wrapperspb.Int64Value `protobuf:"bytes,6,opt,name=occupied_seats,json=occupiedSeats,proto3" json:"occupied_seats,omitempty"`
 	LittlePicture *LittlePictureInfo     `protobuf:"bytes,7,opt,name=little_picture,json=littlePicture,proto3" json:"little_picture,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -516,11 +525,11 @@ func (x *CreateIventRequest) GetDatetime() *timestamppb.Timestamp {
 	return nil
 }
 
-func (x *CreateIventRequest) GetPrice() int64 {
+func (x *CreateIventRequest) GetPrice() *wrapperspb.Int64Value {
 	if x != nil {
 		return x.Price
 	}
-	return 0
+	return nil
 }
 
 func (x *CreateIventRequest) GetTotalSeats() int64 {
@@ -530,11 +539,11 @@ func (x *CreateIventRequest) GetTotalSeats() int64 {
 	return 0
 }
 
-func (x *CreateIventRequest) GetOccupiedSeats() int64 {
+func (x *CreateIventRequest) GetOccupiedSeats() *wrapperspb.Int64Value {
 	if x != nil {
 		return x.OccupiedSeats
 	}
-	return 0
+	return nil
 }
 
 func (x *CreateIventRequest) GetLittlePicture() *LittlePictureInfo {
@@ -550,9 +559,9 @@ type UpdateIventRequest struct {
 	Title         *string                `protobuf:"bytes,2,opt,name=title,proto3,oneof" json:"title,omitempty"`
 	Description   *string                `protobuf:"bytes,3,opt,name=description,proto3,oneof" json:"description,omitempty"`
 	Datetime      *timestamppb.Timestamp `protobuf:"bytes,4,opt,name=datetime,proto3,oneof" json:"datetime,omitempty"`
-	Price         *int64                 `protobuf:"varint,5,opt,name=price,proto3,oneof" json:"price,omitempty"`
+	Price         *wrapperspb.Int64Value `protobuf:"bytes,5,opt,name=price,proto3" json:"price,omitempty"`
 	TotalSeats    *int64                 `protobuf:"varint,6,opt,name=total_seats,json=totalSeats,proto3,oneof" json:"total_seats,omitempty"`
-	OccupiedSeats *int64                 `protobuf:"varint,7,opt,name=occupied_seats,json=occupiedSeats,proto3,oneof" json:"occupied_seats,omitempty"`
+	OccupiedSeats *wrapperspb.Int64Value `protobuf:"bytes,7,opt,name=occupied_seats,json=occupiedSeats,proto3" json:"occupied_seats,omitempty"`
 	LittlePicture *LittlePictureInfo     `protobuf:"bytes,8,opt,name=little_picture,json=littlePicture,proto3,oneof" json:"little_picture,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -616,11 +625,11 @@ func (x *UpdateIventRequest) GetDatetime() *timestamppb.Timestamp {
 	return nil
 }
 
-func (x *UpdateIventRequest) GetPrice() int64 {
-	if x != nil && x.Price != nil {
-		return *x.Price
+func (x *UpdateIventRequest) GetPrice() *wrapperspb.Int64Value {
+	if x != nil {
+		return x.Price
 	}
-	return 0
+	return nil
 }
 
 func (x *UpdateIventRequest) GetTotalSeats() int64 {
@@ -630,11 +639,11 @@ func (x *UpdateIventRequest) GetTotalSeats() int64 {
 	return 0
 }
 
-func (x *UpdateIventRequest) GetOccupiedSeats() int64 {
-	if x != nil && x.OccupiedSeats != nil {
-		return *x.OccupiedSeats
+func (x *UpdateIventRequest) GetOccupiedSeats() *wrapperspb.Int64Value {
+	if x != nil {
+		return x.OccupiedSeats
 	}
-	return 0
+	return nil
 }
 
 func (x *UpdateIventRequest) GetLittlePicture() *LittlePictureInfo {
@@ -1956,16 +1965,17 @@ var File_special_admin_proto protoreflect.FileDescriptor
 
 const file_special_admin_proto_rawDesc = "" +
 	"\n" +
-	"\x13special-admin.proto\x12\x0especial_app_v1\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1cgoogle/api/annotations.proto\"J\n" +
+	"\x13special-admin.proto\x12\x0especial_app_v1\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1egoogle/protobuf/wrappers.proto\"J\n" +
 	"\x11LittlePictureInfo\x12\x18\n" +
 	"\apicture\x18\x01 \x01(\fR\apicture\x12\x1b\n" +
 	"\tmime_type\x18\x02 \x01(\tR\bmimeType\"T\n" +
 	"\vPictureInfo\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x18\n" +
 	"\apicture\x18\x02 \x01(\fR\apicture\x12\x1b\n" +
-	"\tmime_type\x18\x03 \x01(\tR\bmimeType\"M\n" +
-	"\x14CreatePictureRequest\x125\n" +
-	"\apicture\x18\x01 \x01(\v2\x1b.special_app_v1.PictureInfoR\apicture\"&\n" +
+	"\tmime_type\x18\x03 \x01(\tR\bmimeType\"p\n" +
+	"\x14CreatePictureRequest\x12\x1b\n" +
+	"\tparent_id\x18\x01 \x01(\tR\bparentId\x12;\n" +
+	"\apicture\x18\x02 \x01(\v2!.special_app_v1.LittlePictureInfoR\apicture\"&\n" +
 	"\x14DeletePictureRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\"\x11\n" +
 	"\x0fGetUsersRequest\"w\n" +
@@ -1978,32 +1988,30 @@ const file_special_admin_proto_rawDesc = "" +
 	"\x05users\x18\x01 \x03(\v2\x18.special_app_v1.UserInfoR\x05users\"%\n" +
 	"\x13GetIventInfoRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\"\x12\n" +
-	"\x10GetIventsRequest\"\xac\x02\n" +
+	"\x10GetIventsRequest\"\xe6\x02\n" +
 	"\x12CreateIventRequest\x12\x14\n" +
 	"\x05title\x18\x01 \x01(\tR\x05title\x12 \n" +
 	"\vdescription\x18\x02 \x01(\tR\vdescription\x126\n" +
-	"\bdatetime\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\bdatetime\x12\x14\n" +
-	"\x05price\x18\x04 \x01(\x03R\x05price\x12\x1f\n" +
+	"\bdatetime\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\bdatetime\x121\n" +
+	"\x05price\x18\x04 \x01(\v2\x1b.google.protobuf.Int64ValueR\x05price\x12\x1f\n" +
 	"\vtotal_seats\x18\x05 \x01(\x03R\n" +
-	"totalSeats\x12%\n" +
-	"\x0eoccupied_seats\x18\x06 \x01(\x03R\roccupiedSeats\x12H\n" +
-	"\x0elittle_picture\x18\a \x01(\v2!.special_app_v1.LittlePictureInfoR\rlittlePicture\"\xc6\x03\n" +
+	"totalSeats\x12B\n" +
+	"\x0eoccupied_seats\x18\x06 \x01(\v2\x1b.google.protobuf.Int64ValueR\roccupiedSeats\x12H\n" +
+	"\x0elittle_picture\x18\a \x01(\v2!.special_app_v1.LittlePictureInfoR\rlittlePicture\"\xd9\x03\n" +
 	"\x12UpdateIventRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x19\n" +
 	"\x05title\x18\x02 \x01(\tH\x00R\x05title\x88\x01\x01\x12%\n" +
 	"\vdescription\x18\x03 \x01(\tH\x01R\vdescription\x88\x01\x01\x12;\n" +
-	"\bdatetime\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampH\x02R\bdatetime\x88\x01\x01\x12\x19\n" +
-	"\x05price\x18\x05 \x01(\x03H\x03R\x05price\x88\x01\x01\x12$\n" +
-	"\vtotal_seats\x18\x06 \x01(\x03H\x04R\n" +
-	"totalSeats\x88\x01\x01\x12*\n" +
-	"\x0eoccupied_seats\x18\a \x01(\x03H\x05R\roccupiedSeats\x88\x01\x01\x12M\n" +
-	"\x0elittle_picture\x18\b \x01(\v2!.special_app_v1.LittlePictureInfoH\x06R\rlittlePicture\x88\x01\x01B\b\n" +
+	"\bdatetime\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampH\x02R\bdatetime\x88\x01\x01\x121\n" +
+	"\x05price\x18\x05 \x01(\v2\x1b.google.protobuf.Int64ValueR\x05price\x12$\n" +
+	"\vtotal_seats\x18\x06 \x01(\x03H\x03R\n" +
+	"totalSeats\x88\x01\x01\x12B\n" +
+	"\x0eoccupied_seats\x18\a \x01(\v2\x1b.google.protobuf.Int64ValueR\roccupiedSeats\x12M\n" +
+	"\x0elittle_picture\x18\b \x01(\v2!.special_app_v1.LittlePictureInfoH\x04R\rlittlePicture\x88\x01\x01B\b\n" +
 	"\x06_titleB\x0e\n" +
 	"\f_descriptionB\v\n" +
-	"\t_datetimeB\b\n" +
-	"\x06_priceB\x0e\n" +
+	"\t_datetimeB\x0e\n" +
 	"\f_total_seatsB\x11\n" +
-	"\x0f_occupied_seatsB\x11\n" +
 	"\x0f_little_picture\"$\n" +
 	"\x12DeleteIventRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\"n\n" +
@@ -2103,7 +2111,7 @@ const file_special_admin_proto_rawDesc = "" +
 	"\x06status\x18\x04 \x01(\tR\x06status\x12!\n" +
 	"\forder_amount\x18\x05 \x01(\x03R\vorderAmount\"M\n" +
 	"\x11GetOrdersResponse\x128\n" +
-	"\x06orders\x18\x01 \x03(\v2 .special_app_v1.OrderInfoForListR\x06orders2\xd3\x10\n" +
+	"\x06orders\x18\x01 \x03(\v2 .special_app_v1.OrderInfoForListR\x06orders2\xc4\x10\n" +
 	"\x13SpecialAdminService\x12`\n" +
 	"\bGetUsers\x12\x1f.special_app_v1.GetUsersRequest\x1a .special_app_v1.GetUsersResponse\"\x11\x82\xd3\xe4\x93\x02\v\x12\t/v1/users\x12r\n" +
 	"\fGetIventInfo\x12#.special_app_v1.GetIventInfoRequest\x1a$.special_app_v1.GetIventInfoResponse\"\x17\x82\xd3\xe4\x93\x02\x11\x12\x0f/v1/ivents/{id}\x12d\n" +
@@ -2113,8 +2121,8 @@ const file_special_admin_proto_rawDesc = "" +
 	"/v1/ivents\x12s\n" +
 	"\vUpdateIvent\x12\".special_app_v1.UpdateIventRequest\x1a$.special_app_v1.GetIventInfoResponse\"\x1a\x82\xd3\xe4\x93\x02\x14:\x01*2\x0f/v1/ivents/{id}\x12b\n" +
 	"\vDeleteIvent\x12\".special_app_v1.DeleteIventRequest\x1a\x16.google.protobuf.Empty\"\x17\x82\xd3\xe4\x93\x02\x11*\x0f/v1/ivents/{id}\x12\x7f\n" +
-	"\x12CreateIventPicture\x12$.special_app_v1.CreatePictureRequest\x1a$.special_app_v1.GetIventInfoResponse\"\x1d\x82\xd3\xe4\x93\x02\x17:\x01*\"\x12/v1/ivent_pictures\x12\x81\x01\n" +
-	"\x12DeleteIventPicture\x12$.special_app_v1.DeletePictureRequest\x1a$.special_app_v1.GetIventInfoResponse\"\x1f\x82\xd3\xe4\x93\x02\x19*\x17/v1/ivent_pictures/{id}\x12n\n" +
+	"\x12CreateIventPicture\x12$.special_app_v1.CreatePictureRequest\x1a$.special_app_v1.GetIventInfoResponse\"\x1d\x82\xd3\xe4\x93\x02\x17:\x01*\"\x12/v1/ivent_pictures\x12s\n" +
+	"\x12DeleteIventPicture\x12$.special_app_v1.DeletePictureRequest\x1a\x16.google.protobuf.Empty\"\x1f\x82\xd3\xe4\x93\x02\x19*\x17/v1/ivent_pictures/{id}\x12n\n" +
 	"\vGetItemInfo\x12\".special_app_v1.GetItemInfoRequest\x1a#.special_app_v1.GetItemInfoResponse\"\x16\x82\xd3\xe4\x93\x02\x10\x12\x0e/v1/items/{id}\x12`\n" +
 	"\bGetItems\x12\x1f.special_app_v1.GetItemsRequest\x1a .special_app_v1.GetItemsResponse\"\x11\x82\xd3\xe4\x93\x02\v\x12\t/v1/items\x12j\n" +
 	"\n" +
@@ -2178,77 +2186,82 @@ var file_special_admin_proto_goTypes = []any{
 	(*OrderInfoForList)(nil),      // 30: special_app_v1.OrderInfoForList
 	(*GetOrdersResponse)(nil),     // 31: special_app_v1.GetOrdersResponse
 	(*timestamppb.Timestamp)(nil), // 32: google.protobuf.Timestamp
-	(*emptypb.Empty)(nil),         // 33: google.protobuf.Empty
+	(*wrapperspb.Int64Value)(nil), // 33: google.protobuf.Int64Value
+	(*emptypb.Empty)(nil),         // 34: google.protobuf.Empty
 }
 var file_special_admin_proto_depIdxs = []int32{
-	1,  // 0: special_app_v1.CreatePictureRequest.picture:type_name -> special_app_v1.PictureInfo
+	0,  // 0: special_app_v1.CreatePictureRequest.picture:type_name -> special_app_v1.LittlePictureInfo
 	5,  // 1: special_app_v1.GetUsersResponse.users:type_name -> special_app_v1.UserInfo
 	32, // 2: special_app_v1.CreateIventRequest.datetime:type_name -> google.protobuf.Timestamp
-	0,  // 3: special_app_v1.CreateIventRequest.little_picture:type_name -> special_app_v1.LittlePictureInfo
-	32, // 4: special_app_v1.UpdateIventRequest.datetime:type_name -> google.protobuf.Timestamp
-	0,  // 5: special_app_v1.UpdateIventRequest.little_picture:type_name -> special_app_v1.LittlePictureInfo
-	32, // 6: special_app_v1.GetIventInfoResponse.datetime:type_name -> google.protobuf.Timestamp
-	0,  // 7: special_app_v1.GetIventInfoResponse.little_picture:type_name -> special_app_v1.LittlePictureInfo
-	1,  // 8: special_app_v1.GetIventInfoResponse.pictures:type_name -> special_app_v1.PictureInfo
-	12, // 9: special_app_v1.GetIventInfoResponse.userIvents:type_name -> special_app_v1.UserIventInfo
-	32, // 10: special_app_v1.IventInfoForList.datetime:type_name -> google.protobuf.Timestamp
-	0,  // 11: special_app_v1.IventInfoForList.little_picture:type_name -> special_app_v1.LittlePictureInfo
-	14, // 12: special_app_v1.GetIventsResponse.ivents:type_name -> special_app_v1.IventInfoForList
-	0,  // 13: special_app_v1.CreateItemRequest.little_picture:type_name -> special_app_v1.LittlePictureInfo
-	0,  // 14: special_app_v1.UpdateItemRequest.little_picture:type_name -> special_app_v1.LittlePictureInfo
-	0,  // 15: special_app_v1.GetItemInfoResponse.little_picture:type_name -> special_app_v1.LittlePictureInfo
-	1,  // 16: special_app_v1.GetItemInfoResponse.pictures:type_name -> special_app_v1.PictureInfo
-	0,  // 17: special_app_v1.ItemInfoForList.little_picture:type_name -> special_app_v1.LittlePictureInfo
-	22, // 18: special_app_v1.GetItemsResponse.items:type_name -> special_app_v1.ItemInfoForList
-	0,  // 19: special_app_v1.OrderItemInfoForList.little_picture:type_name -> special_app_v1.LittlePictureInfo
-	32, // 20: special_app_v1.GetOrderInfoResponse.form_date:type_name -> google.protobuf.Timestamp
-	32, // 21: special_app_v1.GetOrderInfoResponse.completion_date:type_name -> google.protobuf.Timestamp
-	28, // 22: special_app_v1.GetOrderInfoResponse.items:type_name -> special_app_v1.OrderItemInfoForList
-	32, // 23: special_app_v1.OrderInfoForList.completion_date:type_name -> google.protobuf.Timestamp
-	30, // 24: special_app_v1.GetOrdersResponse.orders:type_name -> special_app_v1.OrderInfoForList
-	4,  // 25: special_app_v1.SpecialAdminService.GetUsers:input_type -> special_app_v1.GetUsersRequest
-	7,  // 26: special_app_v1.SpecialAdminService.GetIventInfo:input_type -> special_app_v1.GetIventInfoRequest
-	8,  // 27: special_app_v1.SpecialAdminService.GetIvents:input_type -> special_app_v1.GetIventsRequest
-	9,  // 28: special_app_v1.SpecialAdminService.CreateIvent:input_type -> special_app_v1.CreateIventRequest
-	10, // 29: special_app_v1.SpecialAdminService.UpdateIvent:input_type -> special_app_v1.UpdateIventRequest
-	11, // 30: special_app_v1.SpecialAdminService.DeleteIvent:input_type -> special_app_v1.DeleteIventRequest
-	2,  // 31: special_app_v1.SpecialAdminService.CreateIventPicture:input_type -> special_app_v1.CreatePictureRequest
-	3,  // 32: special_app_v1.SpecialAdminService.DeleteIventPicture:input_type -> special_app_v1.DeletePictureRequest
-	16, // 33: special_app_v1.SpecialAdminService.GetItemInfo:input_type -> special_app_v1.GetItemInfoRequest
-	17, // 34: special_app_v1.SpecialAdminService.GetItems:input_type -> special_app_v1.GetItemsRequest
-	18, // 35: special_app_v1.SpecialAdminService.CreateItem:input_type -> special_app_v1.CreateItemRequest
-	19, // 36: special_app_v1.SpecialAdminService.UpdateItem:input_type -> special_app_v1.UpdateItemRequest
-	20, // 37: special_app_v1.SpecialAdminService.DeleteItem:input_type -> special_app_v1.DeleteItemRequest
-	2,  // 38: special_app_v1.SpecialAdminService.CreateItemPicture:input_type -> special_app_v1.CreatePictureRequest
-	3,  // 39: special_app_v1.SpecialAdminService.DeleteItemPicture:input_type -> special_app_v1.DeletePictureRequest
-	24, // 40: special_app_v1.SpecialAdminService.GetOrderInfo:input_type -> special_app_v1.GetOrderInfoRequest
-	25, // 41: special_app_v1.SpecialAdminService.GetOrders:input_type -> special_app_v1.GetOrdersRequest
-	26, // 42: special_app_v1.SpecialAdminService.UpdateOrder:input_type -> special_app_v1.UpdateOrderRequest
-	27, // 43: special_app_v1.SpecialAdminService.DeleteOrder:input_type -> special_app_v1.DeleteOrderRequest
-	6,  // 44: special_app_v1.SpecialAdminService.GetUsers:output_type -> special_app_v1.GetUsersResponse
-	13, // 45: special_app_v1.SpecialAdminService.GetIventInfo:output_type -> special_app_v1.GetIventInfoResponse
-	15, // 46: special_app_v1.SpecialAdminService.GetIvents:output_type -> special_app_v1.GetIventsResponse
-	13, // 47: special_app_v1.SpecialAdminService.CreateIvent:output_type -> special_app_v1.GetIventInfoResponse
-	13, // 48: special_app_v1.SpecialAdminService.UpdateIvent:output_type -> special_app_v1.GetIventInfoResponse
-	33, // 49: special_app_v1.SpecialAdminService.DeleteIvent:output_type -> google.protobuf.Empty
-	13, // 50: special_app_v1.SpecialAdminService.CreateIventPicture:output_type -> special_app_v1.GetIventInfoResponse
-	13, // 51: special_app_v1.SpecialAdminService.DeleteIventPicture:output_type -> special_app_v1.GetIventInfoResponse
-	21, // 52: special_app_v1.SpecialAdminService.GetItemInfo:output_type -> special_app_v1.GetItemInfoResponse
-	23, // 53: special_app_v1.SpecialAdminService.GetItems:output_type -> special_app_v1.GetItemsResponse
-	21, // 54: special_app_v1.SpecialAdminService.CreateItem:output_type -> special_app_v1.GetItemInfoResponse
-	21, // 55: special_app_v1.SpecialAdminService.UpdateItem:output_type -> special_app_v1.GetItemInfoResponse
-	33, // 56: special_app_v1.SpecialAdminService.DeleteItem:output_type -> google.protobuf.Empty
-	21, // 57: special_app_v1.SpecialAdminService.CreateItemPicture:output_type -> special_app_v1.GetItemInfoResponse
-	33, // 58: special_app_v1.SpecialAdminService.DeleteItemPicture:output_type -> google.protobuf.Empty
-	29, // 59: special_app_v1.SpecialAdminService.GetOrderInfo:output_type -> special_app_v1.GetOrderInfoResponse
-	31, // 60: special_app_v1.SpecialAdminService.GetOrders:output_type -> special_app_v1.GetOrdersResponse
-	29, // 61: special_app_v1.SpecialAdminService.UpdateOrder:output_type -> special_app_v1.GetOrderInfoResponse
-	33, // 62: special_app_v1.SpecialAdminService.DeleteOrder:output_type -> google.protobuf.Empty
-	44, // [44:63] is the sub-list for method output_type
-	25, // [25:44] is the sub-list for method input_type
-	25, // [25:25] is the sub-list for extension type_name
-	25, // [25:25] is the sub-list for extension extendee
-	0,  // [0:25] is the sub-list for field type_name
+	33, // 3: special_app_v1.CreateIventRequest.price:type_name -> google.protobuf.Int64Value
+	33, // 4: special_app_v1.CreateIventRequest.occupied_seats:type_name -> google.protobuf.Int64Value
+	0,  // 5: special_app_v1.CreateIventRequest.little_picture:type_name -> special_app_v1.LittlePictureInfo
+	32, // 6: special_app_v1.UpdateIventRequest.datetime:type_name -> google.protobuf.Timestamp
+	33, // 7: special_app_v1.UpdateIventRequest.price:type_name -> google.protobuf.Int64Value
+	33, // 8: special_app_v1.UpdateIventRequest.occupied_seats:type_name -> google.protobuf.Int64Value
+	0,  // 9: special_app_v1.UpdateIventRequest.little_picture:type_name -> special_app_v1.LittlePictureInfo
+	32, // 10: special_app_v1.GetIventInfoResponse.datetime:type_name -> google.protobuf.Timestamp
+	0,  // 11: special_app_v1.GetIventInfoResponse.little_picture:type_name -> special_app_v1.LittlePictureInfo
+	1,  // 12: special_app_v1.GetIventInfoResponse.pictures:type_name -> special_app_v1.PictureInfo
+	12, // 13: special_app_v1.GetIventInfoResponse.userIvents:type_name -> special_app_v1.UserIventInfo
+	32, // 14: special_app_v1.IventInfoForList.datetime:type_name -> google.protobuf.Timestamp
+	0,  // 15: special_app_v1.IventInfoForList.little_picture:type_name -> special_app_v1.LittlePictureInfo
+	14, // 16: special_app_v1.GetIventsResponse.ivents:type_name -> special_app_v1.IventInfoForList
+	0,  // 17: special_app_v1.CreateItemRequest.little_picture:type_name -> special_app_v1.LittlePictureInfo
+	0,  // 18: special_app_v1.UpdateItemRequest.little_picture:type_name -> special_app_v1.LittlePictureInfo
+	0,  // 19: special_app_v1.GetItemInfoResponse.little_picture:type_name -> special_app_v1.LittlePictureInfo
+	1,  // 20: special_app_v1.GetItemInfoResponse.pictures:type_name -> special_app_v1.PictureInfo
+	0,  // 21: special_app_v1.ItemInfoForList.little_picture:type_name -> special_app_v1.LittlePictureInfo
+	22, // 22: special_app_v1.GetItemsResponse.items:type_name -> special_app_v1.ItemInfoForList
+	0,  // 23: special_app_v1.OrderItemInfoForList.little_picture:type_name -> special_app_v1.LittlePictureInfo
+	32, // 24: special_app_v1.GetOrderInfoResponse.form_date:type_name -> google.protobuf.Timestamp
+	32, // 25: special_app_v1.GetOrderInfoResponse.completion_date:type_name -> google.protobuf.Timestamp
+	28, // 26: special_app_v1.GetOrderInfoResponse.items:type_name -> special_app_v1.OrderItemInfoForList
+	32, // 27: special_app_v1.OrderInfoForList.completion_date:type_name -> google.protobuf.Timestamp
+	30, // 28: special_app_v1.GetOrdersResponse.orders:type_name -> special_app_v1.OrderInfoForList
+	4,  // 29: special_app_v1.SpecialAdminService.GetUsers:input_type -> special_app_v1.GetUsersRequest
+	7,  // 30: special_app_v1.SpecialAdminService.GetIventInfo:input_type -> special_app_v1.GetIventInfoRequest
+	8,  // 31: special_app_v1.SpecialAdminService.GetIvents:input_type -> special_app_v1.GetIventsRequest
+	9,  // 32: special_app_v1.SpecialAdminService.CreateIvent:input_type -> special_app_v1.CreateIventRequest
+	10, // 33: special_app_v1.SpecialAdminService.UpdateIvent:input_type -> special_app_v1.UpdateIventRequest
+	11, // 34: special_app_v1.SpecialAdminService.DeleteIvent:input_type -> special_app_v1.DeleteIventRequest
+	2,  // 35: special_app_v1.SpecialAdminService.CreateIventPicture:input_type -> special_app_v1.CreatePictureRequest
+	3,  // 36: special_app_v1.SpecialAdminService.DeleteIventPicture:input_type -> special_app_v1.DeletePictureRequest
+	16, // 37: special_app_v1.SpecialAdminService.GetItemInfo:input_type -> special_app_v1.GetItemInfoRequest
+	17, // 38: special_app_v1.SpecialAdminService.GetItems:input_type -> special_app_v1.GetItemsRequest
+	18, // 39: special_app_v1.SpecialAdminService.CreateItem:input_type -> special_app_v1.CreateItemRequest
+	19, // 40: special_app_v1.SpecialAdminService.UpdateItem:input_type -> special_app_v1.UpdateItemRequest
+	20, // 41: special_app_v1.SpecialAdminService.DeleteItem:input_type -> special_app_v1.DeleteItemRequest
+	2,  // 42: special_app_v1.SpecialAdminService.CreateItemPicture:input_type -> special_app_v1.CreatePictureRequest
+	3,  // 43: special_app_v1.SpecialAdminService.DeleteItemPicture:input_type -> special_app_v1.DeletePictureRequest
+	24, // 44: special_app_v1.SpecialAdminService.GetOrderInfo:input_type -> special_app_v1.GetOrderInfoRequest
+	25, // 45: special_app_v1.SpecialAdminService.GetOrders:input_type -> special_app_v1.GetOrdersRequest
+	26, // 46: special_app_v1.SpecialAdminService.UpdateOrder:input_type -> special_app_v1.UpdateOrderRequest
+	27, // 47: special_app_v1.SpecialAdminService.DeleteOrder:input_type -> special_app_v1.DeleteOrderRequest
+	6,  // 48: special_app_v1.SpecialAdminService.GetUsers:output_type -> special_app_v1.GetUsersResponse
+	13, // 49: special_app_v1.SpecialAdminService.GetIventInfo:output_type -> special_app_v1.GetIventInfoResponse
+	15, // 50: special_app_v1.SpecialAdminService.GetIvents:output_type -> special_app_v1.GetIventsResponse
+	13, // 51: special_app_v1.SpecialAdminService.CreateIvent:output_type -> special_app_v1.GetIventInfoResponse
+	13, // 52: special_app_v1.SpecialAdminService.UpdateIvent:output_type -> special_app_v1.GetIventInfoResponse
+	34, // 53: special_app_v1.SpecialAdminService.DeleteIvent:output_type -> google.protobuf.Empty
+	13, // 54: special_app_v1.SpecialAdminService.CreateIventPicture:output_type -> special_app_v1.GetIventInfoResponse
+	34, // 55: special_app_v1.SpecialAdminService.DeleteIventPicture:output_type -> google.protobuf.Empty
+	21, // 56: special_app_v1.SpecialAdminService.GetItemInfo:output_type -> special_app_v1.GetItemInfoResponse
+	23, // 57: special_app_v1.SpecialAdminService.GetItems:output_type -> special_app_v1.GetItemsResponse
+	21, // 58: special_app_v1.SpecialAdminService.CreateItem:output_type -> special_app_v1.GetItemInfoResponse
+	21, // 59: special_app_v1.SpecialAdminService.UpdateItem:output_type -> special_app_v1.GetItemInfoResponse
+	34, // 60: special_app_v1.SpecialAdminService.DeleteItem:output_type -> google.protobuf.Empty
+	21, // 61: special_app_v1.SpecialAdminService.CreateItemPicture:output_type -> special_app_v1.GetItemInfoResponse
+	34, // 62: special_app_v1.SpecialAdminService.DeleteItemPicture:output_type -> google.protobuf.Empty
+	29, // 63: special_app_v1.SpecialAdminService.GetOrderInfo:output_type -> special_app_v1.GetOrderInfoResponse
+	31, // 64: special_app_v1.SpecialAdminService.GetOrders:output_type -> special_app_v1.GetOrdersResponse
+	29, // 65: special_app_v1.SpecialAdminService.UpdateOrder:output_type -> special_app_v1.GetOrderInfoResponse
+	34, // 66: special_app_v1.SpecialAdminService.DeleteOrder:output_type -> google.protobuf.Empty
+	48, // [48:67] is the sub-list for method output_type
+	29, // [29:48] is the sub-list for method input_type
+	29, // [29:29] is the sub-list for extension type_name
+	29, // [29:29] is the sub-list for extension extendee
+	0,  // [0:29] is the sub-list for field type_name
 }
 
 func init() { file_special_admin_proto_init() }

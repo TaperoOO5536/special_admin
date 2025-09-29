@@ -265,7 +265,8 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/special_app_v1GetIventInfoResponse"
+              "type": "object",
+              "properties": {}
             }
           },
           "default": {
@@ -711,8 +712,11 @@
     "special_app_v1CreatePictureRequest": {
       "type": "object",
       "properties": {
+        "parentId": {
+          "type": "string"
+        },
         "picture": {
-          "$ref": "#/definitions/special_app_v1PictureInfo"
+          "$ref": "#/definitions/special_app_v1LittlePictureInfo"
         }
       }
     },

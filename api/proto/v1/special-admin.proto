@@ -3,6 +3,8 @@ syntax = "proto3";
 import "google/protobuf/empty.proto";
 import "google/protobuf/timestamp.proto";
 import "google/api/annotations.proto";
+import "google/protobuf/wrappers.proto";
+
 
 package special_app_v1;
 
@@ -50,7 +52,7 @@ service SpecialAdminService {
       body: "*"
     };
   }
-  rpc DeleteIventPicture(DeletePictureRequest) returns (GetIventInfoResponse) {
+  rpc DeleteIventPicture(DeletePictureRequest) returns (google.protobuf.Empty) {
     option (google.api.http) = {
       delete: "/v1/ivent_pictures/{id}"
     };
@@ -135,7 +137,8 @@ message PictureInfo {
 }
 
 message CreatePictureRequest {
-  PictureInfo picture = 1;
+  string parent_id = 1;
+  LittlePictureInfo picture = 2;
 }
 
 message DeletePictureRequest {
@@ -169,9 +172,9 @@ message CreateIventRequest {
   string title = 1;
   string description = 2;
   google.protobuf.Timestamp datetime = 3;
-  int64 price = 4;
+  google.protobuf.Int64Value price = 4;
   int64 total_seats = 5;
-  int64 occupied_seats = 6;
+  google.protobuf.Int64Value occupied_seats = 6;
   LittlePictureInfo little_picture = 7;
 }
 
@@ -180,9 +183,9 @@ message UpdateIventRequest {
   optional string title = 2;
   optional string description = 3;
   optional google.protobuf.Timestamp datetime = 4;
-  optional int64 price = 5;
+  google.protobuf.Int64Value price = 5;
   optional int64 total_seats = 6;
-  optional int64 occupied_seats = 7;
+  google.protobuf.Int64Value occupied_seats = 7;
   optional LittlePictureInfo little_picture = 8;
 }
 

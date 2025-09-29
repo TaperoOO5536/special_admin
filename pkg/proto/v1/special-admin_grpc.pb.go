@@ -52,7 +52,7 @@ type SpecialAdminServiceClient interface {
 	UpdateIvent(ctx context.Context, in *UpdateIventRequest, opts ...grpc.CallOption) (*GetIventInfoResponse, error)
 	DeleteIvent(ctx context.Context, in *DeleteIventRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
 	CreateIventPicture(ctx context.Context, in *CreatePictureRequest, opts ...grpc.CallOption) (*GetIventInfoResponse, error)
-	DeleteIventPicture(ctx context.Context, in *DeletePictureRequest, opts ...grpc.CallOption) (*GetIventInfoResponse, error)
+	DeleteIventPicture(ctx context.Context, in *DeletePictureRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
 	GetItemInfo(ctx context.Context, in *GetItemInfoRequest, opts ...grpc.CallOption) (*GetItemInfoResponse, error)
 	GetItems(ctx context.Context, in *GetItemsRequest, opts ...grpc.CallOption) (*GetItemsResponse, error)
 	CreateItem(ctx context.Context, in *CreateItemRequest, opts ...grpc.CallOption) (*GetItemInfoResponse, error)
@@ -144,9 +144,9 @@ func (c *specialAdminServiceClient) CreateIventPicture(ctx context.Context, in *
 	return out, nil
 }
 
-func (c *specialAdminServiceClient) DeleteIventPicture(ctx context.Context, in *DeletePictureRequest, opts ...grpc.CallOption) (*GetIventInfoResponse, error) {
+func (c *specialAdminServiceClient) DeleteIventPicture(ctx context.Context, in *DeletePictureRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(GetIventInfoResponse)
+	out := new(emptypb.Empty)
 	err := c.cc.Invoke(ctx, SpecialAdminService_DeleteIventPicture_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
@@ -275,7 +275,7 @@ type SpecialAdminServiceServer interface {
 	UpdateIvent(context.Context, *UpdateIventRequest) (*GetIventInfoResponse, error)
 	DeleteIvent(context.Context, *DeleteIventRequest) (*emptypb.Empty, error)
 	CreateIventPicture(context.Context, *CreatePictureRequest) (*GetIventInfoResponse, error)
-	DeleteIventPicture(context.Context, *DeletePictureRequest) (*GetIventInfoResponse, error)
+	DeleteIventPicture(context.Context, *DeletePictureRequest) (*emptypb.Empty, error)
 	GetItemInfo(context.Context, *GetItemInfoRequest) (*GetItemInfoResponse, error)
 	GetItems(context.Context, *GetItemsRequest) (*GetItemsResponse, error)
 	CreateItem(context.Context, *CreateItemRequest) (*GetItemInfoResponse, error)
@@ -318,7 +318,7 @@ func (UnimplementedSpecialAdminServiceServer) DeleteIvent(context.Context, *Dele
 func (UnimplementedSpecialAdminServiceServer) CreateIventPicture(context.Context, *CreatePictureRequest) (*GetIventInfoResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateIventPicture not implemented")
 }
-func (UnimplementedSpecialAdminServiceServer) DeleteIventPicture(context.Context, *DeletePictureRequest) (*GetIventInfoResponse, error) {
+func (UnimplementedSpecialAdminServiceServer) DeleteIventPicture(context.Context, *DeletePictureRequest) (*emptypb.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteIventPicture not implemented")
 }
 func (UnimplementedSpecialAdminServiceServer) GetItemInfo(context.Context, *GetItemInfoRequest) (*GetItemInfoResponse, error) {
