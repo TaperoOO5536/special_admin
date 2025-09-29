@@ -10,9 +10,10 @@ import (
 type Handler struct {
 	pb.UnimplementedSpecialAdminServiceServer
 	userHandler         *UserServiceHandler
-	iventHandler         *IventServiceHandler
+	iventHandler        *IventServiceHandler
 	iventPictureHandler *IventPictureServiceHandler
-	itemHandler  *ItemServiceHandler
+	itemHandler         *ItemServiceHandler
+	itemPictureHandler  *ItemPictureServiceHandler
 }
 
 func NewHandler(
@@ -20,12 +21,14 @@ func NewHandler(
 	iventHandler        *IventServiceHandler,
 	iventPictureHandler *IventPictureServiceHandler,
 	itemServiceHandler  *ItemServiceHandler,
+	itemPictureHandler  *ItemPictureServiceHandler,
 ) *Handler {
 	return &Handler{
 		userHandler:         userHandler,
-		iventHandler:         iventHandler,
+		iventHandler:        iventHandler,
 		iventPictureHandler: iventPictureHandler,
-		itemHandler:  itemServiceHandler,
+		itemHandler:         itemServiceHandler,
+		itemPictureHandler:  itemPictureHandler,
 	}
 }
 
@@ -88,4 +91,14 @@ func (h *Handler) UpdateItem(ctx context.Context, req *pb.UpdateItemRequest) (*p
 
 func (h *Handler) DeleteItem(ctx context.Context, req *pb.DeleteItemRequest) (*emptypb.Empty, error) {
 	return h.itemHandler.DeleteItem(ctx, req)
+}
+
+//itemPictures
+
+func (h *Handler) CreateItemPicture(ctx context.Context, req *pb.CreatePictureRequest) (*pb.GetItemInfoResponse, error) {
+	return h.itemPictureHandler.CreateItemPicture(ctx, req)
+}
+
+func (h *Handler) DeleteItemPicture(ctx context.Context, req *pb.DeletePictureRequest) (*emptypb.Empty, error) {
+	return h.itemPictureHandler.DeleteItemPicture(ctx, req)
 }
