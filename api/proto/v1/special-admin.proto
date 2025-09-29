@@ -283,7 +283,8 @@ message GetOrdersRequest {}
 
 message UpdateOrderRequest {
   string id = 1;
-  string status = 2;
+  optional string status = 2;
+  optional string comment = 3;
 }
 
 message DeleteOrderRequest {

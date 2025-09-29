@@ -630,6 +630,9 @@
       "properties": {
         "status": {
           "type": "string"
+        },
+        "comment": {
+          "type": "string"
         }
       }
     },

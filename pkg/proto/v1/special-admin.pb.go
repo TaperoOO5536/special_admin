@@ -1556,7 +1556,8 @@ func (*GetOrdersRequest) Descriptor() ([]byte, []int) {
 type UpdateOrderRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Status        string                 `protobuf:"bytes,2,opt,name=status,proto3" json:"status,omitempty"`
+	Status        *string                `protobuf:"bytes,2,opt,name=status,proto3,oneof" json:"status,omitempty"`
+	Comment       *string                `protobuf:"bytes,3,opt,name=comment,proto3,oneof" json:"comment,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1599,8 +1600,15 @@ func (x *UpdateOrderRequest) GetId() string {
 }
 
 func (x *UpdateOrderRequest) GetStatus() string {
-	if x != nil {
-		return x.Status
+	if x != nil && x.Status != nil {
+		return *x.Status
+	}
+	return ""
+}
+
+func (x *UpdateOrderRequest) GetComment() string {
+	if x != nil && x.Comment != nil {
+		return *x.Comment
 	}
 	return ""
 }
@@ -2080,10 +2088,14 @@ const file_special_admin_proto_rawDesc = "" +
 	"\x05items\x18\x01 \x03(\v2\x1f.special_app_v1.ItemInfoForListR\x05items\"%\n" +
 	"\x13GetOrderInfoRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\"\x12\n" +
-	"\x10GetOrdersRequest\"<\n" +
+	"\x10GetOrdersRequest\"w\n" +
 	"\x12UpdateOrderRequest\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x16\n" +
-	"\x06status\x18\x02 \x01(\tR\x06status\"$\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
+	"\x06status\x18\x02 \x01(\tH\x00R\x06status\x88\x01\x01\x12\x1d\n" +
+	"\acomment\x18\x03 \x01(\tH\x01R\acomment\x88\x01\x01B\t\n" +
+	"\a_statusB\n" +
+	"\n" +
+	"\b_comment\"$\n" +
 	"\x12DeleteOrderRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\"\xd1\x01\n" +
 	"\x14OrderItemInfoForList\x12\x0e\n" +
@@ -2270,6 +2282,7 @@ func file_special_admin_proto_init() {
 	}
 	file_special_admin_proto_msgTypes[10].OneofWrappers = []any{}
 	file_special_admin_proto_msgTypes[19].OneofWrappers = []any{}
+	file_special_admin_proto_msgTypes[26].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

@@ -9,8 +9,6 @@ import (
 	"github.com/google/uuid"
 )
 
-// var (	ErrNotEnoughSeats = errors.New("ivent does not have enough seats"))
-
 type IventRepository interface {
 	GetIventInfo(ctx context.Context, id uuid.UUID) (*models.Ivent, error)
 	GetIvents(ctx context.Context) ([]*models.Ivent, error)

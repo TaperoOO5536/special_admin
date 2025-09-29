@@ -55,6 +55,7 @@ type Order struct {
 	Status         string      `gorm:"column:order_status"`
 	OrderAmount    int64       `gorm:"column:order_amount"`
 	OrderItems     []OrderItem `gorm:"foreignKey:OrderID"`
+	User           User        `gorm:"foreignKey:UserID"`
 }
 
 type Item struct {

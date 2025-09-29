@@ -53,20 +53,25 @@ func (a *App) Start(ctx context.Context) error {
 	iventPictureRepo := repository.NewIventPictureRepository(db, iventRepo)
 	itemRepo := repository.NewItemRepository(db)
 	itemPictureRepo := repository.NewItemPictureRepository(db, itemRepo)
+	orderRepo := repository.NewOrderRepository(db)
 
 	userService := service.NewUserService(userRepo)
 	iventService := service.NewIventService(iventRepo)
 	iventPictureService := service.NewIventPictureService(iventPictureRepo)
 	itemService := service.NewItemService(itemRepo)
 	itemPictureService := service.NewItemPictureService(itemPictureRepo)
+	orderService := service.NewOrderService(orderRepo)
 
 	userServiceHandler := api.NewUserServiceHandler(userService)
 	iventServiceHandler := api.NewIventServiceHandler(iventService)
 	iventPictureServiceHandler := api.NewIventPictureServiceHandler(iventPictureService)
 	itemServiceHandler := api.NewItemServiceHandler(itemService)
-	itemPictureHandler := api.NewItemPictureServiceHandler(itemPictureService)
+	itemPictureServiceHandler := api.NewItemPictureServiceHandler(itemPictureService)
+	orderServiceHandler := api.NewOrderServiceHandler(orderService)
 
-	handler := api.NewHandler(userServiceHandler, iventServiceHandler, iventPictureServiceHandler, itemServiceHandler, itemPictureHandler)
+	handler := api.NewHandler(userServiceHandler, iventServiceHandler,
+														iventPictureServiceHandler, itemServiceHandler,
+														itemPictureServiceHandler, orderServiceHandler)
 
 	grpcServer := grpc.NewServer()
 

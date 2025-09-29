@@ -14,6 +14,7 @@ type Handler struct {
 	iventPictureHandler *IventPictureServiceHandler
 	itemHandler         *ItemServiceHandler
 	itemPictureHandler  *ItemPictureServiceHandler
+	orderHandler        *OrderServiceHandler
 }
 
 func NewHandler(
@@ -22,6 +23,7 @@ func NewHandler(
 	iventPictureHandler *IventPictureServiceHandler,
 	itemServiceHandler  *ItemServiceHandler,
 	itemPictureHandler  *ItemPictureServiceHandler,
+	orderHandler        *OrderServiceHandler,
 ) *Handler {
 	return &Handler{
 		userHandler:         userHandler,
@@ -29,6 +31,7 @@ func NewHandler(
 		iventPictureHandler: iventPictureHandler,
 		itemHandler:         itemServiceHandler,
 		itemPictureHandler:  itemPictureHandler,
+		orderHandler:        orderHandler,
 	}
 }
 
@@ -101,4 +104,22 @@ func (h *Handler) CreateItemPicture(ctx context.Context, req *pb.CreatePictureRe
 
 func (h *Handler) DeleteItemPicture(ctx context.Context, req *pb.DeletePictureRequest) (*emptypb.Empty, error) {
 	return h.itemPictureHandler.DeleteItemPicture(ctx, req)
+}
+
+//orders
+
+func (h *Handler) GetOrderInfo(ctx context.Context, req *pb.GetOrderInfoRequest) (*pb.GetOrderInfoResponse, error) {
+	return h.orderHandler.GetOrderInfo(ctx, req)
+}
+
+func (h *Handler) GetOrders(ctx context.Context, req *pb.GetOrdersRequest) (*pb.GetOrdersResponse, error) {
+	return h.orderHandler.GetOrders(ctx, req)
+}
+
+func (h *Handler) UpdateOrder(ctx context.Context, req *pb.UpdateOrderRequest) (*pb.GetOrderInfoResponse, error) {
+	return h.orderHandler.UpdateOrder(ctx, req)
+}
+
+func (h *Handler) DeleteOrder(ctx context.Context, req *pb.DeleteOrderRequest) (*emptypb.Empty, error) {
+	return h.orderHandler.DeleteOrder(ctx, req)
 }
