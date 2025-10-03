@@ -18,43 +18,43 @@ service SpecialAdminService {
   }
 
 
-  rpc GetIventInfo(GetIventInfoRequest) returns (GetIventInfoResponse) {
+  rpc GetEventInfo(GetEventInfoRequest) returns (GetEventInfoResponse) {
     option (google.api.http) = {
-      get: "/v1/ivents/{id}"
+      get: "/v1/events/{id}"
     };
   }
-  rpc GetIvents(GetIventsRequest) returns (GetIventsResponse) {
+  rpc GetEvents(GetEventsRequest) returns (GetEventsResponse) {
     option (google.api.http) = {
-      get: "/v1/ivents"
+      get: "/v1/events"
     };
   }
-  rpc CreateIvent(CreateIventRequest) returns (GetIventInfoResponse) {
+  rpc CreateEvent(CreateEventRequest) returns (GetEventInfoResponse) {
     option (google.api.http) = {
-      post: "/v1/ivents"
+      post: "/v1/events"
       body: "*"
     };
   }
-  rpc UpdateIvent(UpdateIventRequest) returns (GetIventInfoResponse) {
+  rpc UpdateEvent(UpdateEventRequest) returns (GetEventInfoResponse) {
     option (google.api.http) = {
-      patch: "/v1/ivents/{id}"
+      patch: "/v1/events/{id}"
       body: "*"
     };
   }
-  rpc DeleteIvent(DeleteIventRequest) returns (google.protobuf.Empty) {
+  rpc DeleteEvent(DeleteEventRequest) returns (google.protobuf.Empty) {
     option (google.api.http) = {
-      delete: "/v1/ivents/{id}"
+      delete: "/v1/events/{id}"
     };
   }
 
-  rpc CreateIventPicture(CreatePictureRequest) returns (GetIventInfoResponse) {
+  rpc CreateEventPicture(CreatePictureRequest) returns (GetEventInfoResponse) {
     option (google.api.http) = {
-      post: "/v1/ivent_pictures"
+      post: "/v1/event_pictures"
       body: "*"
     };
   }
-  rpc DeleteIventPicture(DeletePictureRequest) returns (google.protobuf.Empty) {
+  rpc DeleteEventPicture(DeletePictureRequest) returns (google.protobuf.Empty) {
     option (google.api.http) = {
-      delete: "/v1/ivent_pictures/{id}"
+      delete: "/v1/event_pictures/{id}"
     };
   }
 
@@ -160,15 +160,15 @@ message GetUsersResponse {
   repeated UserInfo users = 1;
 }
 
-// Ivents
+// Events
 
-message GetIventInfoRequest {
+message GetEventInfoRequest {
   string id = 1;
 }
 
-message GetIventsRequest {}
+message GetEventsRequest {}
 
-message CreateIventRequest {
+message CreateEventRequest {
   string title = 1;
   string description = 2;
   google.protobuf.Timestamp datetime = 3;
@@ -178,7 +178,7 @@ message CreateIventRequest {
   LittlePictureInfo little_picture = 7;
 }
 
-message UpdateIventRequest {
+message UpdateEventRequest {
   string id = 1;
   optional string title = 2;
   optional string description = 3;
@@ -189,17 +189,17 @@ message UpdateIventRequest {
   optional LittlePictureInfo little_picture = 8;
 }
 
-message DeleteIventRequest {
+message DeleteEventRequest {
   string id = 1;
 }
 
-message UserIventInfo {
+message UserEventInfo {
   string id = 1; 
   string user_nickname = 2;
   int64 number_of_guests = 3;
 }
 
-message GetIventInfoResponse {
+message GetEventInfoResponse {
   string id = 1;
   string title = 2;
   string description = 3;
@@ -209,10 +209,10 @@ message GetIventInfoResponse {
   int64 occupied_seats = 7;
   LittlePictureInfo little_picture = 8;
   repeated PictureInfo pictures = 9;
-  repeated UserIventInfo userIvents = 10;
+  repeated UserEventInfo userEvents = 10;
 }
 
-message IventInfoForList {
+message EventInfoForList {
   string id = 1;
   string title = 2;
   google.protobuf.Timestamp datetime = 3;
@@ -222,8 +222,8 @@ message IventInfoForList {
   LittlePictureInfo little_picture = 7;
 }
 
-message GetIventsResponse {
-  repeated IventInfoForList ivents = 1;
+message GetEventsResponse {
+  repeated EventInfoForList events = 1;
 }
 
 // Item

@@ -10,8 +10,8 @@ import (
 type Handler struct {
 	pb.UnimplementedSpecialAdminServiceServer
 	userHandler         *UserServiceHandler
-	iventHandler        *IventServiceHandler
-	iventPictureHandler *IventPictureServiceHandler
+	eventHandler        *EventServiceHandler
+	eventPictureHandler *EventPictureServiceHandler
 	itemHandler         *ItemServiceHandler
 	itemPictureHandler  *ItemPictureServiceHandler
 	orderHandler        *OrderServiceHandler
@@ -19,16 +19,16 @@ type Handler struct {
 
 func NewHandler(
 	userHandler         *UserServiceHandler,
-	iventHandler        *IventServiceHandler,
-	iventPictureHandler *IventPictureServiceHandler,
+	eventHandler        *EventServiceHandler,
+	eventPictureHandler *EventPictureServiceHandler,
 	itemServiceHandler  *ItemServiceHandler,
 	itemPictureHandler  *ItemPictureServiceHandler,
 	orderHandler        *OrderServiceHandler,
 ) *Handler {
 	return &Handler{
 		userHandler:         userHandler,
-		iventHandler:        iventHandler,
-		iventPictureHandler: iventPictureHandler,
+		eventHandler:        eventHandler,
+		eventPictureHandler: eventPictureHandler,
 		itemHandler:         itemServiceHandler,
 		itemPictureHandler:  itemPictureHandler,
 		orderHandler:        orderHandler,
@@ -42,36 +42,36 @@ func (h *Handler) GetUsers(ctx context.Context, req *pb.GetUsersRequest) (*pb.Ge
 	return h.userHandler.GetUsers(ctx, req)
 }
 
-//ivents
+//events
 
-func (h *Handler) CreateIvent(ctx context.Context, req *pb.CreateIventRequest) (*pb.GetIventInfoResponse, error) {
-	return h.iventHandler.CreateIvent(ctx, req)
+func (h *Handler) CreateEvent(ctx context.Context, req *pb.CreateEventRequest) (*pb.GetEventInfoResponse, error) {
+	return h.eventHandler.CreateEvent(ctx, req)
 }
 
-func (h *Handler) GetIventInfo(ctx context.Context, req *pb.GetIventInfoRequest) (*pb.GetIventInfoResponse, error) {
-	return h.iventHandler.GetIventInfo(ctx, req)
+func (h *Handler) GetEventInfo(ctx context.Context, req *pb.GetEventInfoRequest) (*pb.GetEventInfoResponse, error) {
+	return h.eventHandler.GetEventInfo(ctx, req)
 }
 
-func (h *Handler) GetIvents(ctx context.Context, req *pb.GetIventsRequest) (*pb.GetIventsResponse, error) {
-	return h.iventHandler.GetIvents(ctx, req)
+func (h *Handler) GetEvents(ctx context.Context, req *pb.GetEventsRequest) (*pb.GetEventsResponse, error) {
+	return h.eventHandler.GetEvents(ctx, req)
 }
 
-func (h *Handler) UpdateIvent(ctx context.Context, req *pb.UpdateIventRequest) (*pb.GetIventInfoResponse, error) {
-	return h.iventHandler.UpdateIvent(ctx, req)
+func (h *Handler) UpdateEvent(ctx context.Context, req *pb.UpdateEventRequest) (*pb.GetEventInfoResponse, error) {
+	return h.eventHandler.UpdateEvent(ctx, req)
 }
 
-func (h *Handler) DeleteIvent(ctx context.Context, req *pb.DeleteIventRequest) (*emptypb.Empty, error) {
-	return h.iventHandler.DeleteIvent(ctx, req)
+func (h *Handler) DeleteEvent(ctx context.Context, req *pb.DeleteEventRequest) (*emptypb.Empty, error) {
+	return h.eventHandler.DeleteEvent(ctx, req)
 }
 
-//iventPictures
+//eventPictures
 
-func (h *Handler) CreateIventPicture(ctx context.Context, req *pb.CreatePictureRequest) (*pb.GetIventInfoResponse, error) {
-	return h.iventPictureHandler.CreateIventPicture(ctx, req)
+func (h *Handler) CreateEventPicture(ctx context.Context, req *pb.CreatePictureRequest) (*pb.GetEventInfoResponse, error) {
+	return h.eventPictureHandler.CreateEventPicture(ctx, req)
 }
 
-func (h *Handler) DeleteIventPicture(ctx context.Context, req *pb.DeletePictureRequest) (*emptypb.Empty, error) {
-	return h.iventPictureHandler.DeleteIventPicture(ctx, req)
+func (h *Handler) DeleteEventPicture(ctx context.Context, req *pb.DeletePictureRequest) (*emptypb.Empty, error) {
+	return h.eventPictureHandler.DeleteEventPicture(ctx, req)
 }
 
 //items

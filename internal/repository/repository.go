@@ -6,14 +6,14 @@ package repository
 
 // type Repository struct {
 // 	User         UserRepository
-// 	Ivent        IventRepository
-// 	IventPicture iventPictureRepository
+// 	Event        EventRepository
+// 	EventPicture eventPictureRepository
 // }
 
 // func NewRepository(db *gorm.DB) *Repository {
 // 	return &Repository{
 // 		User:         NewUserRepository(db),
-// 		Ivent:        NewIventRepository(db),
-// 		IventPicture: NewIventPictureRepository(db),
+// 		Event:        NewEventRepository(db),
+// 		EventPicture: NewEventPictureRepository(db),
 // 	}
 // }

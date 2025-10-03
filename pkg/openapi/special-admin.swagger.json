@@ -16,6 +16,216 @@
     "application/json"
   ],
   "paths": {
+    "/v1/event_pictures": {
+      "post": {
+        "operationId": "SpecialAdminService_CreateEventPicture",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/special_app_v1GetEventInfoResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/special_app_v1CreatePictureRequest"
+            }
+          }
+        ],
+        "tags": [
+          "SpecialAdminService"
+        ]
+      }
+    },
+    "/v1/event_pictures/{id}": {
+      "delete": {
+        "operationId": "SpecialAdminService_DeleteEventPicture",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "SpecialAdminService"
+        ]
+      }
+    },
+    "/v1/events": {
+      "get": {
+        "operationId": "SpecialAdminService_GetEvents",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/special_app_v1GetEventsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "tags": [
+          "SpecialAdminService"
+        ]
+      },
+      "post": {
+        "operationId": "SpecialAdminService_CreateEvent",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/special_app_v1GetEventInfoResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/special_app_v1CreateEventRequest"
+            }
+          }
+        ],
+        "tags": [
+          "SpecialAdminService"
+        ]
+      }
+    },
+    "/v1/events/{id}": {
+      "get": {
+        "operationId": "SpecialAdminService_GetEventInfo",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/special_app_v1GetEventInfoResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "SpecialAdminService"
+        ]
+      },
+      "delete": {
+        "operationId": "SpecialAdminService_DeleteEvent",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "SpecialAdminService"
+        ]
+      },
+      "patch": {
+        "operationId": "SpecialAdminService_UpdateEvent",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/special_app_v1GetEventInfoResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SpecialAdminServiceUpdateEventBody"
+            }
+          }
+        ],
+        "tags": [
+          "SpecialAdminService"
+        ]
+      }
+    },
     "/v1/item_pictures": {
       "post": {
         "operationId": "SpecialAdminService_CreateItemPicture",
@@ -226,216 +436,6 @@
         ]
       }
     },
-    "/v1/ivent_pictures": {
-      "post": {
-        "operationId": "SpecialAdminService_CreateIventPicture",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/special_app_v1GetIventInfoResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/special_app_v1CreatePictureRequest"
-            }
-          }
-        ],
-        "tags": [
-          "SpecialAdminService"
-        ]
-      }
-    },
-    "/v1/ivent_pictures/{id}": {
-      "delete": {
-        "operationId": "SpecialAdminService_DeleteIventPicture",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "type": "object",
-              "properties": {}
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "tags": [
-          "SpecialAdminService"
-        ]
-      }
-    },
-    "/v1/ivents": {
-      "get": {
-        "operationId": "SpecialAdminService_GetIvents",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/special_app_v1GetIventsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "tags": [
-          "SpecialAdminService"
-        ]
-      },
-      "post": {
-        "operationId": "SpecialAdminService_CreateIvent",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/special_app_v1GetIventInfoResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/special_app_v1CreateIventRequest"
-            }
-          }
-        ],
-        "tags": [
-          "SpecialAdminService"
-        ]
-      }
-    },
-    "/v1/ivents/{id}": {
-      "get": {
-        "operationId": "SpecialAdminService_GetIventInfo",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/special_app_v1GetIventInfoResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "tags": [
-          "SpecialAdminService"
-        ]
-      },
-      "delete": {
-        "operationId": "SpecialAdminService_DeleteIvent",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "type": "object",
-              "properties": {}
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "tags": [
-          "SpecialAdminService"
-        ]
-      },
-      "patch": {
-        "operationId": "SpecialAdminService_UpdateIvent",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/special_app_v1GetIventInfoResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/SpecialAdminServiceUpdateIventBody"
-            }
-          }
-        ],
-        "tags": [
-          "SpecialAdminService"
-        ]
-      }
-    },
     "/v1/orders": {
       "get": {
         "operationId": "SpecialAdminService_GetOrders",
@@ -577,25 +577,7 @@
     }
   },
   "definitions": {
-    "SpecialAdminServiceUpdateItemBody": {
-      "type": "object",
-      "properties": {
-        "title": {
-          "type": "string"
-        },
-        "description": {
-          "type": "string"
-        },
-        "price": {
-          "type": "string",
-          "format": "int64"
-        },
-        "littlePicture": {
-          "$ref": "#/definitions/special_app_v1LittlePictureInfo"
-        }
-      }
-    },
-    "SpecialAdminServiceUpdateIventBody": {
+    "SpecialAdminServiceUpdateEventBody": {
       "type": "object",
       "properties": {
         "title": {
@@ -617,6 +599,24 @@
           "format": "int64"
         },
         "occupiedSeats": {
+          "type": "string",
+          "format": "int64"
+        },
+        "littlePicture": {
+          "$ref": "#/definitions/special_app_v1LittlePictureInfo"
+        }
+      }
+    },
+    "SpecialAdminServiceUpdateItemBody": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "price": {
           "type": "string",
           "format": "int64"
         },
@@ -664,25 +664,7 @@
         }
       }
     },
-    "special_app_v1CreateItemRequest": {
-      "type": "object",
-      "properties": {
-        "title": {
-          "type": "string"
-        },
-        "description": {
-          "type": "string"
-        },
-        "price": {
-          "type": "string",
-          "format": "int64"
-        },
-        "littlePicture": {
-          "$ref": "#/definitions/special_app_v1LittlePictureInfo"
-        }
-      }
-    },
-    "special_app_v1CreateIventRequest": {
+    "special_app_v1CreateEventRequest": {
       "type": "object",
       "properties": {
         "title": {
@@ -712,6 +694,24 @@
         }
       }
     },
+    "special_app_v1CreateItemRequest": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "price": {
+          "type": "string",
+          "format": "int64"
+        },
+        "littlePicture": {
+          "$ref": "#/definitions/special_app_v1LittlePictureInfo"
+        }
+      }
+    },
     "special_app_v1CreatePictureRequest": {
       "type": "object",
       "properties": {
@@ -720,6 +720,95 @@
         },
         "picture": {
           "$ref": "#/definitions/special_app_v1LittlePictureInfo"
+        }
+      }
+    },
+    "special_app_v1EventInfoForList": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "datetime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "price": {
+          "type": "string",
+          "format": "int64"
+        },
+        "totalSeats": {
+          "type": "string",
+          "format": "int64"
+        },
+        "occupiedSeats": {
+          "type": "string",
+          "format": "int64"
+        },
+        "littlePicture": {
+          "$ref": "#/definitions/special_app_v1LittlePictureInfo"
+        }
+      }
+    },
+    "special_app_v1GetEventInfoResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "datetime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "price": {
+          "type": "string",
+          "format": "int64"
+        },
+        "totalSeats": {
+          "type": "string",
+          "format": "int64"
+        },
+        "occupiedSeats": {
+          "type": "string",
+          "format": "int64"
+        },
+        "littlePicture": {
+          "$ref": "#/definitions/special_app_v1LittlePictureInfo"
+        },
+        "pictures": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/special_app_v1PictureInfo"
+          }
+        },
+        "userEvents": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/special_app_v1UserEventInfo"
+          }
+        }
+      }
+    },
+    "special_app_v1GetEventsResponse": {
+      "type": "object",
+      "properties": {
+        "events": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/special_app_v1EventInfoForList"
+          }
         }
       }
     },
@@ -759,65 +848,6 @@
           "items": {
             "type": "object",
             "$ref": "#/definitions/special_app_v1ItemInfoForList"
-          }
-        }
-      }
-    },
-    "special_app_v1GetIventInfoResponse": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "title": {
-          "type": "string"
-        },
-        "description": {
-          "type": "string"
-        },
-        "datetime": {
-          "type": "string",
-          "format": "date-time"
-        },
-        "price": {
-          "type": "string",
-          "format": "int64"
-        },
-        "totalSeats": {
-          "type": "string",
-          "format": "int64"
-        },
-        "occupiedSeats": {
-          "type": "string",
-          "format": "int64"
-        },
-        "littlePicture": {
-          "$ref": "#/definitions/special_app_v1LittlePictureInfo"
-        },
-        "pictures": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/special_app_v1PictureInfo"
-          }
-        },
-        "userIvents": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/special_app_v1UserIventInfo"
-          }
-        }
-      }
-    },
-    "special_app_v1GetIventsResponse": {
-      "type": "object",
-      "properties": {
-        "ivents": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/special_app_v1IventInfoForList"
           }
         }
       }
@@ -903,36 +933,6 @@
         }
       }
     },
-    "special_app_v1IventInfoForList": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "title": {
-          "type": "string"
-        },
-        "datetime": {
-          "type": "string",
-          "format": "date-time"
-        },
-        "price": {
-          "type": "string",
-          "format": "int64"
-        },
-        "totalSeats": {
-          "type": "string",
-          "format": "int64"
-        },
-        "occupiedSeats": {
-          "type": "string",
-          "format": "int64"
-        },
-        "littlePicture": {
-          "$ref": "#/definitions/special_app_v1LittlePictureInfo"
-        }
-      }
-    },
     "special_app_v1LittlePictureInfo": {
       "type": "object",
       "properties": {
@@ -1007,6 +1007,21 @@
         }
       }
     },
+    "special_app_v1UserEventInfo": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "userNickname": {
+          "type": "string"
+        },
+        "numberOfGuests": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
     "special_app_v1UserInfo": {
       "type": "object",
       "properties": {
@@ -1021,21 +1036,6 @@
         },
         "phoneNumber": {
           "type": "string"
-        }
-      }
-    },
-    "special_app_v1UserIventInfo": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "userNickname": {
-          "type": "string"
-        },
-        "numberOfGuests": {
-          "type": "string",
-          "format": "int64"
         }
       }
     }

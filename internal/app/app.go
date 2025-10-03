@@ -49,28 +49,28 @@ func (a *App) Start(ctx context.Context) error {
 	db := config.NewDBClient(a.config.Dsn)
 
 	userRepo := repository.NewUserRepository(db)
-	iventRepo := repository.NewIventRepository(db)
-	iventPictureRepo := repository.NewIventPictureRepository(db, iventRepo)
+	eventRepo := repository.NewEventRepository(db)
+	eventPictureRepo := repository.NewEventPictureRepository(db, eventRepo)
 	itemRepo := repository.NewItemRepository(db)
 	itemPictureRepo := repository.NewItemPictureRepository(db, itemRepo)
 	orderRepo := repository.NewOrderRepository(db)
 
 	userService := service.NewUserService(userRepo)
-	iventService := service.NewIventService(iventRepo)
-	iventPictureService := service.NewIventPictureService(iventPictureRepo)
+	eventService := service.NewEventService(eventRepo)
+	eventPictureService := service.NewEventPictureService(eventPictureRepo)
 	itemService := service.NewItemService(itemRepo)
 	itemPictureService := service.NewItemPictureService(itemPictureRepo)
 	orderService := service.NewOrderService(orderRepo)
 
 	userServiceHandler := api.NewUserServiceHandler(userService)
-	iventServiceHandler := api.NewIventServiceHandler(iventService)
-	iventPictureServiceHandler := api.NewIventPictureServiceHandler(iventPictureService)
+	eventServiceHandler := api.NewEventServiceHandler(eventService)
+	eventPictureServiceHandler := api.NewEventPictureServiceHandler(eventPictureService)
 	itemServiceHandler := api.NewItemServiceHandler(itemService)
 	itemPictureServiceHandler := api.NewItemPictureServiceHandler(itemPictureService)
 	orderServiceHandler := api.NewOrderServiceHandler(orderService)
 
-	handler := api.NewHandler(userServiceHandler, iventServiceHandler,
-														iventPictureServiceHandler, itemServiceHandler,
+	handler := api.NewHandler(userServiceHandler, eventServiceHandler,
+														eventPictureServiceHandler, itemServiceHandler,
 														itemPictureServiceHandler, orderServiceHandler)
 
 	grpcServer := grpc.NewServer()

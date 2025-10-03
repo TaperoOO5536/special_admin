@@ -381,27 +381,27 @@ func (x *GetUsersResponse) GetUsers() []*UserInfo {
 	return nil
 }
 
-type GetIventInfoRequest struct {
+type GetEventInfoRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetIventInfoRequest) Reset() {
-	*x = GetIventInfoRequest{}
+func (x *GetEventInfoRequest) Reset() {
+	*x = GetEventInfoRequest{}
 	mi := &file_special_admin_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetIventInfoRequest) String() string {
+func (x *GetEventInfoRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetIventInfoRequest) ProtoMessage() {}
+func (*GetEventInfoRequest) ProtoMessage() {}
 
-func (x *GetIventInfoRequest) ProtoReflect() protoreflect.Message {
+func (x *GetEventInfoRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_special_admin_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -413,38 +413,38 @@ func (x *GetIventInfoRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetIventInfoRequest.ProtoReflect.Descriptor instead.
-func (*GetIventInfoRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetEventInfoRequest.ProtoReflect.Descriptor instead.
+func (*GetEventInfoRequest) Descriptor() ([]byte, []int) {
 	return file_special_admin_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *GetIventInfoRequest) GetId() string {
+func (x *GetEventInfoRequest) GetId() string {
 	if x != nil {
 		return x.Id
 	}
 	return ""
 }
 
-type GetIventsRequest struct {
+type GetEventsRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetIventsRequest) Reset() {
-	*x = GetIventsRequest{}
+func (x *GetEventsRequest) Reset() {
+	*x = GetEventsRequest{}
 	mi := &file_special_admin_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetIventsRequest) String() string {
+func (x *GetEventsRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetIventsRequest) ProtoMessage() {}
+func (*GetEventsRequest) ProtoMessage() {}
 
-func (x *GetIventsRequest) ProtoReflect() protoreflect.Message {
+func (x *GetEventsRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_special_admin_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -456,12 +456,12 @@ func (x *GetIventsRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetIventsRequest.ProtoReflect.Descriptor instead.
-func (*GetIventsRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetEventsRequest.ProtoReflect.Descriptor instead.
+func (*GetEventsRequest) Descriptor() ([]byte, []int) {
 	return file_special_admin_proto_rawDescGZIP(), []int{8}
 }
 
-type CreateIventRequest struct {
+type CreateEventRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Title         string                 `protobuf:"bytes,1,opt,name=title,proto3" json:"title,omitempty"`
 	Description   string                 `protobuf:"bytes,2,opt,name=description,proto3" json:"description,omitempty"`
@@ -474,20 +474,20 @@ type CreateIventRequest struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *CreateIventRequest) Reset() {
-	*x = CreateIventRequest{}
+func (x *CreateEventRequest) Reset() {
+	*x = CreateEventRequest{}
 	mi := &file_special_admin_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *CreateIventRequest) String() string {
+func (x *CreateEventRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CreateIventRequest) ProtoMessage() {}
+func (*CreateEventRequest) ProtoMessage() {}
 
-func (x *CreateIventRequest) ProtoReflect() protoreflect.Message {
+func (x *CreateEventRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_special_admin_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -499,61 +499,61 @@ func (x *CreateIventRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CreateIventRequest.ProtoReflect.Descriptor instead.
-func (*CreateIventRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use CreateEventRequest.ProtoReflect.Descriptor instead.
+func (*CreateEventRequest) Descriptor() ([]byte, []int) {
 	return file_special_admin_proto_rawDescGZIP(), []int{9}
 }
 
-func (x *CreateIventRequest) GetTitle() string {
+func (x *CreateEventRequest) GetTitle() string {
 	if x != nil {
 		return x.Title
 	}
 	return ""
 }
 
-func (x *CreateIventRequest) GetDescription() string {
+func (x *CreateEventRequest) GetDescription() string {
 	if x != nil {
 		return x.Description
 	}
 	return ""
 }
 
-func (x *CreateIventRequest) GetDatetime() *timestamppb.Timestamp {
+func (x *CreateEventRequest) GetDatetime() *timestamppb.Timestamp {
 	if x != nil {
 		return x.Datetime
 	}
 	return nil
 }
 
-func (x *CreateIventRequest) GetPrice() *wrapperspb.Int64Value {
+func (x *CreateEventRequest) GetPrice() *wrapperspb.Int64Value {
 	if x != nil {
 		return x.Price
 	}
 	return nil
 }
 
-func (x *CreateIventRequest) GetTotalSeats() int64 {
+func (x *CreateEventRequest) GetTotalSeats() int64 {
 	if x != nil {
 		return x.TotalSeats
 	}
 	return 0
 }
 
-func (x *CreateIventRequest) GetOccupiedSeats() *wrapperspb.Int64Value {
+func (x *CreateEventRequest) GetOccupiedSeats() *wrapperspb.Int64Value {
 	if x != nil {
 		return x.OccupiedSeats
 	}
 	return nil
 }
 
-func (x *CreateIventRequest) GetLittlePicture() *LittlePictureInfo {
+func (x *CreateEventRequest) GetLittlePicture() *LittlePictureInfo {
 	if x != nil {
 		return x.LittlePicture
 	}
 	return nil
 }
 
-type UpdateIventRequest struct {
+type UpdateEventRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Title         *string                `protobuf:"bytes,2,opt,name=title,proto3,oneof" json:"title,omitempty"`
@@ -567,20 +567,20 @@ type UpdateIventRequest struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *UpdateIventRequest) Reset() {
-	*x = UpdateIventRequest{}
+func (x *UpdateEventRequest) Reset() {
+	*x = UpdateEventRequest{}
 	mi := &file_special_admin_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *UpdateIventRequest) String() string {
+func (x *UpdateEventRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*UpdateIventRequest) ProtoMessage() {}
+func (*UpdateEventRequest) ProtoMessage() {}
 
-func (x *UpdateIventRequest) ProtoReflect() protoreflect.Message {
+func (x *UpdateEventRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_special_admin_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -592,88 +592,88 @@ func (x *UpdateIventRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use UpdateIventRequest.ProtoReflect.Descriptor instead.
-func (*UpdateIventRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use UpdateEventRequest.ProtoReflect.Descriptor instead.
+func (*UpdateEventRequest) Descriptor() ([]byte, []int) {
 	return file_special_admin_proto_rawDescGZIP(), []int{10}
 }
 
-func (x *UpdateIventRequest) GetId() string {
+func (x *UpdateEventRequest) GetId() string {
 	if x != nil {
 		return x.Id
 	}
 	return ""
 }
 
-func (x *UpdateIventRequest) GetTitle() string {
+func (x *UpdateEventRequest) GetTitle() string {
 	if x != nil && x.Title != nil {
 		return *x.Title
 	}
 	return ""
 }
 
-func (x *UpdateIventRequest) GetDescription() string {
+func (x *UpdateEventRequest) GetDescription() string {
 	if x != nil && x.Description != nil {
 		return *x.Description
 	}
 	return ""
 }
 
-func (x *UpdateIventRequest) GetDatetime() *timestamppb.Timestamp {
+func (x *UpdateEventRequest) GetDatetime() *timestamppb.Timestamp {
 	if x != nil {
 		return x.Datetime
 	}
 	return nil
 }
 
-func (x *UpdateIventRequest) GetPrice() *wrapperspb.Int64Value {
+func (x *UpdateEventRequest) GetPrice() *wrapperspb.Int64Value {
 	if x != nil {
 		return x.Price
 	}
 	return nil
 }
 
-func (x *UpdateIventRequest) GetTotalSeats() int64 {
+func (x *UpdateEventRequest) GetTotalSeats() int64 {
 	if x != nil && x.TotalSeats != nil {
 		return *x.TotalSeats
 	}
 	return 0
 }
 
-func (x *UpdateIventRequest) GetOccupiedSeats() *wrapperspb.Int64Value {
+func (x *UpdateEventRequest) GetOccupiedSeats() *wrapperspb.Int64Value {
 	if x != nil {
 		return x.OccupiedSeats
 	}
 	return nil
 }
 
-func (x *UpdateIventRequest) GetLittlePicture() *LittlePictureInfo {
+func (x *UpdateEventRequest) GetLittlePicture() *LittlePictureInfo {
 	if x != nil {
 		return x.LittlePicture
 	}
 	return nil
 }
 
-type DeleteIventRequest struct {
+type DeleteEventRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *DeleteIventRequest) Reset() {
-	*x = DeleteIventRequest{}
+func (x *DeleteEventRequest) Reset() {
+	*x = DeleteEventRequest{}
 	mi := &file_special_admin_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *DeleteIventRequest) String() string {
+func (x *DeleteEventRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*DeleteIventRequest) ProtoMessage() {}
+func (*DeleteEventRequest) ProtoMessage() {}
 
-func (x *DeleteIventRequest) ProtoReflect() protoreflect.Message {
+func (x *DeleteEventRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_special_admin_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -685,19 +685,19 @@ func (x *DeleteIventRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use DeleteIventRequest.ProtoReflect.Descriptor instead.
-func (*DeleteIventRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use DeleteEventRequest.ProtoReflect.Descriptor instead.
+func (*DeleteEventRequest) Descriptor() ([]byte, []int) {
 	return file_special_admin_proto_rawDescGZIP(), []int{11}
 }
 
-func (x *DeleteIventRequest) GetId() string {
+func (x *DeleteEventRequest) GetId() string {
 	if x != nil {
 		return x.Id
 	}
 	return ""
 }
 
-type UserIventInfo struct {
+type UserEventInfo struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
 	Id             string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	UserNickname   string                 `protobuf:"bytes,2,opt,name=user_nickname,json=userNickname,proto3" json:"user_nickname,omitempty"`
@@ -706,20 +706,20 @@ type UserIventInfo struct {
 	sizeCache      protoimpl.SizeCache
 }
 
-func (x *UserIventInfo) Reset() {
-	*x = UserIventInfo{}
+func (x *UserEventInfo) Reset() {
+	*x = UserEventInfo{}
 	mi := &file_special_admin_proto_msgTypes[12]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *UserIventInfo) String() string {
+func (x *UserEventInfo) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*UserIventInfo) ProtoMessage() {}
+func (*UserEventInfo) ProtoMessage() {}
 
-func (x *UserIventInfo) ProtoReflect() protoreflect.Message {
+func (x *UserEventInfo) ProtoReflect() protoreflect.Message {
 	mi := &file_special_admin_proto_msgTypes[12]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -731,33 +731,33 @@ func (x *UserIventInfo) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use UserIventInfo.ProtoReflect.Descriptor instead.
-func (*UserIventInfo) Descriptor() ([]byte, []int) {
+// Deprecated: Use UserEventInfo.ProtoReflect.Descriptor instead.
+func (*UserEventInfo) Descriptor() ([]byte, []int) {
 	return file_special_admin_proto_rawDescGZIP(), []int{12}
 }
 
-func (x *UserIventInfo) GetId() string {
+func (x *UserEventInfo) GetId() string {
 	if x != nil {
 		return x.Id
 	}
 	return ""
 }
 
-func (x *UserIventInfo) GetUserNickname() string {
+func (x *UserEventInfo) GetUserNickname() string {
 	if x != nil {
 		return x.UserNickname
 	}
 	return ""
 }
 
-func (x *UserIventInfo) GetNumberOfGuests() int64 {
+func (x *UserEventInfo) GetNumberOfGuests() int64 {
 	if x != nil {
 		return x.NumberOfGuests
 	}
 	return 0
 }
 
-type GetIventInfoResponse struct {
+type GetEventInfoResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Title         string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
@@ -768,25 +768,25 @@ type GetIventInfoResponse struct {
 	OccupiedSeats int64                  `protobuf:"varint,7,opt,name=occupied_seats,json=occupiedSeats,proto3" json:"occupied_seats,omitempty"`
 	LittlePicture *LittlePictureInfo     `protobuf:"bytes,8,opt,name=little_picture,json=littlePicture,proto3" json:"little_picture,omitempty"`
 	Pictures      []*PictureInfo         `protobuf:"bytes,9,rep,name=pictures,proto3" json:"pictures,omitempty"`
-	UserIvents    []*UserIventInfo       `protobuf:"bytes,10,rep,name=userIvents,proto3" json:"userIvents,omitempty"`
+	UserEvents    []*UserEventInfo       `protobuf:"bytes,10,rep,name=userEvents,proto3" json:"userEvents,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetIventInfoResponse) Reset() {
-	*x = GetIventInfoResponse{}
+func (x *GetEventInfoResponse) Reset() {
+	*x = GetEventInfoResponse{}
 	mi := &file_special_admin_proto_msgTypes[13]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetIventInfoResponse) String() string {
+func (x *GetEventInfoResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetIventInfoResponse) ProtoMessage() {}
+func (*GetEventInfoResponse) ProtoMessage() {}
 
-func (x *GetIventInfoResponse) ProtoReflect() protoreflect.Message {
+func (x *GetEventInfoResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_special_admin_proto_msgTypes[13]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -798,82 +798,82 @@ func (x *GetIventInfoResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetIventInfoResponse.ProtoReflect.Descriptor instead.
-func (*GetIventInfoResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetEventInfoResponse.ProtoReflect.Descriptor instead.
+func (*GetEventInfoResponse) Descriptor() ([]byte, []int) {
 	return file_special_admin_proto_rawDescGZIP(), []int{13}
 }
 
-func (x *GetIventInfoResponse) GetId() string {
+func (x *GetEventInfoResponse) GetId() string {
 	if x != nil {
 		return x.Id
 	}
 	return ""
 }
 
-func (x *GetIventInfoResponse) GetTitle() string {
+func (x *GetEventInfoResponse) GetTitle() string {
 	if x != nil {
 		return x.Title
 	}
 	return ""
 }
 
-func (x *GetIventInfoResponse) GetDescription() string {
+func (x *GetEventInfoResponse) GetDescription() string {
 	if x != nil {
 		return x.Description
 	}
 	return ""
 }
 
-func (x *GetIventInfoResponse) GetDatetime() *timestamppb.Timestamp {
+func (x *GetEventInfoResponse) GetDatetime() *timestamppb.Timestamp {
 	if x != nil {
 		return x.Datetime
 	}
 	return nil
 }
 
-func (x *GetIventInfoResponse) GetPrice() int64 {
+func (x *GetEventInfoResponse) GetPrice() int64 {
 	if x != nil {
 		return x.Price
 	}
 	return 0
 }
 
-func (x *GetIventInfoResponse) GetTotalSeats() int64 {
+func (x *GetEventInfoResponse) GetTotalSeats() int64 {
 	if x != nil {
 		return x.TotalSeats
 	}
 	return 0
 }
 
-func (x *GetIventInfoResponse) GetOccupiedSeats() int64 {
+func (x *GetEventInfoResponse) GetOccupiedSeats() int64 {
 	if x != nil {
 		return x.OccupiedSeats
 	}
 	return 0
 }
 
-func (x *GetIventInfoResponse) GetLittlePicture() *LittlePictureInfo {
+func (x *GetEventInfoResponse) GetLittlePicture() *LittlePictureInfo {
 	if x != nil {
 		return x.LittlePicture
 	}
 	return nil
 }
 
-func (x *GetIventInfoResponse) GetPictures() []*PictureInfo {
+func (x *GetEventInfoResponse) GetPictures() []*PictureInfo {
 	if x != nil {
 		return x.Pictures
 	}
 	return nil
 }
 
-func (x *GetIventInfoResponse) GetUserIvents() []*UserIventInfo {
+func (x *GetEventInfoResponse) GetUserEvents() []*UserEventInfo {
 	if x != nil {
-		return x.UserIvents
+		return x.UserEvents
 	}
 	return nil
 }
 
-type IventInfoForList struct {
+type EventInfoForList struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Title         string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
@@ -886,20 +886,20 @@ type IventInfoForList struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *IventInfoForList) Reset() {
-	*x = IventInfoForList{}
+func (x *EventInfoForList) Reset() {
+	*x = EventInfoForList{}
 	mi := &file_special_admin_proto_msgTypes[14]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *IventInfoForList) String() string {
+func (x *EventInfoForList) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*IventInfoForList) ProtoMessage() {}
+func (*EventInfoForList) ProtoMessage() {}
 
-func (x *IventInfoForList) ProtoReflect() protoreflect.Message {
+func (x *EventInfoForList) ProtoReflect() protoreflect.Message {
 	mi := &file_special_admin_proto_msgTypes[14]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -911,81 +911,81 @@ func (x *IventInfoForList) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use IventInfoForList.ProtoReflect.Descriptor instead.
-func (*IventInfoForList) Descriptor() ([]byte, []int) {
+// Deprecated: Use EventInfoForList.ProtoReflect.Descriptor instead.
+func (*EventInfoForList) Descriptor() ([]byte, []int) {
 	return file_special_admin_proto_rawDescGZIP(), []int{14}
 }
 
-func (x *IventInfoForList) GetId() string {
+func (x *EventInfoForList) GetId() string {
 	if x != nil {
 		return x.Id
 	}
 	return ""
 }
 
-func (x *IventInfoForList) GetTitle() string {
+func (x *EventInfoForList) GetTitle() string {
 	if x != nil {
 		return x.Title
 	}
 	return ""
 }
 
-func (x *IventInfoForList) GetDatetime() *timestamppb.Timestamp {
+func (x *EventInfoForList) GetDatetime() *timestamppb.Timestamp {
 	if x != nil {
 		return x.Datetime
 	}
 	return nil
 }
 
-func (x *IventInfoForList) GetPrice() int64 {
+func (x *EventInfoForList) GetPrice() int64 {
 	if x != nil {
 		return x.Price
 	}
 	return 0
 }
 
-func (x *IventInfoForList) GetTotalSeats() int64 {
+func (x *EventInfoForList) GetTotalSeats() int64 {
 	if x != nil {
 		return x.TotalSeats
 	}
 	return 0
 }
 
-func (x *IventInfoForList) GetOccupiedSeats() int64 {
+func (x *EventInfoForList) GetOccupiedSeats() int64 {
 	if x != nil {
 		return x.OccupiedSeats
 	}
 	return 0
 }
 
-func (x *IventInfoForList) GetLittlePicture() *LittlePictureInfo {
+func (x *EventInfoForList) GetLittlePicture() *LittlePictureInfo {
 	if x != nil {
 		return x.LittlePicture
 	}
 	return nil
 }
 
-type GetIventsResponse struct {
+type GetEventsResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Ivents        []*IventInfoForList    `protobuf:"bytes,1,rep,name=ivents,proto3" json:"ivents,omitempty"`
+	Events        []*EventInfoForList    `protobuf:"bytes,1,rep,name=events,proto3" json:"events,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetIventsResponse) Reset() {
-	*x = GetIventsResponse{}
+func (x *GetEventsResponse) Reset() {
+	*x = GetEventsResponse{}
 	mi := &file_special_admin_proto_msgTypes[15]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetIventsResponse) String() string {
+func (x *GetEventsResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetIventsResponse) ProtoMessage() {}
+func (*GetEventsResponse) ProtoMessage() {}
 
-func (x *GetIventsResponse) ProtoReflect() protoreflect.Message {
+func (x *GetEventsResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_special_admin_proto_msgTypes[15]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -997,14 +997,14 @@ func (x *GetIventsResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetIventsResponse.ProtoReflect.Descriptor instead.
-func (*GetIventsResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetEventsResponse.ProtoReflect.Descriptor instead.
+func (*GetEventsResponse) Descriptor() ([]byte, []int) {
 	return file_special_admin_proto_rawDescGZIP(), []int{15}
 }
 
-func (x *GetIventsResponse) GetIvents() []*IventInfoForList {
+func (x *GetEventsResponse) GetEvents() []*EventInfoForList {
 	if x != nil {
-		return x.Ivents
+		return x.Events
 	}
 	return nil
 }
@@ -1994,10 +1994,10 @@ const file_special_admin_proto_rawDesc = "" +
 	"\fphone_number\x18\x04 \x01(\tR\vphoneNumber\"B\n" +
 	"\x10GetUsersResponse\x12.\n" +
 	"\x05users\x18\x01 \x03(\v2\x18.special_app_v1.UserInfoR\x05users\"%\n" +
-	"\x13GetIventInfoRequest\x12\x0e\n" +
+	"\x13GetEventInfoRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\"\x12\n" +
-	"\x10GetIventsRequest\"\xe6\x02\n" +
-	"\x12CreateIventRequest\x12\x14\n" +
+	"\x10GetEventsRequest\"\xe6\x02\n" +
+	"\x12CreateEventRequest\x12\x14\n" +
 	"\x05title\x18\x01 \x01(\tR\x05title\x12 \n" +
 	"\vdescription\x18\x02 \x01(\tR\vdescription\x126\n" +
 	"\bdatetime\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\bdatetime\x121\n" +
@@ -2006,7 +2006,7 @@ const file_special_admin_proto_rawDesc = "" +
 	"totalSeats\x12B\n" +
 	"\x0eoccupied_seats\x18\x06 \x01(\v2\x1b.google.protobuf.Int64ValueR\roccupiedSeats\x12H\n" +
 	"\x0elittle_picture\x18\a \x01(\v2!.special_app_v1.LittlePictureInfoR\rlittlePicture\"\xd9\x03\n" +
-	"\x12UpdateIventRequest\x12\x0e\n" +
+	"\x12UpdateEventRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x19\n" +
 	"\x05title\x18\x02 \x01(\tH\x00R\x05title\x88\x01\x01\x12%\n" +
 	"\vdescription\x18\x03 \x01(\tH\x01R\vdescription\x88\x01\x01\x12;\n" +
@@ -2021,13 +2021,13 @@ const file_special_admin_proto_rawDesc = "" +
 	"\t_datetimeB\x0e\n" +
 	"\f_total_seatsB\x11\n" +
 	"\x0f_little_picture\"$\n" +
-	"\x12DeleteIventRequest\x12\x0e\n" +
+	"\x12DeleteEventRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\"n\n" +
-	"\rUserIventInfo\x12\x0e\n" +
+	"\rUserEventInfo\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12#\n" +
 	"\ruser_nickname\x18\x02 \x01(\tR\fuserNickname\x12(\n" +
 	"\x10number_of_guests\x18\x03 \x01(\x03R\x0enumberOfGuests\"\xb6\x03\n" +
-	"\x14GetIventInfoResponse\x12\x0e\n" +
+	"\x14GetEventInfoResponse\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
 	"\x05title\x18\x02 \x01(\tR\x05title\x12 \n" +
 	"\vdescription\x18\x03 \x01(\tR\vdescription\x126\n" +
@@ -2039,10 +2039,10 @@ const file_special_admin_proto_rawDesc = "" +
 	"\x0elittle_picture\x18\b \x01(\v2!.special_app_v1.LittlePictureInfoR\rlittlePicture\x127\n" +
 	"\bpictures\x18\t \x03(\v2\x1b.special_app_v1.PictureInfoR\bpictures\x12=\n" +
 	"\n" +
-	"userIvents\x18\n" +
-	" \x03(\v2\x1d.special_app_v1.UserIventInfoR\n" +
-	"userIvents\"\x98\x02\n" +
-	"\x10IventInfoForList\x12\x0e\n" +
+	"userEvents\x18\n" +
+	" \x03(\v2\x1d.special_app_v1.UserEventInfoR\n" +
+	"userEvents\"\x98\x02\n" +
+	"\x10EventInfoForList\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
 	"\x05title\x18\x02 \x01(\tR\x05title\x126\n" +
 	"\bdatetime\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\bdatetime\x12\x14\n" +
@@ -2051,8 +2051,8 @@ const file_special_admin_proto_rawDesc = "" +
 	"totalSeats\x12%\n" +
 	"\x0eoccupied_seats\x18\x06 \x01(\x03R\roccupiedSeats\x12H\n" +
 	"\x0elittle_picture\x18\a \x01(\v2!.special_app_v1.LittlePictureInfoR\rlittlePicture\"M\n" +
-	"\x11GetIventsResponse\x128\n" +
-	"\x06ivents\x18\x01 \x03(\v2 .special_app_v1.IventInfoForListR\x06ivents\"$\n" +
+	"\x11GetEventsResponse\x128\n" +
+	"\x06events\x18\x01 \x03(\v2 .special_app_v1.EventInfoForListR\x06events\"$\n" +
 	"\x12GetItemInfoRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\"\x11\n" +
 	"\x0fGetItemsRequest\"\xab\x01\n" +
@@ -2125,15 +2125,15 @@ const file_special_admin_proto_rawDesc = "" +
 	"\x06orders\x18\x01 \x03(\v2 .special_app_v1.OrderInfoForListR\x06orders2\xc4\x10\n" +
 	"\x13SpecialAdminService\x12`\n" +
 	"\bGetUsers\x12\x1f.special_app_v1.GetUsersRequest\x1a .special_app_v1.GetUsersResponse\"\x11\x82\xd3\xe4\x93\x02\v\x12\t/v1/users\x12r\n" +
-	"\fGetIventInfo\x12#.special_app_v1.GetIventInfoRequest\x1a$.special_app_v1.GetIventInfoResponse\"\x17\x82\xd3\xe4\x93\x02\x11\x12\x0f/v1/ivents/{id}\x12d\n" +
-	"\tGetIvents\x12 .special_app_v1.GetIventsRequest\x1a!.special_app_v1.GetIventsResponse\"\x12\x82\xd3\xe4\x93\x02\f\x12\n" +
-	"/v1/ivents\x12n\n" +
-	"\vCreateIvent\x12\".special_app_v1.CreateIventRequest\x1a$.special_app_v1.GetIventInfoResponse\"\x15\x82\xd3\xe4\x93\x02\x0f:\x01*\"\n" +
-	"/v1/ivents\x12s\n" +
-	"\vUpdateIvent\x12\".special_app_v1.UpdateIventRequest\x1a$.special_app_v1.GetIventInfoResponse\"\x1a\x82\xd3\xe4\x93\x02\x14:\x01*2\x0f/v1/ivents/{id}\x12b\n" +
-	"\vDeleteIvent\x12\".special_app_v1.DeleteIventRequest\x1a\x16.google.protobuf.Empty\"\x17\x82\xd3\xe4\x93\x02\x11*\x0f/v1/ivents/{id}\x12\x7f\n" +
-	"\x12CreateIventPicture\x12$.special_app_v1.CreatePictureRequest\x1a$.special_app_v1.GetIventInfoResponse\"\x1d\x82\xd3\xe4\x93\x02\x17:\x01*\"\x12/v1/ivent_pictures\x12s\n" +
-	"\x12DeleteIventPicture\x12$.special_app_v1.DeletePictureRequest\x1a\x16.google.protobuf.Empty\"\x1f\x82\xd3\xe4\x93\x02\x19*\x17/v1/ivent_pictures/{id}\x12n\n" +
+	"\fGetEventInfo\x12#.special_app_v1.GetEventInfoRequest\x1a$.special_app_v1.GetEventInfoResponse\"\x17\x82\xd3\xe4\x93\x02\x11\x12\x0f/v1/events/{id}\x12d\n" +
+	"\tGetEvents\x12 .special_app_v1.GetEventsRequest\x1a!.special_app_v1.GetEventsResponse\"\x12\x82\xd3\xe4\x93\x02\f\x12\n" +
+	"/v1/events\x12n\n" +
+	"\vCreateEvent\x12\".special_app_v1.CreateEventRequest\x1a$.special_app_v1.GetEventInfoResponse\"\x15\x82\xd3\xe4\x93\x02\x0f:\x01*\"\n" +
+	"/v1/events\x12s\n" +
+	"\vUpdateEvent\x12\".special_app_v1.UpdateEventRequest\x1a$.special_app_v1.GetEventInfoResponse\"\x1a\x82\xd3\xe4\x93\x02\x14:\x01*2\x0f/v1/events/{id}\x12b\n" +
+	"\vDeleteEvent\x12\".special_app_v1.DeleteEventRequest\x1a\x16.google.protobuf.Empty\"\x17\x82\xd3\xe4\x93\x02\x11*\x0f/v1/events/{id}\x12\x7f\n" +
+	"\x12CreateEventPicture\x12$.special_app_v1.CreatePictureRequest\x1a$.special_app_v1.GetEventInfoResponse\"\x1d\x82\xd3\xe4\x93\x02\x17:\x01*\"\x12/v1/event_pictures\x12s\n" +
+	"\x12DeleteEventPicture\x12$.special_app_v1.DeletePictureRequest\x1a\x16.google.protobuf.Empty\"\x1f\x82\xd3\xe4\x93\x02\x19*\x17/v1/event_pictures/{id}\x12n\n" +
 	"\vGetItemInfo\x12\".special_app_v1.GetItemInfoRequest\x1a#.special_app_v1.GetItemInfoResponse\"\x16\x82\xd3\xe4\x93\x02\x10\x12\x0e/v1/items/{id}\x12`\n" +
 	"\bGetItems\x12\x1f.special_app_v1.GetItemsRequest\x1a .special_app_v1.GetItemsResponse\"\x11\x82\xd3\xe4\x93\x02\v\x12\t/v1/items\x12j\n" +
 	"\n" +
@@ -2171,15 +2171,15 @@ var file_special_admin_proto_goTypes = []any{
 	(*GetUsersRequest)(nil),       // 4: special_app_v1.GetUsersRequest
 	(*UserInfo)(nil),              // 5: special_app_v1.UserInfo
 	(*GetUsersResponse)(nil),      // 6: special_app_v1.GetUsersResponse
-	(*GetIventInfoRequest)(nil),   // 7: special_app_v1.GetIventInfoRequest
-	(*GetIventsRequest)(nil),      // 8: special_app_v1.GetIventsRequest
-	(*CreateIventRequest)(nil),    // 9: special_app_v1.CreateIventRequest
-	(*UpdateIventRequest)(nil),    // 10: special_app_v1.UpdateIventRequest
-	(*DeleteIventRequest)(nil),    // 11: special_app_v1.DeleteIventRequest
-	(*UserIventInfo)(nil),         // 12: special_app_v1.UserIventInfo
-	(*GetIventInfoResponse)(nil),  // 13: special_app_v1.GetIventInfoResponse
-	(*IventInfoForList)(nil),      // 14: special_app_v1.IventInfoForList
-	(*GetIventsResponse)(nil),     // 15: special_app_v1.GetIventsResponse
+	(*GetEventInfoRequest)(nil),   // 7: special_app_v1.GetEventInfoRequest
+	(*GetEventsRequest)(nil),      // 8: special_app_v1.GetEventsRequest
+	(*CreateEventRequest)(nil),    // 9: special_app_v1.CreateEventRequest
+	(*UpdateEventRequest)(nil),    // 10: special_app_v1.UpdateEventRequest
+	(*DeleteEventRequest)(nil),    // 11: special_app_v1.DeleteEventRequest
+	(*UserEventInfo)(nil),         // 12: special_app_v1.UserEventInfo
+	(*GetEventInfoResponse)(nil),  // 13: special_app_v1.GetEventInfoResponse
+	(*EventInfoForList)(nil),      // 14: special_app_v1.EventInfoForList
+	(*GetEventsResponse)(nil),     // 15: special_app_v1.GetEventsResponse
 	(*GetItemInfoRequest)(nil),    // 16: special_app_v1.GetItemInfoRequest
 	(*GetItemsRequest)(nil),       // 17: special_app_v1.GetItemsRequest
 	(*CreateItemRequest)(nil),     // 18: special_app_v1.CreateItemRequest
@@ -2203,21 +2203,21 @@ var file_special_admin_proto_goTypes = []any{
 var file_special_admin_proto_depIdxs = []int32{
 	0,  // 0: special_app_v1.CreatePictureRequest.picture:type_name -> special_app_v1.LittlePictureInfo
 	5,  // 1: special_app_v1.GetUsersResponse.users:type_name -> special_app_v1.UserInfo
-	32, // 2: special_app_v1.CreateIventRequest.datetime:type_name -> google.protobuf.Timestamp
-	33, // 3: special_app_v1.CreateIventRequest.price:type_name -> google.protobuf.Int64Value
-	33, // 4: special_app_v1.CreateIventRequest.occupied_seats:type_name -> google.protobuf.Int64Value
-	0,  // 5: special_app_v1.CreateIventRequest.little_picture:type_name -> special_app_v1.LittlePictureInfo
-	32, // 6: special_app_v1.UpdateIventRequest.datetime:type_name -> google.protobuf.Timestamp
-	33, // 7: special_app_v1.UpdateIventRequest.price:type_name -> google.protobuf.Int64Value
-	33, // 8: special_app_v1.UpdateIventRequest.occupied_seats:type_name -> google.protobuf.Int64Value
-	0,  // 9: special_app_v1.UpdateIventRequest.little_picture:type_name -> special_app_v1.LittlePictureInfo
-	32, // 10: special_app_v1.GetIventInfoResponse.datetime:type_name -> google.protobuf.Timestamp
-	0,  // 11: special_app_v1.GetIventInfoResponse.little_picture:type_name -> special_app_v1.LittlePictureInfo
-	1,  // 12: special_app_v1.GetIventInfoResponse.pictures:type_name -> special_app_v1.PictureInfo
-	12, // 13: special_app_v1.GetIventInfoResponse.userIvents:type_name -> special_app_v1.UserIventInfo
-	32, // 14: special_app_v1.IventInfoForList.datetime:type_name -> google.protobuf.Timestamp
-	0,  // 15: special_app_v1.IventInfoForList.little_picture:type_name -> special_app_v1.LittlePictureInfo
-	14, // 16: special_app_v1.GetIventsResponse.ivents:type_name -> special_app_v1.IventInfoForList
+	32, // 2: special_app_v1.CreateEventRequest.datetime:type_name -> google.protobuf.Timestamp
+	33, // 3: special_app_v1.CreateEventRequest.price:type_name -> google.protobuf.Int64Value
+	33, // 4: special_app_v1.CreateEventRequest.occupied_seats:type_name -> google.protobuf.Int64Value
+	0,  // 5: special_app_v1.CreateEventRequest.little_picture:type_name -> special_app_v1.LittlePictureInfo
+	32, // 6: special_app_v1.UpdateEventRequest.datetime:type_name -> google.protobuf.Timestamp
+	33, // 7: special_app_v1.UpdateEventRequest.price:type_name -> google.protobuf.Int64Value
+	33, // 8: special_app_v1.UpdateEventRequest.occupied_seats:type_name -> google.protobuf.Int64Value
+	0,  // 9: special_app_v1.UpdateEventRequest.little_picture:type_name -> special_app_v1.LittlePictureInfo
+	32, // 10: special_app_v1.GetEventInfoResponse.datetime:type_name -> google.protobuf.Timestamp
+	0,  // 11: special_app_v1.GetEventInfoResponse.little_picture:type_name -> special_app_v1.LittlePictureInfo
+	1,  // 12: special_app_v1.GetEventInfoResponse.pictures:type_name -> special_app_v1.PictureInfo
+	12, // 13: special_app_v1.GetEventInfoResponse.userEvents:type_name -> special_app_v1.UserEventInfo
+	32, // 14: special_app_v1.EventInfoForList.datetime:type_name -> google.protobuf.Timestamp
+	0,  // 15: special_app_v1.EventInfoForList.little_picture:type_name -> special_app_v1.LittlePictureInfo
+	14, // 16: special_app_v1.GetEventsResponse.events:type_name -> special_app_v1.EventInfoForList
 	0,  // 17: special_app_v1.CreateItemRequest.little_picture:type_name -> special_app_v1.LittlePictureInfo
 	0,  // 18: special_app_v1.UpdateItemRequest.little_picture:type_name -> special_app_v1.LittlePictureInfo
 	0,  // 19: special_app_v1.GetItemInfoResponse.little_picture:type_name -> special_app_v1.LittlePictureInfo
@@ -2231,13 +2231,13 @@ var file_special_admin_proto_depIdxs = []int32{
 	32, // 27: special_app_v1.OrderInfoForList.completion_date:type_name -> google.protobuf.Timestamp
 	30, // 28: special_app_v1.GetOrdersResponse.orders:type_name -> special_app_v1.OrderInfoForList
 	4,  // 29: special_app_v1.SpecialAdminService.GetUsers:input_type -> special_app_v1.GetUsersRequest
-	7,  // 30: special_app_v1.SpecialAdminService.GetIventInfo:input_type -> special_app_v1.GetIventInfoRequest
-	8,  // 31: special_app_v1.SpecialAdminService.GetIvents:input_type -> special_app_v1.GetIventsRequest
-	9,  // 32: special_app_v1.SpecialAdminService.CreateIvent:input_type -> special_app_v1.CreateIventRequest
-	10, // 33: special_app_v1.SpecialAdminService.UpdateIvent:input_type -> special_app_v1.UpdateIventRequest
-	11, // 34: special_app_v1.SpecialAdminService.DeleteIvent:input_type -> special_app_v1.DeleteIventRequest
-	2,  // 35: special_app_v1.SpecialAdminService.CreateIventPicture:input_type -> special_app_v1.CreatePictureRequest
-	3,  // 36: special_app_v1.SpecialAdminService.DeleteIventPicture:input_type -> special_app_v1.DeletePictureRequest
+	7,  // 30: special_app_v1.SpecialAdminService.GetEventInfo:input_type -> special_app_v1.GetEventInfoRequest
+	8,  // 31: special_app_v1.SpecialAdminService.GetEvents:input_type -> special_app_v1.GetEventsRequest
+	9,  // 32: special_app_v1.SpecialAdminService.CreateEvent:input_type -> special_app_v1.CreateEventRequest
+	10, // 33: special_app_v1.SpecialAdminService.UpdateEvent:input_type -> special_app_v1.UpdateEventRequest
+	11, // 34: special_app_v1.SpecialAdminService.DeleteEvent:input_type -> special_app_v1.DeleteEventRequest
+	2,  // 35: special_app_v1.SpecialAdminService.CreateEventPicture:input_type -> special_app_v1.CreatePictureRequest
+	3,  // 36: special_app_v1.SpecialAdminService.DeleteEventPicture:input_type -> special_app_v1.DeletePictureRequest
 	16, // 37: special_app_v1.SpecialAdminService.GetItemInfo:input_type -> special_app_v1.GetItemInfoRequest
 	17, // 38: special_app_v1.SpecialAdminService.GetItems:input_type -> special_app_v1.GetItemsRequest
 	18, // 39: special_app_v1.SpecialAdminService.CreateItem:input_type -> special_app_v1.CreateItemRequest
@@ -2250,13 +2250,13 @@ var file_special_admin_proto_depIdxs = []int32{
 	26, // 46: special_app_v1.SpecialAdminService.UpdateOrder:input_type -> special_app_v1.UpdateOrderRequest
 	27, // 47: special_app_v1.SpecialAdminService.DeleteOrder:input_type -> special_app_v1.DeleteOrderRequest
 	6,  // 48: special_app_v1.SpecialAdminService.GetUsers:output_type -> special_app_v1.GetUsersResponse
-	13, // 49: special_app_v1.SpecialAdminService.GetIventInfo:output_type -> special_app_v1.GetIventInfoResponse
-	15, // 50: special_app_v1.SpecialAdminService.GetIvents:output_type -> special_app_v1.GetIventsResponse
-	13, // 51: special_app_v1.SpecialAdminService.CreateIvent:output_type -> special_app_v1.GetIventInfoResponse
-	13, // 52: special_app_v1.SpecialAdminService.UpdateIvent:output_type -> special_app_v1.GetIventInfoResponse
-	34, // 53: special_app_v1.SpecialAdminService.DeleteIvent:output_type -> google.protobuf.Empty
-	13, // 54: special_app_v1.SpecialAdminService.CreateIventPicture:output_type -> special_app_v1.GetIventInfoResponse
-	34, // 55: special_app_v1.SpecialAdminService.DeleteIventPicture:output_type -> google.protobuf.Empty
+	13, // 49: special_app_v1.SpecialAdminService.GetEventInfo:output_type -> special_app_v1.GetEventInfoResponse
+	15, // 50: special_app_v1.SpecialAdminService.GetEvents:output_type -> special_app_v1.GetEventsResponse
+	13, // 51: special_app_v1.SpecialAdminService.CreateEvent:output_type -> special_app_v1.GetEventInfoResponse
+	13, // 52: special_app_v1.SpecialAdminService.UpdateEvent:output_type -> special_app_v1.GetEventInfoResponse
+	34, // 53: special_app_v1.SpecialAdminService.DeleteEvent:output_type -> google.protobuf.Empty
+	13, // 54: special_app_v1.SpecialAdminService.CreateEventPicture:output_type -> special_app_v1.GetEventInfoResponse
+	34, // 55: special_app_v1.SpecialAdminService.DeleteEventPicture:output_type -> google.protobuf.Empty
 	21, // 56: special_app_v1.SpecialAdminService.GetItemInfo:output_type -> special_app_v1.GetItemInfoResponse
 	23, // 57: special_app_v1.SpecialAdminService.GetItems:output_type -> special_app_v1.GetItemsResponse
 	21, // 58: special_app_v1.SpecialAdminService.CreateItem:output_type -> special_app_v1.GetItemInfoResponse
