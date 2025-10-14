@@ -6,6 +6,39 @@ import (
 	"time"
 )
 
+type Pagination struct {
+	Page    int `json:"page"`
+	PerPage int `json:"per_page"`
+}
+
+type PaginatedEvents struct {
+	Events     []Event `json:"events"`
+	TotalCount int64   `json:"total_count"`
+	Page       int     `json:"page"`
+	PerPage    int     `json:"per_page"`
+}
+
+type PaginatedOrders struct {
+	Orders     []Order `json:"events"`
+	TotalCount int64   `json:"total_count"`
+	Page       int     `json:"page"`
+	PerPage    int     `json:"per_page"`
+}
+
+type PaginatedItems struct {
+	Items     []Item `json:"events"`
+	TotalCount int64   `json:"total_count"`
+	Page       int     `json:"page"`
+	PerPage    int     `json:"per_page"`
+}
+
+type PaginatedUsers struct {
+	Users      []User `json:"events"`
+	TotalCount int64   `json:"total_count"`
+	Page       int     `json:"page"`
+	PerPage    int     `json:"per_page"`
+}
+
 type User struct {
 	ID          string      `gorm:"column:id_user;primaryKey"`
 	Name        string      `gorm:"column:f_n_user"`

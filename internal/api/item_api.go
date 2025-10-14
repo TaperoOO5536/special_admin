@@ -35,7 +35,7 @@ func ItemToGetItemInfoResponse(item *models.Item) (*pb.GetItemInfoResponse) {
 		Id:            item.ID.String(),
 		Title:         item.Title,
 		Description:   item.Description,
-		Price:         item.Price,
+		Price:         int32(item.Price),
 		LittlePicture: &pb.LittlePictureInfo{
 			Picture: item.LittlePicture,
 			MimeType: item.MimeType,
@@ -70,7 +70,7 @@ func (h *ItemServiceHandler) CreateItem(ctx context.Context, req *pb.CreateItemR
 		ID:            itemID,
 		Title:         req.Title,
 		Description:   req.Description,
-		Price:         req.Price,
+		Price:         int64(req.Price),
 		LittlePicture: req.LittlePicture.Picture,
 		MimeType:      req.LittlePicture.MimeType,
 	}
@@ -104,28 +104,45 @@ func (h *ItemServiceHandler) GetItemInfo(ctx context.Context, req *pb.GetItemInf
 }
 
 func (h *ItemServiceHandler) GetItems(ctx context.Context, req *pb.GetItemsRequest) (*pb.GetItemsResponse, error) {
-	items, err := h.itemService.GetItems(ctx)
+	pagination := models.Pagination{}	
+
+	if req.Page == 0 {
+		pagination.Page = 1
+	} else {
+		pagination.Page = int(req.Page)
+	}
+	if req.PerPage == 0 {
+		pagination.PerPage = 1
+	} else {
+		pagination.PerPage = int(req.PerPage)
+	}
+	
+	paginatedItems, err := h.itemService.GetItems(ctx, pagination)
 	if err != nil {
 		return nil, status.Errorf(codes.InvalidArgument, "failed to get items: %v", err)
 	}
 
-	pbItems := make([]*pb.ItemInfoForList, 0, len(items))
-	for _, item := range items {
+	response := &pb.GetItemsResponse{
+		Items: make([]*pb.ItemInfoForList, 0, len(paginatedItems.Items)),
+		Total:   int32(paginatedItems.TotalCount),
+		Page:    int32(paginatedItems.Page),
+		PerPage: int32(paginatedItems.PerPage),
+	}	
+
+	for _, item := range paginatedItems.Items {
 		pbItem := &pb.ItemInfoForList{
 			Id:            item.ID.String(),
 			Title:         item.Title,
-			Price:         item.Price,
+			Price:         int32(item.Price),
 			LittlePicture: &pb.LittlePictureInfo{
 				Picture:  item.LittlePicture,
 				MimeType: item.MimeType,
 			},
 		}
-		pbItems = append(pbItems, pbItem)
+		response.Items = append(response.Items, pbItem)
 	}
 
-	return &pb.GetItemsResponse{
-		Items: pbItems,
-	}, nil
+	return response, nil
 }
 	
 func (h *ItemServiceHandler) UpdateItem(ctx context.Context, req *pb.UpdateItemRequest) (*pb.GetItemInfoResponse, error) {
@@ -160,7 +177,7 @@ func (h *ItemServiceHandler) UpdateItem(ctx context.Context, req *pb.UpdateItemR
 		item.MimeType = req.LittlePicture.MimeType
 	}
 	if req.Price != 0 {
-		item.Price = req.Price
+		item.Price = int64(req.Price)
 		isPriceUpdated = true
 	}
 

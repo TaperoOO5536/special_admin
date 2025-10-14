@@ -11,7 +11,7 @@ import (
 
 type OrderRepository interface {
 	GetOrderInfo(ctx context.Context, id uuid.UUID) (*models.Order, error)
-	GetOrders(ctx context.Context) ([]*models.Order, error)
+	GetOrders(ctx context.Context, pagination models.Pagination) (*models.PaginatedOrders, error)
 	UpdateOrder(ctx context.Context, order *models.Order) (*models.Order, error)
 	DeleteOrder(ctx context.Context, id uuid.UUID) (error)
 }
@@ -40,12 +40,24 @@ func (r *orderRepository) GetOrderInfo(ctx context.Context, id uuid.UUID) (*mode
 	return &order, nil
 }
 
-func (r *orderRepository) GetOrders(ctx context.Context) ([]*models.Order, error) {
-	var orders []*models.Order
-	if err := r.db.Find(&orders).Error; err != nil {
+func (r *orderRepository) GetOrders(ctx context.Context, pagination models.Pagination) (*models.PaginatedOrders, error) {
+	var orders []models.Order
+	var total int64
+	
+	if err := r.db.Model(&models.Order{}).Count(&total).Error; err != nil {
+    return nil, err
+  }
+
+	offset := (pagination.Page - 1) * pagination.PerPage
+	if err := r.db.Limit(pagination.PerPage).Offset(offset).Find(&orders).Error; err != nil {
 		return nil, err
 	}
-	return orders, nil
+	return &models.PaginatedOrders{
+		Orders:     orders,
+		TotalCount: total,
+		Page:       pagination.Page,
+		PerPage:    pagination.PerPage,
+	}, nil
 }
 
 func (r *orderRepository) UpdateOrder(ctx context.Context, order *models.Order) (*models.Order, error) {

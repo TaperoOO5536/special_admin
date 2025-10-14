@@ -235,6 +235,8 @@ func (x *DeletePictureRequest) GetId() string {
 
 type GetUsersRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
+	Page          int32                  `protobuf:"varint,1,opt,name=page,proto3" json:"page,omitempty"`
+	PerPage       int32                  `protobuf:"varint,2,opt,name=per_page,json=perPage,proto3" json:"per_page,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -267,6 +269,20 @@ func (x *GetUsersRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use GetUsersRequest.ProtoReflect.Descriptor instead.
 func (*GetUsersRequest) Descriptor() ([]byte, []int) {
 	return file_special_admin_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *GetUsersRequest) GetPage() int32 {
+	if x != nil {
+		return x.Page
+	}
+	return 0
+}
+
+func (x *GetUsersRequest) GetPerPage() int32 {
+	if x != nil {
+		return x.PerPage
+	}
+	return 0
 }
 
 type UserInfo struct {
@@ -340,6 +356,9 @@ func (x *UserInfo) GetPhoneNumber() string {
 type GetUsersResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Users         []*UserInfo            `protobuf:"bytes,1,rep,name=users,proto3" json:"users,omitempty"`
+	Total         int32                  `protobuf:"varint,2,opt,name=total,proto3" json:"total,omitempty"`
+	Page          int32                  `protobuf:"varint,3,opt,name=page,proto3" json:"page,omitempty"`
+	PerPage       int32                  `protobuf:"varint,4,opt,name=per_page,json=perPage,proto3" json:"per_page,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -379,6 +398,27 @@ func (x *GetUsersResponse) GetUsers() []*UserInfo {
 		return x.Users
 	}
 	return nil
+}
+
+func (x *GetUsersResponse) GetTotal() int32 {
+	if x != nil {
+		return x.Total
+	}
+	return 0
+}
+
+func (x *GetUsersResponse) GetPage() int32 {
+	if x != nil {
+		return x.Page
+	}
+	return 0
+}
+
+func (x *GetUsersResponse) GetPerPage() int32 {
+	if x != nil {
+		return x.PerPage
+	}
+	return 0
 }
 
 type GetEventInfoRequest struct {
@@ -427,6 +467,8 @@ func (x *GetEventInfoRequest) GetId() string {
 
 type GetEventsRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
+	Page          int32                  `protobuf:"varint,1,opt,name=page,proto3" json:"page,omitempty"`
+	PerPage       int32                  `protobuf:"varint,2,opt,name=per_page,json=perPage,proto3" json:"per_page,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -461,13 +503,27 @@ func (*GetEventsRequest) Descriptor() ([]byte, []int) {
 	return file_special_admin_proto_rawDescGZIP(), []int{8}
 }
 
+func (x *GetEventsRequest) GetPage() int32 {
+	if x != nil {
+		return x.Page
+	}
+	return 0
+}
+
+func (x *GetEventsRequest) GetPerPage() int32 {
+	if x != nil {
+		return x.PerPage
+	}
+	return 0
+}
+
 type CreateEventRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Title         string                 `protobuf:"bytes,1,opt,name=title,proto3" json:"title,omitempty"`
 	Description   string                 `protobuf:"bytes,2,opt,name=description,proto3" json:"description,omitempty"`
 	Datetime      *timestamppb.Timestamp `protobuf:"bytes,3,opt,name=datetime,proto3" json:"datetime,omitempty"`
 	Price         *wrapperspb.Int64Value `protobuf:"bytes,4,opt,name=price,proto3" json:"price,omitempty"`
-	TotalSeats    int64                  `protobuf:"varint,5,opt,name=total_seats,json=totalSeats,proto3" json:"total_seats,omitempty"`
+	TotalSeats    int32                  `protobuf:"varint,5,opt,name=total_seats,json=totalSeats,proto3" json:"total_seats,omitempty"`
 	OccupiedSeats *wrapperspb.Int64Value `protobuf:"bytes,6,opt,name=occupied_seats,json=occupiedSeats,proto3" json:"occupied_seats,omitempty"`
 	LittlePicture *LittlePictureInfo     `protobuf:"bytes,7,opt,name=little_picture,json=littlePicture,proto3" json:"little_picture,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -532,7 +588,7 @@ func (x *CreateEventRequest) GetPrice() *wrapperspb.Int64Value {
 	return nil
 }
 
-func (x *CreateEventRequest) GetTotalSeats() int64 {
+func (x *CreateEventRequest) GetTotalSeats() int32 {
 	if x != nil {
 		return x.TotalSeats
 	}
@@ -560,7 +616,7 @@ type UpdateEventRequest struct {
 	Description   *string                `protobuf:"bytes,3,opt,name=description,proto3,oneof" json:"description,omitempty"`
 	Datetime      *timestamppb.Timestamp `protobuf:"bytes,4,opt,name=datetime,proto3,oneof" json:"datetime,omitempty"`
 	Price         *wrapperspb.Int64Value `protobuf:"bytes,5,opt,name=price,proto3" json:"price,omitempty"`
-	TotalSeats    *int64                 `protobuf:"varint,6,opt,name=total_seats,json=totalSeats,proto3,oneof" json:"total_seats,omitempty"`
+	TotalSeats    *int32                 `protobuf:"varint,6,opt,name=total_seats,json=totalSeats,proto3,oneof" json:"total_seats,omitempty"`
 	OccupiedSeats *wrapperspb.Int64Value `protobuf:"bytes,7,opt,name=occupied_seats,json=occupiedSeats,proto3" json:"occupied_seats,omitempty"`
 	LittlePicture *LittlePictureInfo     `protobuf:"bytes,8,opt,name=little_picture,json=littlePicture,proto3,oneof" json:"little_picture,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -632,7 +688,7 @@ func (x *UpdateEventRequest) GetPrice() *wrapperspb.Int64Value {
 	return nil
 }
 
-func (x *UpdateEventRequest) GetTotalSeats() int64 {
+func (x *UpdateEventRequest) GetTotalSeats() int32 {
 	if x != nil && x.TotalSeats != nil {
 		return *x.TotalSeats
 	}
@@ -701,7 +757,7 @@ type UserEventInfo struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
 	Id             string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	UserNickname   string                 `protobuf:"bytes,2,opt,name=user_nickname,json=userNickname,proto3" json:"user_nickname,omitempty"`
-	NumberOfGuests int64                  `protobuf:"varint,3,opt,name=number_of_guests,json=numberOfGuests,proto3" json:"number_of_guests,omitempty"`
+	NumberOfGuests int32                  `protobuf:"varint,3,opt,name=number_of_guests,json=numberOfGuests,proto3" json:"number_of_guests,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -750,7 +806,7 @@ func (x *UserEventInfo) GetUserNickname() string {
 	return ""
 }
 
-func (x *UserEventInfo) GetNumberOfGuests() int64 {
+func (x *UserEventInfo) GetNumberOfGuests() int32 {
 	if x != nil {
 		return x.NumberOfGuests
 	}
@@ -763,9 +819,9 @@ type GetEventInfoResponse struct {
 	Title         string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
 	Description   string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
 	Datetime      *timestamppb.Timestamp `protobuf:"bytes,4,opt,name=datetime,proto3" json:"datetime,omitempty"`
-	Price         int64                  `protobuf:"varint,5,opt,name=price,proto3" json:"price,omitempty"`
-	TotalSeats    int64                  `protobuf:"varint,6,opt,name=total_seats,json=totalSeats,proto3" json:"total_seats,omitempty"`
-	OccupiedSeats int64                  `protobuf:"varint,7,opt,name=occupied_seats,json=occupiedSeats,proto3" json:"occupied_seats,omitempty"`
+	Price         int32                  `protobuf:"varint,5,opt,name=price,proto3" json:"price,omitempty"`
+	TotalSeats    int32                  `protobuf:"varint,6,opt,name=total_seats,json=totalSeats,proto3" json:"total_seats,omitempty"`
+	OccupiedSeats int32                  `protobuf:"varint,7,opt,name=occupied_seats,json=occupiedSeats,proto3" json:"occupied_seats,omitempty"`
 	LittlePicture *LittlePictureInfo     `protobuf:"bytes,8,opt,name=little_picture,json=littlePicture,proto3" json:"little_picture,omitempty"`
 	Pictures      []*PictureInfo         `protobuf:"bytes,9,rep,name=pictures,proto3" json:"pictures,omitempty"`
 	UserEvents    []*UserEventInfo       `protobuf:"bytes,10,rep,name=userEvents,proto3" json:"userEvents,omitempty"`
@@ -831,21 +887,21 @@ func (x *GetEventInfoResponse) GetDatetime() *timestamppb.Timestamp {
 	return nil
 }
 
-func (x *GetEventInfoResponse) GetPrice() int64 {
+func (x *GetEventInfoResponse) GetPrice() int32 {
 	if x != nil {
 		return x.Price
 	}
 	return 0
 }
 
-func (x *GetEventInfoResponse) GetTotalSeats() int64 {
+func (x *GetEventInfoResponse) GetTotalSeats() int32 {
 	if x != nil {
 		return x.TotalSeats
 	}
 	return 0
 }
 
-func (x *GetEventInfoResponse) GetOccupiedSeats() int64 {
+func (x *GetEventInfoResponse) GetOccupiedSeats() int32 {
 	if x != nil {
 		return x.OccupiedSeats
 	}
@@ -878,9 +934,9 @@ type EventInfoForList struct {
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Title         string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
 	Datetime      *timestamppb.Timestamp `protobuf:"bytes,3,opt,name=datetime,proto3" json:"datetime,omitempty"`
-	Price         int64                  `protobuf:"varint,4,opt,name=price,proto3" json:"price,omitempty"`
-	TotalSeats    int64                  `protobuf:"varint,5,opt,name=total_seats,json=totalSeats,proto3" json:"total_seats,omitempty"`
-	OccupiedSeats int64                  `protobuf:"varint,6,opt,name=occupied_seats,json=occupiedSeats,proto3" json:"occupied_seats,omitempty"`
+	Price         int32                  `protobuf:"varint,4,opt,name=price,proto3" json:"price,omitempty"`
+	TotalSeats    int32                  `protobuf:"varint,5,opt,name=total_seats,json=totalSeats,proto3" json:"total_seats,omitempty"`
+	OccupiedSeats int32                  `protobuf:"varint,6,opt,name=occupied_seats,json=occupiedSeats,proto3" json:"occupied_seats,omitempty"`
 	LittlePicture *LittlePictureInfo     `protobuf:"bytes,7,opt,name=little_picture,json=littlePicture,proto3" json:"little_picture,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -937,21 +993,21 @@ func (x *EventInfoForList) GetDatetime() *timestamppb.Timestamp {
 	return nil
 }
 
-func (x *EventInfoForList) GetPrice() int64 {
+func (x *EventInfoForList) GetPrice() int32 {
 	if x != nil {
 		return x.Price
 	}
 	return 0
 }
 
-func (x *EventInfoForList) GetTotalSeats() int64 {
+func (x *EventInfoForList) GetTotalSeats() int32 {
 	if x != nil {
 		return x.TotalSeats
 	}
 	return 0
 }
 
-func (x *EventInfoForList) GetOccupiedSeats() int64 {
+func (x *EventInfoForList) GetOccupiedSeats() int32 {
 	if x != nil {
 		return x.OccupiedSeats
 	}
@@ -968,6 +1024,9 @@ func (x *EventInfoForList) GetLittlePicture() *LittlePictureInfo {
 type GetEventsResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Events        []*EventInfoForList    `protobuf:"bytes,1,rep,name=events,proto3" json:"events,omitempty"`
+	Total         int32                  `protobuf:"varint,2,opt,name=total,proto3" json:"total,omitempty"`
+	Page          int32                  `protobuf:"varint,3,opt,name=page,proto3" json:"page,omitempty"`
+	PerPage       int32                  `protobuf:"varint,4,opt,name=per_page,json=perPage,proto3" json:"per_page,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1007,6 +1066,27 @@ func (x *GetEventsResponse) GetEvents() []*EventInfoForList {
 		return x.Events
 	}
 	return nil
+}
+
+func (x *GetEventsResponse) GetTotal() int32 {
+	if x != nil {
+		return x.Total
+	}
+	return 0
+}
+
+func (x *GetEventsResponse) GetPage() int32 {
+	if x != nil {
+		return x.Page
+	}
+	return 0
+}
+
+func (x *GetEventsResponse) GetPerPage() int32 {
+	if x != nil {
+		return x.PerPage
+	}
+	return 0
 }
 
 type GetItemInfoRequest struct {
@@ -1055,6 +1135,8 @@ func (x *GetItemInfoRequest) GetId() string {
 
 type GetItemsRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
+	Page          int32                  `protobuf:"varint,1,opt,name=page,proto3" json:"page,omitempty"`
+	PerPage       int32                  `protobuf:"varint,2,opt,name=per_page,json=perPage,proto3" json:"per_page,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1089,11 +1171,25 @@ func (*GetItemsRequest) Descriptor() ([]byte, []int) {
 	return file_special_admin_proto_rawDescGZIP(), []int{17}
 }
 
+func (x *GetItemsRequest) GetPage() int32 {
+	if x != nil {
+		return x.Page
+	}
+	return 0
+}
+
+func (x *GetItemsRequest) GetPerPage() int32 {
+	if x != nil {
+		return x.PerPage
+	}
+	return 0
+}
+
 type CreateItemRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Title         string                 `protobuf:"bytes,1,opt,name=title,proto3" json:"title,omitempty"`
 	Description   string                 `protobuf:"bytes,2,opt,name=description,proto3" json:"description,omitempty"`
-	Price         int64                  `protobuf:"varint,3,opt,name=price,proto3" json:"price,omitempty"`
+	Price         int32                  `protobuf:"varint,3,opt,name=price,proto3" json:"price,omitempty"`
 	LittlePicture *LittlePictureInfo     `protobuf:"bytes,4,opt,name=little_picture,json=littlePicture,proto3" json:"little_picture,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -1143,7 +1239,7 @@ func (x *CreateItemRequest) GetDescription() string {
 	return ""
 }
 
-func (x *CreateItemRequest) GetPrice() int64 {
+func (x *CreateItemRequest) GetPrice() int32 {
 	if x != nil {
 		return x.Price
 	}
@@ -1162,7 +1258,7 @@ type UpdateItemRequest struct {
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Title         *string                `protobuf:"bytes,2,opt,name=title,proto3,oneof" json:"title,omitempty"`
 	Description   *string                `protobuf:"bytes,3,opt,name=description,proto3,oneof" json:"description,omitempty"`
-	Price         int64                  `protobuf:"varint,4,opt,name=price,proto3" json:"price,omitempty"`
+	Price         int32                  `protobuf:"varint,4,opt,name=price,proto3" json:"price,omitempty"`
 	LittlePicture *LittlePictureInfo     `protobuf:"bytes,5,opt,name=little_picture,json=littlePicture,proto3,oneof" json:"little_picture,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -1219,7 +1315,7 @@ func (x *UpdateItemRequest) GetDescription() string {
 	return ""
 }
 
-func (x *UpdateItemRequest) GetPrice() int64 {
+func (x *UpdateItemRequest) GetPrice() int32 {
 	if x != nil {
 		return x.Price
 	}
@@ -1282,7 +1378,7 @@ type GetItemInfoResponse struct {
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Title         string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
 	Description   string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
-	Price         int64                  `protobuf:"varint,4,opt,name=price,proto3" json:"price,omitempty"`
+	Price         int32                  `protobuf:"varint,4,opt,name=price,proto3" json:"price,omitempty"`
 	LittlePicture *LittlePictureInfo     `protobuf:"bytes,5,opt,name=little_picture,json=littlePicture,proto3" json:"little_picture,omitempty"`
 	Pictures      []*PictureInfo         `protobuf:"bytes,6,rep,name=pictures,proto3" json:"pictures,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -1340,7 +1436,7 @@ func (x *GetItemInfoResponse) GetDescription() string {
 	return ""
 }
 
-func (x *GetItemInfoResponse) GetPrice() int64 {
+func (x *GetItemInfoResponse) GetPrice() int32 {
 	if x != nil {
 		return x.Price
 	}
@@ -1365,7 +1461,7 @@ type ItemInfoForList struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Title         string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
-	Price         int64                  `protobuf:"varint,3,opt,name=price,proto3" json:"price,omitempty"`
+	Price         int32                  `protobuf:"varint,3,opt,name=price,proto3" json:"price,omitempty"`
 	LittlePicture *LittlePictureInfo     `protobuf:"bytes,4,opt,name=little_picture,json=littlePicture,proto3" json:"little_picture,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -1415,7 +1511,7 @@ func (x *ItemInfoForList) GetTitle() string {
 	return ""
 }
 
-func (x *ItemInfoForList) GetPrice() int64 {
+func (x *ItemInfoForList) GetPrice() int32 {
 	if x != nil {
 		return x.Price
 	}
@@ -1432,6 +1528,9 @@ func (x *ItemInfoForList) GetLittlePicture() *LittlePictureInfo {
 type GetItemsResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Items         []*ItemInfoForList     `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	Total         int32                  `protobuf:"varint,2,opt,name=total,proto3" json:"total,omitempty"`
+	Page          int32                  `protobuf:"varint,3,opt,name=page,proto3" json:"page,omitempty"`
+	PerPage       int32                  `protobuf:"varint,4,opt,name=per_page,json=perPage,proto3" json:"per_page,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1471,6 +1570,27 @@ func (x *GetItemsResponse) GetItems() []*ItemInfoForList {
 		return x.Items
 	}
 	return nil
+}
+
+func (x *GetItemsResponse) GetTotal() int32 {
+	if x != nil {
+		return x.Total
+	}
+	return 0
+}
+
+func (x *GetItemsResponse) GetPage() int32 {
+	if x != nil {
+		return x.Page
+	}
+	return 0
+}
+
+func (x *GetItemsResponse) GetPerPage() int32 {
+	if x != nil {
+		return x.PerPage
+	}
+	return 0
 }
 
 type GetOrderInfoRequest struct {
@@ -1519,6 +1639,8 @@ func (x *GetOrderInfoRequest) GetId() string {
 
 type GetOrdersRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
+	Page          int32                  `protobuf:"varint,1,opt,name=page,proto3" json:"page,omitempty"`
+	PerPage       int32                  `protobuf:"varint,2,opt,name=per_page,json=perPage,proto3" json:"per_page,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1551,6 +1673,20 @@ func (x *GetOrdersRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use GetOrdersRequest.ProtoReflect.Descriptor instead.
 func (*GetOrdersRequest) Descriptor() ([]byte, []int) {
 	return file_special_admin_proto_rawDescGZIP(), []int{25}
+}
+
+func (x *GetOrdersRequest) GetPage() int32 {
+	if x != nil {
+		return x.Page
+	}
+	return 0
+}
+
+func (x *GetOrdersRequest) GetPerPage() int32 {
+	if x != nil {
+		return x.PerPage
+	}
+	return 0
 }
 
 type UpdateOrderRequest struct {
@@ -1662,8 +1798,8 @@ type OrderItemInfoForList struct {
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	ItemId        string                 `protobuf:"bytes,2,opt,name=item_id,json=itemId,proto3" json:"item_id,omitempty"`
 	Title         string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
-	Price         int64                  `protobuf:"varint,4,opt,name=price,proto3" json:"price,omitempty"`
-	Quantity      int64                  `protobuf:"varint,5,opt,name=quantity,proto3" json:"quantity,omitempty"`
+	Price         int32                  `protobuf:"varint,4,opt,name=price,proto3" json:"price,omitempty"`
+	Quantity      int32                  `protobuf:"varint,5,opt,name=quantity,proto3" json:"quantity,omitempty"`
 	LittlePicture *LittlePictureInfo     `protobuf:"bytes,6,opt,name=little_picture,json=littlePicture,proto3" json:"little_picture,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -1720,14 +1856,14 @@ func (x *OrderItemInfoForList) GetTitle() string {
 	return ""
 }
 
-func (x *OrderItemInfoForList) GetPrice() int64 {
+func (x *OrderItemInfoForList) GetPrice() int32 {
 	if x != nil {
 		return x.Price
 	}
 	return 0
 }
 
-func (x *OrderItemInfoForList) GetQuantity() int64 {
+func (x *OrderItemInfoForList) GetQuantity() int32 {
 	if x != nil {
 		return x.Quantity
 	}
@@ -1750,7 +1886,7 @@ type GetOrderInfoResponse struct {
 	CompletionDate *timestamppb.Timestamp  `protobuf:"bytes,5,opt,name=completion_date,json=completionDate,proto3" json:"completion_date,omitempty"`
 	Comment        string                  `protobuf:"bytes,6,opt,name=comment,proto3" json:"comment,omitempty"`
 	Status         string                  `protobuf:"bytes,7,opt,name=status,proto3" json:"status,omitempty"`
-	OrderAmount    int64                   `protobuf:"varint,8,opt,name=order_amount,json=orderAmount,proto3" json:"order_amount,omitempty"`
+	OrderAmount    int32                   `protobuf:"varint,8,opt,name=order_amount,json=orderAmount,proto3" json:"order_amount,omitempty"`
 	Items          []*OrderItemInfoForList `protobuf:"bytes,9,rep,name=items,proto3" json:"items,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
@@ -1835,7 +1971,7 @@ func (x *GetOrderInfoResponse) GetStatus() string {
 	return ""
 }
 
-func (x *GetOrderInfoResponse) GetOrderAmount() int64 {
+func (x *GetOrderInfoResponse) GetOrderAmount() int32 {
 	if x != nil {
 		return x.OrderAmount
 	}
@@ -1855,7 +1991,7 @@ type OrderInfoForList struct {
 	Number         string                 `protobuf:"bytes,2,opt,name=number,proto3" json:"number,omitempty"`
 	CompletionDate *timestamppb.Timestamp `protobuf:"bytes,3,opt,name=completion_date,json=completionDate,proto3" json:"completion_date,omitempty"`
 	Status         string                 `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"`
-	OrderAmount    int64                  `protobuf:"varint,5,opt,name=order_amount,json=orderAmount,proto3" json:"order_amount,omitempty"`
+	OrderAmount    int32                  `protobuf:"varint,5,opt,name=order_amount,json=orderAmount,proto3" json:"order_amount,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -1918,7 +2054,7 @@ func (x *OrderInfoForList) GetStatus() string {
 	return ""
 }
 
-func (x *OrderInfoForList) GetOrderAmount() int64 {
+func (x *OrderInfoForList) GetOrderAmount() int32 {
 	if x != nil {
 		return x.OrderAmount
 	}
@@ -1928,6 +2064,9 @@ func (x *OrderInfoForList) GetOrderAmount() int64 {
 type GetOrdersResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Orders        []*OrderInfoForList    `protobuf:"bytes,1,rep,name=orders,proto3" json:"orders,omitempty"`
+	Total         int32                  `protobuf:"varint,2,opt,name=total,proto3" json:"total,omitempty"`
+	Page          int32                  `protobuf:"varint,3,opt,name=page,proto3" json:"page,omitempty"`
+	PerPage       int32                  `protobuf:"varint,4,opt,name=per_page,json=perPage,proto3" json:"per_page,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1969,6 +2108,27 @@ func (x *GetOrdersResponse) GetOrders() []*OrderInfoForList {
 	return nil
 }
 
+func (x *GetOrdersResponse) GetTotal() int32 {
+	if x != nil {
+		return x.Total
+	}
+	return 0
+}
+
+func (x *GetOrdersResponse) GetPage() int32 {
+	if x != nil {
+		return x.Page
+	}
+	return 0
+}
+
+func (x *GetOrdersResponse) GetPerPage() int32 {
+	if x != nil {
+		return x.PerPage
+	}
+	return 0
+}
+
 var File_special_admin_proto protoreflect.FileDescriptor
 
 const file_special_admin_proto_rawDesc = "" +
@@ -1985,24 +2145,31 @@ const file_special_admin_proto_rawDesc = "" +
 	"\tparent_id\x18\x01 \x01(\tR\bparentId\x12;\n" +
 	"\apicture\x18\x02 \x01(\v2!.special_app_v1.LittlePictureInfoR\apicture\"&\n" +
 	"\x14DeletePictureRequest\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\"\x11\n" +
-	"\x0fGetUsersRequest\"w\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\"@\n" +
+	"\x0fGetUsersRequest\x12\x12\n" +
+	"\x04page\x18\x01 \x01(\x05R\x04page\x12\x19\n" +
+	"\bper_page\x18\x02 \x01(\x05R\aperPage\"w\n" +
 	"\bUserInfo\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12\x18\n" +
 	"\asurname\x18\x02 \x01(\tR\asurname\x12\x1a\n" +
 	"\bnickname\x18\x03 \x01(\tR\bnickname\x12!\n" +
-	"\fphone_number\x18\x04 \x01(\tR\vphoneNumber\"B\n" +
+	"\fphone_number\x18\x04 \x01(\tR\vphoneNumber\"\x87\x01\n" +
 	"\x10GetUsersResponse\x12.\n" +
-	"\x05users\x18\x01 \x03(\v2\x18.special_app_v1.UserInfoR\x05users\"%\n" +
+	"\x05users\x18\x01 \x03(\v2\x18.special_app_v1.UserInfoR\x05users\x12\x14\n" +
+	"\x05total\x18\x02 \x01(\x05R\x05total\x12\x12\n" +
+	"\x04page\x18\x03 \x01(\x05R\x04page\x12\x19\n" +
+	"\bper_page\x18\x04 \x01(\x05R\aperPage\"%\n" +
 	"\x13GetEventInfoRequest\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\"\x12\n" +
-	"\x10GetEventsRequest\"\xe6\x02\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\"A\n" +
+	"\x10GetEventsRequest\x12\x12\n" +
+	"\x04page\x18\x01 \x01(\x05R\x04page\x12\x19\n" +
+	"\bper_page\x18\x02 \x01(\x05R\aperPage\"\xe6\x02\n" +
 	"\x12CreateEventRequest\x12\x14\n" +
 	"\x05title\x18\x01 \x01(\tR\x05title\x12 \n" +
 	"\vdescription\x18\x02 \x01(\tR\vdescription\x126\n" +
 	"\bdatetime\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\bdatetime\x121\n" +
 	"\x05price\x18\x04 \x01(\v2\x1b.google.protobuf.Int64ValueR\x05price\x12\x1f\n" +
-	"\vtotal_seats\x18\x05 \x01(\x03R\n" +
+	"\vtotal_seats\x18\x05 \x01(\x05R\n" +
 	"totalSeats\x12B\n" +
 	"\x0eoccupied_seats\x18\x06 \x01(\v2\x1b.google.protobuf.Int64ValueR\roccupiedSeats\x12H\n" +
 	"\x0elittle_picture\x18\a \x01(\v2!.special_app_v1.LittlePictureInfoR\rlittlePicture\"\xd9\x03\n" +
@@ -2012,7 +2179,7 @@ const file_special_admin_proto_rawDesc = "" +
 	"\vdescription\x18\x03 \x01(\tH\x01R\vdescription\x88\x01\x01\x12;\n" +
 	"\bdatetime\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampH\x02R\bdatetime\x88\x01\x01\x121\n" +
 	"\x05price\x18\x05 \x01(\v2\x1b.google.protobuf.Int64ValueR\x05price\x12$\n" +
-	"\vtotal_seats\x18\x06 \x01(\x03H\x03R\n" +
+	"\vtotal_seats\x18\x06 \x01(\x05H\x03R\n" +
 	"totalSeats\x88\x01\x01\x12B\n" +
 	"\x0eoccupied_seats\x18\a \x01(\v2\x1b.google.protobuf.Int64ValueR\roccupiedSeats\x12M\n" +
 	"\x0elittle_picture\x18\b \x01(\v2!.special_app_v1.LittlePictureInfoH\x04R\rlittlePicture\x88\x01\x01B\b\n" +
@@ -2026,16 +2193,16 @@ const file_special_admin_proto_rawDesc = "" +
 	"\rUserEventInfo\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12#\n" +
 	"\ruser_nickname\x18\x02 \x01(\tR\fuserNickname\x12(\n" +
-	"\x10number_of_guests\x18\x03 \x01(\x03R\x0enumberOfGuests\"\xb6\x03\n" +
+	"\x10number_of_guests\x18\x03 \x01(\x05R\x0enumberOfGuests\"\xb6\x03\n" +
 	"\x14GetEventInfoResponse\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
 	"\x05title\x18\x02 \x01(\tR\x05title\x12 \n" +
 	"\vdescription\x18\x03 \x01(\tR\vdescription\x126\n" +
 	"\bdatetime\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampR\bdatetime\x12\x14\n" +
-	"\x05price\x18\x05 \x01(\x03R\x05price\x12\x1f\n" +
-	"\vtotal_seats\x18\x06 \x01(\x03R\n" +
+	"\x05price\x18\x05 \x01(\x05R\x05price\x12\x1f\n" +
+	"\vtotal_seats\x18\x06 \x01(\x05R\n" +
 	"totalSeats\x12%\n" +
-	"\x0eoccupied_seats\x18\a \x01(\x03R\roccupiedSeats\x12H\n" +
+	"\x0eoccupied_seats\x18\a \x01(\x05R\roccupiedSeats\x12H\n" +
 	"\x0elittle_picture\x18\b \x01(\v2!.special_app_v1.LittlePictureInfoR\rlittlePicture\x127\n" +
 	"\bpictures\x18\t \x03(\v2\x1b.special_app_v1.PictureInfoR\bpictures\x12=\n" +
 	"\n" +
@@ -2046,26 +2213,31 @@ const file_special_admin_proto_rawDesc = "" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
 	"\x05title\x18\x02 \x01(\tR\x05title\x126\n" +
 	"\bdatetime\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\bdatetime\x12\x14\n" +
-	"\x05price\x18\x04 \x01(\x03R\x05price\x12\x1f\n" +
-	"\vtotal_seats\x18\x05 \x01(\x03R\n" +
+	"\x05price\x18\x04 \x01(\x05R\x05price\x12\x1f\n" +
+	"\vtotal_seats\x18\x05 \x01(\x05R\n" +
 	"totalSeats\x12%\n" +
-	"\x0eoccupied_seats\x18\x06 \x01(\x03R\roccupiedSeats\x12H\n" +
-	"\x0elittle_picture\x18\a \x01(\v2!.special_app_v1.LittlePictureInfoR\rlittlePicture\"M\n" +
+	"\x0eoccupied_seats\x18\x06 \x01(\x05R\roccupiedSeats\x12H\n" +
+	"\x0elittle_picture\x18\a \x01(\v2!.special_app_v1.LittlePictureInfoR\rlittlePicture\"\x92\x01\n" +
 	"\x11GetEventsResponse\x128\n" +
-	"\x06events\x18\x01 \x03(\v2 .special_app_v1.EventInfoForListR\x06events\"$\n" +
+	"\x06events\x18\x01 \x03(\v2 .special_app_v1.EventInfoForListR\x06events\x12\x14\n" +
+	"\x05total\x18\x02 \x01(\x05R\x05total\x12\x12\n" +
+	"\x04page\x18\x03 \x01(\x05R\x04page\x12\x19\n" +
+	"\bper_page\x18\x04 \x01(\x05R\aperPage\"$\n" +
 	"\x12GetItemInfoRequest\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\"\x11\n" +
-	"\x0fGetItemsRequest\"\xab\x01\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\"@\n" +
+	"\x0fGetItemsRequest\x12\x12\n" +
+	"\x04page\x18\x01 \x01(\x05R\x04page\x12\x19\n" +
+	"\bper_page\x18\x02 \x01(\x05R\aperPage\"\xab\x01\n" +
 	"\x11CreateItemRequest\x12\x14\n" +
 	"\x05title\x18\x01 \x01(\tR\x05title\x12 \n" +
 	"\vdescription\x18\x02 \x01(\tR\vdescription\x12\x14\n" +
-	"\x05price\x18\x03 \x01(\x03R\x05price\x12H\n" +
+	"\x05price\x18\x03 \x01(\x05R\x05price\x12H\n" +
 	"\x0elittle_picture\x18\x04 \x01(\v2!.special_app_v1.LittlePictureInfoR\rlittlePicture\"\xf7\x01\n" +
 	"\x11UpdateItemRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x19\n" +
 	"\x05title\x18\x02 \x01(\tH\x00R\x05title\x88\x01\x01\x12%\n" +
 	"\vdescription\x18\x03 \x01(\tH\x01R\vdescription\x88\x01\x01\x12\x14\n" +
-	"\x05price\x18\x04 \x01(\x03R\x05price\x12M\n" +
+	"\x05price\x18\x04 \x01(\x05R\x05price\x12M\n" +
 	"\x0elittle_picture\x18\x05 \x01(\v2!.special_app_v1.LittlePictureInfoH\x02R\rlittlePicture\x88\x01\x01B\b\n" +
 	"\x06_titleB\x0e\n" +
 	"\f_descriptionB\x11\n" +
@@ -2076,19 +2248,24 @@ const file_special_admin_proto_rawDesc = "" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
 	"\x05title\x18\x02 \x01(\tR\x05title\x12 \n" +
 	"\vdescription\x18\x03 \x01(\tR\vdescription\x12\x14\n" +
-	"\x05price\x18\x04 \x01(\x03R\x05price\x12H\n" +
+	"\x05price\x18\x04 \x01(\x05R\x05price\x12H\n" +
 	"\x0elittle_picture\x18\x05 \x01(\v2!.special_app_v1.LittlePictureInfoR\rlittlePicture\x127\n" +
 	"\bpictures\x18\x06 \x03(\v2\x1b.special_app_v1.PictureInfoR\bpictures\"\x97\x01\n" +
 	"\x0fItemInfoForList\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
 	"\x05title\x18\x02 \x01(\tR\x05title\x12\x14\n" +
-	"\x05price\x18\x03 \x01(\x03R\x05price\x12H\n" +
-	"\x0elittle_picture\x18\x04 \x01(\v2!.special_app_v1.LittlePictureInfoR\rlittlePicture\"I\n" +
+	"\x05price\x18\x03 \x01(\x05R\x05price\x12H\n" +
+	"\x0elittle_picture\x18\x04 \x01(\v2!.special_app_v1.LittlePictureInfoR\rlittlePicture\"\x8e\x01\n" +
 	"\x10GetItemsResponse\x125\n" +
-	"\x05items\x18\x01 \x03(\v2\x1f.special_app_v1.ItemInfoForListR\x05items\"%\n" +
+	"\x05items\x18\x01 \x03(\v2\x1f.special_app_v1.ItemInfoForListR\x05items\x12\x14\n" +
+	"\x05total\x18\x02 \x01(\x05R\x05total\x12\x12\n" +
+	"\x04page\x18\x03 \x01(\x05R\x04page\x12\x19\n" +
+	"\bper_page\x18\x04 \x01(\x05R\aperPage\"%\n" +
 	"\x13GetOrderInfoRequest\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\"\x12\n" +
-	"\x10GetOrdersRequest\"w\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\"A\n" +
+	"\x10GetOrdersRequest\x12\x12\n" +
+	"\x04page\x18\x01 \x01(\x05R\x04page\x12\x19\n" +
+	"\bper_page\x18\x02 \x01(\x05R\aperPage\"w\n" +
 	"\x12UpdateOrderRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
 	"\x06status\x18\x02 \x01(\tH\x00R\x06status\x88\x01\x01\x12\x1d\n" +
@@ -2102,8 +2279,8 @@ const file_special_admin_proto_rawDesc = "" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
 	"\aitem_id\x18\x02 \x01(\tR\x06itemId\x12\x14\n" +
 	"\x05title\x18\x03 \x01(\tR\x05title\x12\x14\n" +
-	"\x05price\x18\x04 \x01(\x03R\x05price\x12\x1a\n" +
-	"\bquantity\x18\x05 \x01(\x03R\bquantity\x12H\n" +
+	"\x05price\x18\x04 \x01(\x05R\x05price\x12\x1a\n" +
+	"\bquantity\x18\x05 \x01(\x05R\bquantity\x12H\n" +
 	"\x0elittle_picture\x18\x06 \x01(\v2!.special_app_v1.LittlePictureInfoR\rlittlePicture\"\xf2\x02\n" +
 	"\x14GetOrderInfoResponse\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x16\n" +
@@ -2113,16 +2290,19 @@ const file_special_admin_proto_rawDesc = "" +
 	"\x0fcompletion_date\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampR\x0ecompletionDate\x12\x18\n" +
 	"\acomment\x18\x06 \x01(\tR\acomment\x12\x16\n" +
 	"\x06status\x18\a \x01(\tR\x06status\x12!\n" +
-	"\forder_amount\x18\b \x01(\x03R\vorderAmount\x12:\n" +
+	"\forder_amount\x18\b \x01(\x05R\vorderAmount\x12:\n" +
 	"\x05items\x18\t \x03(\v2$.special_app_v1.OrderItemInfoForListR\x05items\"\xba\x01\n" +
 	"\x10OrderInfoForList\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x16\n" +
 	"\x06number\x18\x02 \x01(\tR\x06number\x12C\n" +
 	"\x0fcompletion_date\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\x0ecompletionDate\x12\x16\n" +
 	"\x06status\x18\x04 \x01(\tR\x06status\x12!\n" +
-	"\forder_amount\x18\x05 \x01(\x03R\vorderAmount\"M\n" +
+	"\forder_amount\x18\x05 \x01(\x05R\vorderAmount\"\x92\x01\n" +
 	"\x11GetOrdersResponse\x128\n" +
-	"\x06orders\x18\x01 \x03(\v2 .special_app_v1.OrderInfoForListR\x06orders2\xc4\x10\n" +
+	"\x06orders\x18\x01 \x03(\v2 .special_app_v1.OrderInfoForListR\x06orders\x12\x14\n" +
+	"\x05total\x18\x02 \x01(\x05R\x05total\x12\x12\n" +
+	"\x04page\x18\x03 \x01(\x05R\x04page\x12\x19\n" +
+	"\bper_page\x18\x04 \x01(\x05R\aperPage2\xc4\x10\n" +
 	"\x13SpecialAdminService\x12`\n" +
 	"\bGetUsers\x12\x1f.special_app_v1.GetUsersRequest\x1a .special_app_v1.GetUsersResponse\"\x11\x82\xd3\xe4\x93\x02\v\x12\t/v1/users\x12r\n" +
 	"\fGetEventInfo\x12#.special_app_v1.GetEventInfoRequest\x1a$.special_app_v1.GetEventInfoResponse\"\x17\x82\xd3\xe4\x93\x02\x11\x12\x0f/v1/events/{id}\x12d\n" +

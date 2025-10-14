@@ -37,7 +37,7 @@ func EventToGetEventInfoResponse(event *models.Event) (*pb.GetEventInfoResponse)
 		pbUserEvent := &pb.UserEventInfo{
 			Id: userEvent.  ID.String(),
 			UserNickname:   userEvent.User.Nickname,
-			NumberOfGuests: userEvent.NumberOfGuests,
+			NumberOfGuests: int32(userEvent.NumberOfGuests),
 		}
 		pbUserEvents = append(pbUserEvents, pbUserEvent)
 	}
@@ -47,9 +47,9 @@ func EventToGetEventInfoResponse(event *models.Event) (*pb.GetEventInfoResponse)
 		Title:         event.Title,
 		Description:   event.Description,
 		Datetime:      timestamppb.New(event.DateTime),
-		Price:         event.Price,
-		TotalSeats:    event.TotalSeats,
-		OccupiedSeats: event.OccupiedSeats,
+		Price:         int32(event.Price),
+		TotalSeats:    int32(event.TotalSeats),
+		OccupiedSeats: int32(event.OccupiedSeats),
 		LittlePicture: &pb.LittlePictureInfo{
 			Picture: event.LittlePicture,
 			MimeType: event.MimeType,
@@ -99,7 +99,7 @@ func (h *EventServiceHandler) CreateEvent(ctx context.Context, req *pb.CreateEve
 		Description:   req.Description,
 		DateTime:      req.Datetime.AsTime(),
 		Price:         req.Price.Value,
-		TotalSeats:    req.TotalSeats,
+		TotalSeats:    int64(req.TotalSeats),
 		OccupiedSeats: req.OccupiedSeats.Value,
 		LittlePicture: req.LittlePicture.Picture,
 		MimeType:      req.LittlePicture.MimeType,
@@ -135,31 +135,48 @@ func (h *EventServiceHandler) GetEventInfo(ctx context.Context, req *pb.GetEvent
 }
 
 func (h *EventServiceHandler) GetEvents(ctx context.Context, req *pb.GetEventsRequest) (*pb.GetEventsResponse, error) {
-	events, err := h.eventService.GetEvents(ctx)
+	pagination := models.Pagination{}	
+
+	if req.Page == 0 {
+		pagination.Page = 1
+	} else {
+		pagination.Page = int(req.Page)
+	}
+	if req.PerPage == 0 {
+		pagination.PerPage = 1
+	} else {
+		pagination.PerPage = int(req.PerPage)
+	}
+	
+	paginatedEvents, err := h.eventService.GetEvents(ctx, pagination)
 	if err != nil {
 		return nil, status.Errorf(codes.InvalidArgument, "failed to get events: %v", err)
 	}
 
-	pbEvents := make([]*pb.EventInfoForList, 0, len(events))
-	for _, event := range events {
+	response := &pb.GetEventsResponse{
+		Events:  make([]*pb.EventInfoForList, 0, len(paginatedEvents.Events)),
+		Total:   int32(paginatedEvents.TotalCount),
+		Page:    int32(paginatedEvents.Page),
+		PerPage: int32(paginatedEvents.PerPage),
+	}
+
+	for _, event := range paginatedEvents.Events {
 		pbEvent := &pb.EventInfoForList{
 			Id:            event.ID.String(),
 			Title:         event.Title,
 			Datetime:      timestamppb.New(event.DateTime),
-			Price:         event.Price,
-			TotalSeats:    event.TotalSeats,
-			OccupiedSeats: event.OccupiedSeats,
+			Price:         int32(event.Price),
+			TotalSeats:    int32(event.TotalSeats),
+			OccupiedSeats: int32(event.OccupiedSeats),
 			LittlePicture: &pb.LittlePictureInfo{
 				Picture:  event.LittlePicture,
 				MimeType: event.MimeType,
 			},
 		}
-		pbEvents = append(pbEvents, pbEvent)
+		response.Events = append(response.Events, pbEvent)
 	}
 
-	return &pb.GetEventsResponse{
-		Events: pbEvents,
-	}, nil
+	return response, nil
 }
 	
 func (h *EventServiceHandler) UpdateEvent(ctx context.Context, req *pb.UpdateEventRequest) (*pb.GetEventInfoResponse, error) {
@@ -199,7 +216,7 @@ func (h *EventServiceHandler) UpdateEvent(ctx context.Context, req *pb.UpdateEve
 		event.MimeType = req.LittlePicture.MimeType
 	}
 	if req.TotalSeats != nil {
-		event.TotalSeats = *req.TotalSeats
+		event.TotalSeats = int64(*req.TotalSeats)
 	}
 	if req.Price != nil {
 		event.Price = req.Price.Value

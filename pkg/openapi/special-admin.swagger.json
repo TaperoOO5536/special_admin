@@ -96,6 +96,22 @@
             }
           }
         },
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "perPage",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
         "tags": [
           "SpecialAdminService"
         ]
@@ -306,6 +322,22 @@
             }
           }
         },
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "perPage",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
         "tags": [
           "SpecialAdminService"
         ]
@@ -453,6 +485,22 @@
             }
           }
         },
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "perPage",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
         "tags": [
           "SpecialAdminService"
         ]
@@ -570,6 +618,22 @@
             }
           }
         },
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "perPage",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
         "tags": [
           "SpecialAdminService"
         ]
@@ -595,8 +659,8 @@
           "format": "int64"
         },
         "totalSeats": {
-          "type": "string",
-          "format": "int64"
+          "type": "integer",
+          "format": "int32"
         },
         "occupiedSeats": {
           "type": "string",
@@ -617,8 +681,8 @@
           "type": "string"
         },
         "price": {
-          "type": "string",
-          "format": "int64"
+          "type": "integer",
+          "format": "int32"
         },
         "littlePicture": {
           "$ref": "#/definitions/special_app_v1LittlePictureInfo"
@@ -682,8 +746,8 @@
           "format": "int64"
         },
         "totalSeats": {
-          "type": "string",
-          "format": "int64"
+          "type": "integer",
+          "format": "int32"
         },
         "occupiedSeats": {
           "type": "string",
@@ -704,8 +768,8 @@
           "type": "string"
         },
         "price": {
-          "type": "string",
-          "format": "int64"
+          "type": "integer",
+          "format": "int32"
         },
         "littlePicture": {
           "$ref": "#/definitions/special_app_v1LittlePictureInfo"
@@ -737,16 +801,16 @@
           "format": "date-time"
         },
         "price": {
-          "type": "string",
-          "format": "int64"
+          "type": "integer",
+          "format": "int32"
         },
         "totalSeats": {
-          "type": "string",
-          "format": "int64"
+          "type": "integer",
+          "format": "int32"
         },
         "occupiedSeats": {
-          "type": "string",
-          "format": "int64"
+          "type": "integer",
+          "format": "int32"
         },
         "littlePicture": {
           "$ref": "#/definitions/special_app_v1LittlePictureInfo"
@@ -770,16 +834,16 @@
           "format": "date-time"
         },
         "price": {
-          "type": "string",
-          "format": "int64"
+          "type": "integer",
+          "format": "int32"
         },
         "totalSeats": {
-          "type": "string",
-          "format": "int64"
+          "type": "integer",
+          "format": "int32"
         },
         "occupiedSeats": {
-          "type": "string",
-          "format": "int64"
+          "type": "integer",
+          "format": "int32"
         },
         "littlePicture": {
           "$ref": "#/definitions/special_app_v1LittlePictureInfo"
@@ -809,6 +873,18 @@
             "type": "object",
             "$ref": "#/definitions/special_app_v1EventInfoForList"
           }
+        },
+        "total": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "page": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "perPage": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },
@@ -825,8 +901,8 @@
           "type": "string"
         },
         "price": {
-          "type": "string",
-          "format": "int64"
+          "type": "integer",
+          "format": "int32"
         },
         "littlePicture": {
           "$ref": "#/definitions/special_app_v1LittlePictureInfo"
@@ -849,6 +925,18 @@
             "type": "object",
             "$ref": "#/definitions/special_app_v1ItemInfoForList"
           }
+        },
+        "total": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "page": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "perPage": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },
@@ -879,8 +967,8 @@
           "type": "string"
         },
         "orderAmount": {
-          "type": "string",
-          "format": "int64"
+          "type": "integer",
+          "format": "int32"
         },
         "items": {
           "type": "array",
@@ -900,6 +988,18 @@
             "type": "object",
             "$ref": "#/definitions/special_app_v1OrderInfoForList"
           }
+        },
+        "total": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "page": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "perPage": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },
@@ -912,6 +1012,18 @@
             "type": "object",
             "$ref": "#/definitions/special_app_v1UserInfo"
           }
+        },
+        "total": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "page": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "perPage": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },
@@ -925,8 +1037,8 @@
           "type": "string"
         },
         "price": {
-          "type": "string",
-          "format": "int64"
+          "type": "integer",
+          "format": "int32"
         },
         "littlePicture": {
           "$ref": "#/definitions/special_app_v1LittlePictureInfo"
@@ -962,8 +1074,8 @@
           "type": "string"
         },
         "orderAmount": {
-          "type": "string",
-          "format": "int64"
+          "type": "integer",
+          "format": "int32"
         }
       }
     },
@@ -980,12 +1092,12 @@
           "type": "string"
         },
         "price": {
-          "type": "string",
-          "format": "int64"
+          "type": "integer",
+          "format": "int32"
         },
         "quantity": {
-          "type": "string",
-          "format": "int64"
+          "type": "integer",
+          "format": "int32"
         },
         "littlePicture": {
           "$ref": "#/definitions/special_app_v1LittlePictureInfo"
@@ -1017,8 +1129,8 @@
           "type": "string"
         },
         "numberOfGuests": {
-          "type": "string",
-          "format": "int64"
+          "type": "integer",
+          "format": "int32"
         }
       }
     },

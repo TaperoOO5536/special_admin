@@ -17,8 +17,8 @@ func NewUserService(userRepo repository.UserRepository) *UserService {
 	}
 }
 
-func (s *UserService) GetUsers(ctx context.Context) ([]*models.User, error) {
-	users, err := s.userRepo.GetUsers(ctx)
+func (s *UserService) GetUsers(ctx context.Context, pagination models.Pagination) (*models.PaginatedUsers, error) {
+	users, err := s.userRepo.GetUsers(ctx, pagination)
 	if err != nil {
 		return nil, err
 	}

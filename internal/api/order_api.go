@@ -28,8 +28,8 @@ func OrderToGetOrderInfoResponse(order *models.Order) (*pb.GetOrderInfoResponse)
 			Id:            orderItem.ID.String(),
 			ItemId:        orderItem.Item.ID.String(),
 			Title:         orderItem.Item.Title,
-			Price:         orderItem.Item.Price,
-			Quantity:      orderItem.Quantity,
+			Price:         int32(orderItem.Item.Price),
+			Quantity:      int32(orderItem.Quantity),
 			LittlePicture: &pb.LittlePictureInfo{
 				Picture: orderItem.Item.LittlePicture,
 				MimeType: orderItem.Item.MimeType,
@@ -46,7 +46,7 @@ func OrderToGetOrderInfoResponse(order *models.Order) (*pb.GetOrderInfoResponse)
 		CompletionDate: timestamppb.New(order.CompletionDate),
 		Comment:        order.Comment,
 		Status:         order.Status,
-		OrderAmount:    order.OrderAmount,
+		OrderAmount:    int32(order.OrderAmount),
 		Items:          pbOrderItems,
 	}
 	
@@ -74,25 +74,41 @@ func (h *OrderServiceHandler) GetOrderInfo(ctx context.Context, req *pb.GetOrder
 }
 
 func (h *OrderServiceHandler) GetOrders(ctx context.Context, req *pb.GetOrdersRequest) (*pb.GetOrdersResponse, error) {
-	orders, err := h.orderService.GetOrders(ctx)
+	pagination := models.Pagination{}	
+
+	if req.Page == 0 {
+		pagination.Page = 1
+	} else {
+		pagination.Page = int(req.Page)
+	}
+	if req.PerPage == 0 {
+		pagination.PerPage = 1
+	} else {
+		pagination.PerPage = int(req.PerPage)
+	}
+	
+	paginatedOrders, err := h.orderService.GetOrders(ctx, pagination)
 	if err != nil {
 		return nil, status.Errorf(codes.InvalidArgument, "failed to get orders: %v", err)
 	}
 
-	pbOrders := make([]*pb.OrderInfoForList, 0, len(orders))
-	for _, order := range orders {
+	pbOrders := make([]*pb.OrderInfoForList, 0, len(paginatedOrders.Orders))
+	for _, order := range paginatedOrders.Orders {
 		pbOrder := &pb.OrderInfoForList{
 			Id:             order.ID.String(),
 			Number:         order.Number,
 			CompletionDate: timestamppb.New(order.CompletionDate),
 			Status:         order.Status,
-			OrderAmount:    order.OrderAmount,
+			OrderAmount:    int32(order.OrderAmount),
 		}
 		pbOrders = append(pbOrders, pbOrder)
 	}
 
 	return &pb.GetOrdersResponse{
 		Orders: pbOrders,
+		Total:   int32(paginatedOrders.TotalCount),
+		Page:    int32(paginatedOrders.Page),
+		PerPage: int32(paginatedOrders.PerPage),
 	}, nil
 }
 

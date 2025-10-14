@@ -24,6 +24,7 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 	"google.golang.org/grpc/reflection"
+	"google.golang.org/protobuf/encoding/protojson"
 )
 
 type Config struct {
@@ -84,7 +85,16 @@ func (a *App) Start(ctx context.Context) error {
 		return fmt.Errorf("failed to listen: %v", err)
 	}
 
-	gwmux := runtime.NewServeMux()
+	gwmux := runtime.NewServeMux(
+		runtime.WithMarshalerOption(runtime.MIMEWildcard, &runtime.JSONPb{
+            MarshalOptions: protojson.MarshalOptions{
+                EmitUnpopulated: true,
+            },
+            UnmarshalOptions: protojson.UnmarshalOptions{
+                DiscardUnknown: true,
+            },
+        }),
+	)
 	err = pb.RegisterSpecialAdminServiceHandlerFromEndpoint(
 		ctx,
 		gwmux,

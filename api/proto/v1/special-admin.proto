@@ -147,7 +147,10 @@ message DeletePictureRequest {
 
 // Users
 
-message GetUsersRequest {}
+message GetUsersRequest {
+  int32 page = 1;
+  int32 per_page = 2;
+}
 
 message UserInfo{
   string name = 1;
@@ -158,6 +161,9 @@ message UserInfo{
 
 message GetUsersResponse {
   repeated UserInfo users = 1;
+  int32 total = 2;
+  int32 page = 3;
+  int32 per_page = 4;
 }
 
 // Events
@@ -166,14 +172,17 @@ message GetEventInfoRequest {
   string id = 1;
 }
 
-message GetEventsRequest {}
+message GetEventsRequest {
+  int32 page = 1;
+  int32 per_page = 2;
+}
 
 message CreateEventRequest {
   string title = 1;
   string description = 2;
   google.protobuf.Timestamp datetime = 3;
   google.protobuf.Int64Value price = 4;
-  int64 total_seats = 5;
+  int32 total_seats = 5;
   google.protobuf.Int64Value occupied_seats = 6;
   LittlePictureInfo little_picture = 7;
 }
@@ -184,7 +193,7 @@ message UpdateEventRequest {
   optional string description = 3;
   optional google.protobuf.Timestamp datetime = 4;
   google.protobuf.Int64Value price = 5;
-  optional int64 total_seats = 6;
+  optional int32 total_seats = 6;
   google.protobuf.Int64Value occupied_seats = 7;
   optional LittlePictureInfo little_picture = 8;
 }
@@ -196,7 +205,7 @@ message DeleteEventRequest {
 message UserEventInfo {
   string id = 1; 
   string user_nickname = 2;
-  int64 number_of_guests = 3;
+  int32 number_of_guests = 3;
 }
 
 message GetEventInfoResponse {
@@ -204,9 +213,9 @@ message GetEventInfoResponse {
   string title = 2;
   string description = 3;
   google.protobuf.Timestamp datetime = 4;
-  int64 price = 5;
-  int64 total_seats = 6;
-  int64 occupied_seats = 7;
+  int32 price = 5;
+  int32 total_seats = 6;
+  int32 occupied_seats = 7;
   LittlePictureInfo little_picture = 8;
   repeated PictureInfo pictures = 9;
   repeated UserEventInfo userEvents = 10;
@@ -216,14 +225,17 @@ message EventInfoForList {
   string id = 1;
   string title = 2;
   google.protobuf.Timestamp datetime = 3;
-  int64 price = 4;
-  int64 total_seats = 5;
-  int64 occupied_seats = 6;
+  int32 price = 4;
+  int32 total_seats = 5;
+  int32 occupied_seats = 6;
   LittlePictureInfo little_picture = 7;
 }
 
 message GetEventsResponse {
   repeated EventInfoForList events = 1;
+  int32 total = 2;
+  int32 page = 3;
+  int32 per_page = 4;
 }
 
 // Item
@@ -232,12 +244,15 @@ message GetItemInfoRequest {
   string id = 1;
 }
 
-message GetItemsRequest {}
+message GetItemsRequest {
+  int32 page = 1;
+  int32 per_page = 2;
+}
 
 message CreateItemRequest {
   string title = 1;
   string description = 2;
-  int64 price = 3;
+  int32 price = 3;
   LittlePictureInfo little_picture = 4;
 }
 
@@ -245,7 +260,7 @@ message UpdateItemRequest {
   string id = 1;
   optional string title = 2;
   optional string description = 3;
-  int64 price = 4;
+  int32 price = 4;
   optional LittlePictureInfo little_picture = 5;
 }
 
@@ -257,7 +272,7 @@ message GetItemInfoResponse {
   string id = 1;
   string title = 2;
   string description = 3;
-  int64 price = 4;
+  int32 price = 4;
   LittlePictureInfo little_picture = 5;
   repeated PictureInfo pictures = 6;
 }
@@ -265,12 +280,15 @@ message GetItemInfoResponse {
 message ItemInfoForList {
   string id = 1;
   string title = 2;
-  int64 price = 3;
+  int32 price = 3;
   LittlePictureInfo little_picture = 4;
 }
 
 message GetItemsResponse {
   repeated ItemInfoForList items = 1;
+  int32 total = 2;
+  int32 page = 3;
+  int32 per_page = 4;
 }
 
 // Order
@@ -279,7 +297,10 @@ message GetOrderInfoRequest {
   string id = 1;
 }
 
-message GetOrdersRequest {}
+message GetOrdersRequest {
+  int32 page = 1;
+  int32 per_page = 2;
+}
 
 message UpdateOrderRequest {
   string id = 1;
@@ -295,8 +316,8 @@ message OrderItemInfoForList {
   string id = 1;
   string item_id = 2;
   string title = 3;
-  int64 price = 4;
-  int64 quantity = 5;
+  int32 price = 4;
+  int32 quantity = 5;
   LittlePictureInfo little_picture = 6;
 }
 
@@ -308,7 +329,7 @@ message GetOrderInfoResponse {
   google.protobuf.Timestamp completion_date = 5;
   string comment = 6;
   string status = 7;
-  int64 order_amount = 8;
+  int32 order_amount = 8;
   repeated OrderItemInfoForList items = 9;
 }
 
@@ -317,9 +338,12 @@ message OrderInfoForList {
   string number = 2;
   google.protobuf.Timestamp completion_date = 3;
   string status = 4;
-  int64 order_amount = 5;
+  int32 order_amount = 5;
 }
 
 message GetOrdersResponse {
   repeated OrderInfoForList orders = 1;
+  int32 total = 2;
+  int32 page = 3;
+  int32 per_page = 4;
 }

@@ -37,8 +37,8 @@ func (s *OrderService) GetOrderInfo(ctx context.Context, id uuid.UUID) (*models.
 	return order, nil 
 }
 
-func (s *OrderService) GetOrders(ctx context.Context) ([]*models.Order, error) {
-	orders, err := s.orderRepo.GetOrders(ctx)
+func (s *OrderService) GetOrders(ctx context.Context, pagination models.Pagination) (*models.PaginatedOrders, error) {
+	orders, err := s.orderRepo.GetOrders(ctx, pagination)
 	if err != nil {
 		return nil, err
 	}
