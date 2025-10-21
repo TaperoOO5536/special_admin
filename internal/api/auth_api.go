@@ -51,7 +51,7 @@ func (h *AuthServiceHandler) RefreshToken(ctx context.Context, req *pb.RefreshRe
 	
 	return &pb.RefreshResponse{
 		AccessToken: token,
-		Message:      "token refreshed",
+		Message:     "token refreshed",
 	}, nil
 }
 

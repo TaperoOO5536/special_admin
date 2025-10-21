@@ -31,7 +31,7 @@ func OrderToGetOrderInfoResponse(order *models.Order) (*pb.GetOrderInfoResponse)
 			Price:         int32(orderItem.Item.Price),
 			Quantity:      int32(orderItem.Quantity),
 			LittlePicture: &pb.LittlePictureInfo{
-				Picture: orderItem.Item.LittlePicture,
+				Picture:  orderItem.Item.LittlePicture,
 				MimeType: orderItem.Item.MimeType,
 			},
 		}
@@ -105,7 +105,7 @@ func (h *OrderServiceHandler) GetOrders(ctx context.Context, req *pb.GetOrdersRe
 	}
 
 	return &pb.GetOrdersResponse{
-		Orders: pbOrders,
+		Orders:  pbOrders,
 		Total:   int32(paginatedOrders.TotalCount),
 		Page:    int32(paginatedOrders.Page),
 		PerPage: int32(paginatedOrders.PerPage),

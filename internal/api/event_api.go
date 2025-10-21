@@ -51,7 +51,7 @@ func EventToGetEventInfoResponse(event *models.Event) (*pb.GetEventInfoResponse)
 		TotalSeats:    int32(event.TotalSeats),
 		OccupiedSeats: int32(event.OccupiedSeats),
 		LittlePicture: &pb.LittlePictureInfo{
-			Picture: event.LittlePicture,
+			Picture:  event.LittlePicture,
 			MimeType: event.MimeType,
 		},
 		Pictures: pbPictures,

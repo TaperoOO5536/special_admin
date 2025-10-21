@@ -2,7 +2,6 @@ package middleware
 
 import (
 	"context"
-	"fmt"
 	"net/http"
 	"strings"
 
@@ -40,10 +39,7 @@ func AuthMiddleware(next http.Handler, authService *service.AuthService) http.Ha
             return
         }
         
-        claims, err := authService.Jwt.ValidateToken(token, config.GetJWTSecret())
-        fmt.Println("err", err)
-        fmt.Println("claims", claims)
-        fmt.Println("token", token)
+        _, err := authService.Jwt.ValidateToken(token, config.GetJWTSecret())
         if err != nil {
             http.Error(w, "Invalid token", http.StatusUnauthorized)
             return

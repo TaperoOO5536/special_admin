@@ -11,12 +11,12 @@ import (
 )
 
 var (
-	ErrInvalidCredentials = errors.New("invalid credentials")
-	ErrFailedGenerateTokens = errors.New("failed to generate tokens")
+	ErrInvalidCredentials =       errors.New("invalid credentials")
+	ErrFailedGenerateTokens =     errors.New("failed to generate tokens")
 	ErrFailedSavingRefreshToken = errors.New("failed to save refresh token")
-	ErrInvalidAccessToken = errors.New("invalid access token")
-    ErrInvalidRefreshToken = errors.New("invalid refresh token")
-    ErrLogoutFailed = errors.New("logout failed")
+	ErrInvalidAccessToken =       errors.New("invalid access token")
+    ErrInvalidRefreshToken =      errors.New("invalid refresh token")
+    ErrLogoutFailed =             errors.New("logout failed")
 )
 
 type AuthService struct {

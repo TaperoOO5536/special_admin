@@ -37,7 +37,7 @@ func ItemToGetItemInfoResponse(item *models.Item) (*pb.GetItemInfoResponse) {
 		Description:   item.Description,
 		Price:         int32(item.Price),
 		LittlePicture: &pb.LittlePictureInfo{
-			Picture: item.LittlePicture,
+			Picture:  item.LittlePicture,
 			MimeType: item.MimeType,
 		},
 		Pictures: pbPictures,

@@ -45,7 +45,7 @@ func (h *ItemPictureServiceHandler) CreateItemPicture(ctx context.Context, req *
 		ID:       itemPictureID,
 		Path:     req.Picture.Picture,
 		MimeType: req.Picture.MimeType,
-		ItemID:  ItemID,
+		ItemID:   ItemID,
 	}
 
 	item, err := h.itemPictureService.CreateItemPicture(ctx, itemPicture)

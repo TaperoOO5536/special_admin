@@ -32,7 +32,7 @@ func (r *eventRepository) GetEventInfo(ctx context.Context, id uuid.UUID) (*mode
 			return db.Select("id_event_picture", "event_id", "picture_path", "mime_type")
 		}).
 		Preload("UserEvents.User", func(db *gorm.DB) *gorm.DB {
-			return db.Select("n_n_user")
+			return db.Select("id_user", "n_n_user")
 		}).
 		Where("id_event = ?", id).
 		First(&event).Error; err != nil {

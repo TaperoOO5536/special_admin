@@ -79,9 +79,9 @@ type UserEvent struct {
 }
 
 type EventPicture struct {
-	ID      uuid.UUID `gorm:"column:id_event_picture;primaryKey"`
-	EventID uuid.UUID `gorm:"column:event_id"`
-	Path    []byte    `gorm:"column:picture_path"`
+	ID       uuid.UUID `gorm:"column:id_event_picture;primaryKey"`
+	EventID  uuid.UUID `gorm:"column:event_id"`
+	Path     []byte    `gorm:"column:picture_path"`
 	MimeType string   `gorm:"column:mime_type"`
 }
 
@@ -117,8 +117,8 @@ type OrderItem struct{
 }
 
 type ItemPicture struct {
-	ID     uuid.UUID `gorm:"column:id_item_picture;primaryKey"`
-	ItemID uuid.UUID `gorm:"column:item_id"`
-	Path   []byte    `gorm:"column:picture_path"`
+	ID       uuid.UUID `gorm:"column:id_item_picture;primaryKey"`
+	ItemID   uuid.UUID `gorm:"column:item_id"`
+	Path     []byte    `gorm:"column:picture_path"`
 	MimeType string  `gorm:"column:mime_type"`
 }
