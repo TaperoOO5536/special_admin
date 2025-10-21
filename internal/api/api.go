@@ -9,21 +9,24 @@ import (
 
 type Handler struct {
 	pb.UnimplementedSpecialAdminServiceServer
+	pb.UnimplementedAdminAuthServiceServer
 	userHandler         *UserServiceHandler
 	eventHandler        *EventServiceHandler
 	eventPictureHandler *EventPictureServiceHandler
 	itemHandler         *ItemServiceHandler
 	itemPictureHandler  *ItemPictureServiceHandler
 	orderHandler        *OrderServiceHandler
+	authHandler         *AuthServiceHandler
 }
 
 func NewHandler(
-	userHandler         *UserServiceHandler,
-	eventHandler        *EventServiceHandler,
+	userHandler *UserServiceHandler,
+	eventHandler *EventServiceHandler,
 	eventPictureHandler *EventPictureServiceHandler,
-	itemServiceHandler  *ItemServiceHandler,
-	itemPictureHandler  *ItemPictureServiceHandler,
-	orderHandler        *OrderServiceHandler,
+	itemServiceHandler *ItemServiceHandler,
+	itemPictureHandler *ItemPictureServiceHandler,
+	orderHandler *OrderServiceHandler,
+	authHandler *AuthServiceHandler,
 ) *Handler {
 	return &Handler{
 		userHandler:         userHandler,
@@ -32,9 +35,9 @@ func NewHandler(
 		itemHandler:         itemServiceHandler,
 		itemPictureHandler:  itemPictureHandler,
 		orderHandler:        orderHandler,
+		authHandler:         authHandler,
 	}
 }
-
 
 //users
 
@@ -122,4 +125,18 @@ func (h *Handler) UpdateOrder(ctx context.Context, req *pb.UpdateOrderRequest) (
 
 func (h *Handler) DeleteOrder(ctx context.Context, req *pb.DeleteOrderRequest) (*emptypb.Empty, error) {
 	return h.orderHandler.DeleteOrder(ctx, req)
+}
+
+//auth
+
+func (h *Handler) Login(ctx context.Context, req *pb.LoginRequest) (*pb.LoginResponse, error) {
+	return h.authHandler.Login(ctx, req)
+}
+
+func (h *Handler) RefreshToken(ctx context.Context, req *pb.RefreshRequest) (*pb.RefreshResponse, error) {
+	return h.authHandler.RefreshToken(ctx, req)
+}
+
+func (h *Handler) Logout(ctx context.Context, req *pb.LogoutRequest) (*pb.LogoutResponse, error) {
+	return h.authHandler.Logout(ctx, req)
 }

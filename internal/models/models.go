@@ -1,9 +1,9 @@
 package models
 
 import (
-	"github.com/google/uuid"
-	// "google.golang.org/protobuf/types/known/timestamppb"
 	"time"
+
+	"github.com/google/uuid"
 )
 
 type Pagination struct {
@@ -37,6 +37,13 @@ type PaginatedUsers struct {
 	TotalCount int64   `json:"total_count"`
 	Page       int     `json:"page"`
 	PerPage    int     `json:"per_page"`
+}
+
+type Admin struct {
+	Login            string    `gorm:"column:admin_login;primaryKey"`
+	PasswordHash     string	   `gorm:"column:admin_password_hash"`
+	RefreshTokenHash string    `gorm:"column:refresh_token_hash"`
+	RefreshExpiresAt time.Time `gorm:"column:refresh_expires_at"`
 }
 
 type User struct {

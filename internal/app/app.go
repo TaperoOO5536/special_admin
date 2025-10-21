@@ -10,6 +10,7 @@ import (
 	"time"
 
 	"github.com/TaperoOO5536/special_admin/internal/config"
+	"github.com/TaperoOO5536/special_admin/internal/middleware"
 	"github.com/TaperoOO5536/special_admin/internal/repository"
 	"github.com/TaperoOO5536/special_admin/internal/service"
 	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
@@ -20,6 +21,7 @@ import (
 	"syscall"
 
 	"github.com/TaperoOO5536/special_admin/internal/api"
+	"github.com/TaperoOO5536/special_admin/pkg/jwt"
 	pb "github.com/TaperoOO5536/special_admin/pkg/proto/v1"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
@@ -55,6 +57,9 @@ func (a *App) Start(ctx context.Context) error {
 	itemRepo := repository.NewItemRepository(db)
 	itemPictureRepo := repository.NewItemPictureRepository(db, itemRepo)
 	orderRepo := repository.NewOrderRepository(db)
+	authRepo := repository.NewAdminAuthRepository(db)
+
+	jwtManager := jwt.NewJWTManager("15m", "168h")
 
 	userService := service.NewUserService(userRepo)
 	eventService := service.NewEventService(eventRepo)
@@ -62,6 +67,7 @@ func (a *App) Start(ctx context.Context) error {
 	itemService := service.NewItemService(itemRepo)
 	itemPictureService := service.NewItemPictureService(itemPictureRepo)
 	orderService := service.NewOrderService(orderRepo)
+	authService := service.NewAuthService(authRepo, jwtManager, config.GetJWTSecret())
 
 	userServiceHandler := api.NewUserServiceHandler(userService)
 	eventServiceHandler := api.NewEventServiceHandler(eventService)
@@ -69,14 +75,17 @@ func (a *App) Start(ctx context.Context) error {
 	itemServiceHandler := api.NewItemServiceHandler(itemService)
 	itemPictureServiceHandler := api.NewItemPictureServiceHandler(itemPictureService)
 	orderServiceHandler := api.NewOrderServiceHandler(orderService)
+	authServiceHandler := api.NewAuthServiceHandler(authService)
 
 	handler := api.NewHandler(userServiceHandler, eventServiceHandler,
 														eventPictureServiceHandler, itemServiceHandler,
-														itemPictureServiceHandler, orderServiceHandler)
+														itemPictureServiceHandler, orderServiceHandler,
+													authServiceHandler)
 
 	grpcServer := grpc.NewServer()
 
 	pb.RegisterSpecialAdminServiceServer(grpcServer, handler)
+	pb.RegisterAdminAuthServiceServer(grpcServer, handler)
 
 	reflection.Register(grpcServer)
 
@@ -104,6 +113,15 @@ func (a *App) Start(ctx context.Context) error {
 	if err != nil {
 		return fmt.Errorf("failed to register gateway: %v", err)
 	}
+	err = pb.RegisterAdminAuthServiceHandlerFromEndpoint(
+		ctx,
+		gwmux,
+		"localhost:"+a.config.GrpcPort,
+		[]grpc.DialOption{grpc.WithTransportCredentials(insecure.NewCredentials())},
+	)
+	if err != nil {
+		return fmt.Errorf("failed to register gateway: %v", err)
+	}
 
 	c := cors.New(cors.Options{
         AllowedOrigins:   []string{"http://192.168.1.212", "http://localhost:5173"},
@@ -115,10 +133,11 @@ func (a *App) Start(ctx context.Context) error {
     })
 
 	corshandler := c.Handler(gwmux)
+	authMux := middleware.AuthMiddleware(corshandler, authService)
 
 	httpServer := &http.Server{
 		Addr:    ":" + a.config.HttpPort,
-		Handler: corshandler,
+		Handler: authMux,
 	}
 
 	serverError := make(chan error, 1)
