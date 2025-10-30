@@ -27,7 +27,6 @@ func EventToGetEventInfoResponse(event *models.Event) (*pb.GetEventInfoResponse)
 		pbPicture := &pb.PictureInfo{
 			Id:       picture.ID.String(),
 			Picture:  picture.Path,
-			MimeType: picture.MimeType,
 		}
 		pbPictures = append(pbPictures, pbPicture)
 	}
@@ -50,11 +49,8 @@ func EventToGetEventInfoResponse(event *models.Event) (*pb.GetEventInfoResponse)
 		Price:         int32(event.Price),
 		TotalSeats:    int32(event.TotalSeats),
 		OccupiedSeats: int32(event.OccupiedSeats),
-		LittlePicture: &pb.LittlePictureInfo{
-			Picture:  event.LittlePicture,
-			MimeType: event.MimeType,
-		},
-		Pictures: pbPictures,
+		LittlePicture: event.LittlePicture,
+		Pictures:      pbPictures,
 		UserEvents: pbUserEvents,
 	}
 	
@@ -82,7 +78,7 @@ func (h *EventServiceHandler) CreateEvent(ctx context.Context, req *pb.CreateEve
 		err := status.Error(codes.InvalidArgument, "occupied seats is required")
 		return nil, err
 	}
-	if req.LittlePicture == nil {
+	if req.LittlePicture == "" {
 		err := status.Error(codes.InvalidArgument, "little picture is required")
 		return nil, err
 	}
@@ -101,8 +97,7 @@ func (h *EventServiceHandler) CreateEvent(ctx context.Context, req *pb.CreateEve
 		Price:         req.Price.Value,
 		TotalSeats:    int64(req.TotalSeats),
 		OccupiedSeats: req.OccupiedSeats.Value,
-		LittlePicture: req.LittlePicture.Picture,
-		MimeType:      req.LittlePicture.MimeType,
+		LittlePicture: req.LittlePicture,
 	}
 
 	createdEvent, err := h.eventService.CreateEvent(ctx, event)
@@ -168,10 +163,7 @@ func (h *EventServiceHandler) GetEvents(ctx context.Context, req *pb.GetEventsRe
 			Price:         int32(event.Price),
 			TotalSeats:    int32(event.TotalSeats),
 			OccupiedSeats: int32(event.OccupiedSeats),
-			LittlePicture: &pb.LittlePictureInfo{
-				Picture:  event.LittlePicture,
-				MimeType: event.MimeType,
-			},
+			LittlePicture: event.LittlePicture,
 		}
 		response.Events = append(response.Events, pbEvent)
 	}
@@ -212,8 +204,7 @@ func (h *EventServiceHandler) UpdateEvent(ctx context.Context, req *pb.UpdateEve
 		event.Description = *req.Description
 	}
 	if req.LittlePicture != nil {
-		event.LittlePicture = req.LittlePicture.Picture
-		event.MimeType = req.LittlePicture.MimeType
+		event.LittlePicture = *req.LittlePicture
 	}
 	if req.TotalSeats != nil {
 		event.TotalSeats = int64(*req.TotalSeats)

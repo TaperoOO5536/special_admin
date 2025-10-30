@@ -29,7 +29,7 @@ func (r *itemRepository) GetItemInfo(ctx context.Context, id uuid.UUID) (*models
 	var item models.Item
 	if err := r.db.
 		Preload("Pictures", func(db *gorm.DB) *gorm.DB {
-			return db.Select("id_item_picture", "item_id", "picture_path", "mime_type")
+			return db.Select("id_item_picture", "item_id", "picture_path")
 		}).
 		Where("id_item = ?", id).
 		First(&item).Error; err != nil {
@@ -82,7 +82,7 @@ func (r *itemRepository) UpdateItem(ctx context.Context, item *models.Item, isPr
 	if item.Description != "" {
 		existingItem.Description = item.Description
 	}
-	if item.LittlePicture != nil {
+	if item.LittlePicture != "" {
 		existingItem.LittlePicture = item.LittlePicture
 	}
 	if isPriceUpdated {

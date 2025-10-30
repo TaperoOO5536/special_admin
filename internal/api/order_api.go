@@ -30,10 +30,7 @@ func OrderToGetOrderInfoResponse(order *models.Order) (*pb.GetOrderInfoResponse)
 			Title:         orderItem.Item.Title,
 			Price:         int32(orderItem.Item.Price),
 			Quantity:      int32(orderItem.Quantity),
-			LittlePicture: &pb.LittlePictureInfo{
-				Picture:  orderItem.Item.LittlePicture,
-				MimeType: orderItem.Item.MimeType,
-			},
+			LittlePicture: orderItem.Item.LittlePicture,
 		}
 		pbOrderItems = append(pbOrderItems, pbOrderItem)
 	}

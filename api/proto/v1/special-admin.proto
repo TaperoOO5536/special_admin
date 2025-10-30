@@ -125,20 +125,14 @@ service SpecialAdminService {
 
 // pictures
 
-message LittlePictureInfo {
-  bytes picture = 1;
-  string mime_type = 2;
-}
-
 message PictureInfo {
   string id = 1;
-  bytes picture = 2;
-  string mime_type = 3;
+  string picture = 2;
 }
 
 message CreatePictureRequest {
   string parent_id = 1;
-  LittlePictureInfo picture = 2;
+  string picture = 2;
 }
 
 message DeletePictureRequest {
@@ -184,7 +178,7 @@ message CreateEventRequest {
   google.protobuf.Int64Value price = 4;
   int32 total_seats = 5;
   google.protobuf.Int64Value occupied_seats = 6;
-  LittlePictureInfo little_picture = 7;
+  string little_picture = 7;
 }
 
 message UpdateEventRequest {
@@ -195,7 +189,7 @@ message UpdateEventRequest {
   google.protobuf.Int64Value price = 5;
   optional int32 total_seats = 6;
   google.protobuf.Int64Value occupied_seats = 7;
-  optional LittlePictureInfo little_picture = 8;
+  optional string little_picture = 8;
 }
 
 message DeleteEventRequest {
@@ -216,7 +210,7 @@ message GetEventInfoResponse {
   int32 price = 5;
   int32 total_seats = 6;
   int32 occupied_seats = 7;
-  LittlePictureInfo little_picture = 8;
+  string little_picture = 8;
   repeated PictureInfo pictures = 9;
   repeated UserEventInfo userEvents = 10;
 }
@@ -228,7 +222,7 @@ message EventInfoForList {
   int32 price = 4;
   int32 total_seats = 5;
   int32 occupied_seats = 6;
-  LittlePictureInfo little_picture = 7;
+  string little_picture = 7;
 }
 
 message GetEventsResponse {
@@ -253,7 +247,7 @@ message CreateItemRequest {
   string title = 1;
   string description = 2;
   int32 price = 3;
-  LittlePictureInfo little_picture = 4;
+  string little_picture = 4;
 }
 
 message UpdateItemRequest {
@@ -261,7 +255,7 @@ message UpdateItemRequest {
   optional string title = 2;
   optional string description = 3;
   int32 price = 4;
-  optional LittlePictureInfo little_picture = 5;
+  optional string little_picture = 5;
 }
 
 message DeleteItemRequest {
@@ -273,7 +267,7 @@ message GetItemInfoResponse {
   string title = 2;
   string description = 3;
   int32 price = 4;
-  LittlePictureInfo little_picture = 5;
+  string little_picture = 5;
   repeated PictureInfo pictures = 6;
 }
 
@@ -281,7 +275,7 @@ message ItemInfoForList {
   string id = 1;
   string title = 2;
   int32 price = 3;
-  LittlePictureInfo little_picture = 4;
+  string little_picture = 4;
 }
 
 message GetItemsResponse {
@@ -318,7 +312,7 @@ message OrderItemInfoForList {
   string title = 3;
   int32 price = 4;
   int32 quantity = 5;
-  LittlePictureInfo little_picture = 6;
+  string little_picture = 6;
 }
 
 message GetOrderInfoResponse {

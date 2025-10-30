@@ -21,12 +21,8 @@ func NewItemPictureServiceHandler(itemPictureService *service.ItemPictureService
 }
 
 func (h *ItemPictureServiceHandler) CreateItemPicture(ctx context.Context, req *pb.CreatePictureRequest) (*pb.GetItemInfoResponse, error) {
-	if req.Picture.Picture == nil {
+	if req.Picture == "" {
 		err := status.Error(codes.InvalidArgument, "picture is required")
-		return nil, err
-	}
-	if req.Picture.MimeType == "" {
-		err := status.Error(codes.InvalidArgument, "mimetype is required")
 		return nil, err
 	}
 	if req.ParentId == "" {
@@ -43,8 +39,7 @@ func (h *ItemPictureServiceHandler) CreateItemPicture(ctx context.Context, req *
 
 	itemPicture := &models.ItemPicture{
 		ID:       itemPictureID,
-		Path:     req.Picture.Picture,
-		MimeType: req.Picture.MimeType,
+		Path:     req.Picture,
 		ItemID:   ItemID,
 	}
 

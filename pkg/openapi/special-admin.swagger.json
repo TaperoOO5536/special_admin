@@ -667,7 +667,7 @@
           "format": "int64"
         },
         "littlePicture": {
-          "$ref": "#/definitions/special_app_v1LittlePictureInfo"
+          "type": "string"
         }
       }
     },
@@ -685,7 +685,7 @@
           "format": "int32"
         },
         "littlePicture": {
-          "$ref": "#/definitions/special_app_v1LittlePictureInfo"
+          "type": "string"
         }
       }
     },
@@ -754,7 +754,7 @@
           "format": "int64"
         },
         "littlePicture": {
-          "$ref": "#/definitions/special_app_v1LittlePictureInfo"
+          "type": "string"
         }
       }
     },
@@ -772,7 +772,7 @@
           "format": "int32"
         },
         "littlePicture": {
-          "$ref": "#/definitions/special_app_v1LittlePictureInfo"
+          "type": "string"
         }
       }
     },
@@ -783,7 +783,7 @@
           "type": "string"
         },
         "picture": {
-          "$ref": "#/definitions/special_app_v1LittlePictureInfo"
+          "type": "string"
         }
       }
     },
@@ -813,7 +813,7 @@
           "format": "int32"
         },
         "littlePicture": {
-          "$ref": "#/definitions/special_app_v1LittlePictureInfo"
+          "type": "string"
         }
       }
     },
@@ -846,7 +846,7 @@
           "format": "int32"
         },
         "littlePicture": {
-          "$ref": "#/definitions/special_app_v1LittlePictureInfo"
+          "type": "string"
         },
         "pictures": {
           "type": "array",
@@ -905,7 +905,7 @@
           "format": "int32"
         },
         "littlePicture": {
-          "$ref": "#/definitions/special_app_v1LittlePictureInfo"
+          "type": "string"
         },
         "pictures": {
           "type": "array",
@@ -1041,18 +1041,6 @@
           "format": "int32"
         },
         "littlePicture": {
-          "$ref": "#/definitions/special_app_v1LittlePictureInfo"
-        }
-      }
-    },
-    "special_app_v1LittlePictureInfo": {
-      "type": "object",
-      "properties": {
-        "picture": {
-          "type": "string",
-          "format": "byte"
-        },
-        "mimeType": {
           "type": "string"
         }
       }
@@ -1100,7 +1088,7 @@
           "format": "int32"
         },
         "littlePicture": {
-          "$ref": "#/definitions/special_app_v1LittlePictureInfo"
+          "type": "string"
         }
       }
     },
@@ -1111,10 +1099,6 @@
           "type": "string"
         },
         "picture": {
-          "type": "string",
-          "format": "byte"
-        },
-        "mimeType": {
           "type": "string"
         }
       }

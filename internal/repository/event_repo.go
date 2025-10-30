@@ -29,7 +29,7 @@ func (r *eventRepository) GetEventInfo(ctx context.Context, id uuid.UUID) (*mode
 	var event models.Event
 	if err := r.db.
 		Preload("Pictures", func(db *gorm.DB) *gorm.DB {
-			return db.Select("id_event_picture", "event_id", "picture_path", "mime_type")
+			return db.Select("id_event_picture", "event_id", "picture_path")
 		}).
 		Preload("UserEvents.User", func(db *gorm.DB) *gorm.DB {
 			return db.Select("id_user", "n_n_user")
@@ -94,7 +94,7 @@ func (r *eventRepository) UpdateEvent(ctx context.Context, event *models.Event, 
 	if event.OccupiedSeats != 0 {
 		existingEvent.OccupiedSeats = event.OccupiedSeats
 	}
-	if event.LittlePicture != nil {
+	if event.LittlePicture != "" {
 		existingEvent.LittlePicture = event.LittlePicture
 	}
 	if isPriceUpdated {

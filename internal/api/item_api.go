@@ -26,7 +26,6 @@ func ItemToGetItemInfoResponse(item *models.Item) (*pb.GetItemInfoResponse) {
 		pbPicture := &pb.PictureInfo{
 			Id:       picture.ID.String(),
 			Picture:  picture.Path,
-			MimeType: picture.MimeType,
 		}
 		pbPictures = append(pbPictures, pbPicture)
 	}
@@ -36,11 +35,8 @@ func ItemToGetItemInfoResponse(item *models.Item) (*pb.GetItemInfoResponse) {
 		Title:         item.Title,
 		Description:   item.Description,
 		Price:         int32(item.Price),
-		LittlePicture: &pb.LittlePictureInfo{
-			Picture:  item.LittlePicture,
-			MimeType: item.MimeType,
-		},
-		Pictures: pbPictures,
+		LittlePicture: item.LittlePicture,
+		Pictures:      pbPictures,
 	}
 	
 	return response
@@ -55,7 +51,7 @@ func (h *ItemServiceHandler) CreateItem(ctx context.Context, req *pb.CreateItemR
 		err := status.Error(codes.InvalidArgument, "title is required")
 		return nil, err
 	}
-	if req.LittlePicture == nil {
+	if req.LittlePicture == "" {
 		err := status.Error(codes.InvalidArgument, "little picture is required")
 		return nil, err
 	}
@@ -71,8 +67,7 @@ func (h *ItemServiceHandler) CreateItem(ctx context.Context, req *pb.CreateItemR
 		Title:         req.Title,
 		Description:   req.Description,
 		Price:         int64(req.Price),
-		LittlePicture: req.LittlePicture.Picture,
-		MimeType:      req.LittlePicture.MimeType,
+		LittlePicture: req.LittlePicture,
 	}
 
 	createdItem, err := h.itemService.CreateItem(ctx, item)
@@ -134,10 +129,7 @@ func (h *ItemServiceHandler) GetItems(ctx context.Context, req *pb.GetItemsReque
 			Id:            item.ID.String(),
 			Title:         item.Title,
 			Price:         int32(item.Price),
-			LittlePicture: &pb.LittlePictureInfo{
-				Picture:  item.LittlePicture,
-				MimeType: item.MimeType,
-			},
+			LittlePicture: item.LittlePicture,
 		}
 		response.Items = append(response.Items, pbItem)
 	}
@@ -173,8 +165,7 @@ func (h *ItemServiceHandler) UpdateItem(ctx context.Context, req *pb.UpdateItemR
 		item.Description = *req.Description
 	}
 	if req.LittlePicture != nil {
-		item.LittlePicture = req.LittlePicture.Picture
-		item.MimeType = req.LittlePicture.MimeType
+		item.LittlePicture = *req.LittlePicture
 	}
 	if req.Price != 0 {
 		item.Price = int64(req.Price)

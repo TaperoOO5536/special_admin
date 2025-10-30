@@ -21,12 +21,8 @@ func NewEventPictureServiceHandler(eventPictureService *service.EventPictureServ
 }
 
 func (h *EventPictureServiceHandler) CreateEventPicture(ctx context.Context, req *pb.CreatePictureRequest) (*pb.GetEventInfoResponse, error) {
-	if req.Picture.Picture == nil {
+	if req.Picture == "" {
 		err := status.Error(codes.InvalidArgument, "picture is required")
-		return nil, err
-	}
-	if req.Picture.MimeType == "" {
-		err := status.Error(codes.InvalidArgument, "mimetype is required")
 		return nil, err
 	}
 	if req.ParentId == "" {
@@ -43,8 +39,7 @@ func (h *EventPictureServiceHandler) CreateEventPicture(ctx context.Context, req
 
 	eventPicture := &models.EventPicture{
 		ID:       eventPictureID,
-		Path:     req.Picture.Picture,
-		MimeType: req.Picture.MimeType,
+		Path:     req.Picture,
 		EventID:  EventID,
 	}
 
