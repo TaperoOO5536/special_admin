@@ -3,6 +3,7 @@ module github.com/TaperoOO5536/special_admin
 go 1.23.5
 
 require (
+	github.com/confluentinc/confluent-kafka-go v1.9.2 // indirect
 	github.com/golang-jwt/jwt/v5 v5.3.0 // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/googleapis/googleapis v0.0.0-20250916201823-9f0cd3d817ca // indirect

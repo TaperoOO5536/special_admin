@@ -10,6 +10,7 @@ import (
 	"time"
 
 	"github.com/TaperoOO5536/special_admin/internal/config"
+	"github.com/TaperoOO5536/special_admin/internal/kafka"
 	"github.com/TaperoOO5536/special_admin/internal/middleware"
 	"github.com/TaperoOO5536/special_admin/internal/repository"
 	"github.com/TaperoOO5536/special_admin/internal/service"
@@ -49,7 +50,8 @@ func New(cfg *Config) *App {
 }
 
 func (a *App) Start(ctx context.Context) error {
-	db := config.NewDBClient(a.config.Dsn)
+	db, sqlDB := config.NewDBClient(a.config.Dsn)
+	defer sqlDB.Close()
 
 	userRepo := repository.NewUserRepository(db)
 	eventRepo := repository.NewEventRepository(db)
@@ -61,12 +63,18 @@ func (a *App) Start(ctx context.Context) error {
 
 	jwtManager := jwt.NewJWTManager("15m", "168h")
 
+	p, err := kafka.NewProducer([]string{"localhost:38905"})
+	if err != nil {
+		return fmt.Errorf("failed to create kafka producer: %v", err)
+	}
+	defer p.Close()
+
 	userService := service.NewUserService(userRepo)
 	eventService := service.NewEventService(eventRepo)
 	eventPictureService := service.NewEventPictureService(eventPictureRepo)
 	itemService := service.NewItemService(itemRepo)
 	itemPictureService := service.NewItemPictureService(itemPictureRepo)
-	orderService := service.NewOrderService(orderRepo)
+	orderService := service.NewOrderService(orderRepo, userRepo, p)
 	authService := service.NewAuthService(authRepo, jwtManager, config.GetJWTSecret())
 
 	userServiceHandler := api.NewUserServiceHandler(userService)

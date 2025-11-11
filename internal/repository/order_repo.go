@@ -28,7 +28,7 @@ func (r *orderRepository) GetOrderInfo(ctx context.Context, id uuid.UUID) (*mode
 	var order models.Order
 	if err := r.db.
 		Preload("OrderItems.Item", func(db *gorm.DB) *gorm.DB {
-			return db.Select("id_item", "item_title", "item_price", "little_picture", "mime_type")
+			return db.Select("id_item", "item_title", "item_price", "little_picture")
 		}).
 		Preload("User", func(db *gorm.DB) *gorm.DB {
 			return db.Select("id_user", "n_n_user")

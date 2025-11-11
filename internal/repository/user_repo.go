@@ -9,6 +9,7 @@ import (
 
 type UserRepository interface {
 	GetUsers(ctx context.Context, pagination models.Pagination) (*models.PaginatedUsers, error)
+	GetUserInfo(ctx context.Context, id string) (*models.User, error)
 }
 
 type userRepository struct {
@@ -37,4 +38,12 @@ func (r *userRepository) GetUsers(ctx context.Context, pagination models.Paginat
 		Page:       pagination.Page,
 		PerPage:    pagination.PerPage,
 	}, nil
+}
+
+func (r *userRepository) GetUserInfo(ctx context.Context, id string) (*models.User, error) {
+	var user models.User
+	if err := r.db.Where("id_user = ?", id).First(&user).Error; err != nil {
+		return nil, err
+	}
+	return &user, nil
 }
