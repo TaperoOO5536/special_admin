@@ -62,12 +62,24 @@ func (h *ItemServiceHandler) CreateItem(ctx context.Context, req *pb.CreateItemR
 
 	itemID := uuid.New()
 
+  pictures := make([]models.ItemPicture, 0, len(req.Pictures))
+
+	for _, pbPicture := range req.Pictures {
+		picture := models.ItemPicture{
+			ID:     uuid.New(),
+			ItemID: itemID,
+			Path:   pbPicture,
+		}
+		pictures = append(pictures, picture)
+	}
+
 	item := &models.Item{
 		ID:            itemID,
 		Title:         req.Title,
 		Description:   req.Description,
 		Price:         int64(req.Price),
 		LittlePicture: req.LittlePicture,
+		Pictures:      pictures,
 	}
 
 	createdItem, err := h.itemService.CreateItem(ctx, item)

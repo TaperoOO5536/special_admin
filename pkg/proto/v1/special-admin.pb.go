@@ -466,6 +466,7 @@ type CreateEventRequest struct {
 	TotalSeats    int32                  `protobuf:"varint,5,opt,name=total_seats,json=totalSeats,proto3" json:"total_seats,omitempty"`
 	OccupiedSeats *wrapperspb.Int64Value `protobuf:"bytes,6,opt,name=occupied_seats,json=occupiedSeats,proto3" json:"occupied_seats,omitempty"`
 	LittlePicture string                 `protobuf:"bytes,7,opt,name=little_picture,json=littlePicture,proto3" json:"little_picture,omitempty"`
+	Pictures      []string               `protobuf:"bytes,8,rep,name=pictures,proto3" json:"pictures,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -547,6 +548,13 @@ func (x *CreateEventRequest) GetLittlePicture() string {
 		return x.LittlePicture
 	}
 	return ""
+}
+
+func (x *CreateEventRequest) GetPictures() []string {
+	if x != nil {
+		return x.Pictures
+	}
+	return nil
 }
 
 type UpdateEventRequest struct {
@@ -1131,6 +1139,7 @@ type CreateItemRequest struct {
 	Description   string                 `protobuf:"bytes,2,opt,name=description,proto3" json:"description,omitempty"`
 	Price         int32                  `protobuf:"varint,3,opt,name=price,proto3" json:"price,omitempty"`
 	LittlePicture string                 `protobuf:"bytes,4,opt,name=little_picture,json=littlePicture,proto3" json:"little_picture,omitempty"`
+	Pictures      []string               `protobuf:"bytes,5,rep,name=pictures,proto3" json:"pictures,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1191,6 +1200,13 @@ func (x *CreateItemRequest) GetLittlePicture() string {
 		return x.LittlePicture
 	}
 	return ""
+}
+
+func (x *CreateItemRequest) GetPictures() []string {
+	if x != nil {
+		return x.Pictures
+	}
+	return nil
 }
 
 type UpdateItemRequest struct {
@@ -2099,7 +2115,7 @@ const file_special_admin_proto_rawDesc = "" +
 	"\x02id\x18\x01 \x01(\tR\x02id\"A\n" +
 	"\x10GetEventsRequest\x12\x12\n" +
 	"\x04page\x18\x01 \x01(\x05R\x04page\x12\x19\n" +
-	"\bper_page\x18\x02 \x01(\x05R\aperPage\"\xc3\x02\n" +
+	"\bper_page\x18\x02 \x01(\x05R\aperPage\"\xdf\x02\n" +
 	"\x12CreateEventRequest\x12\x14\n" +
 	"\x05title\x18\x01 \x01(\tR\x05title\x12 \n" +
 	"\vdescription\x18\x02 \x01(\tR\vdescription\x126\n" +
@@ -2108,7 +2124,8 @@ const file_special_admin_proto_rawDesc = "" +
 	"\vtotal_seats\x18\x05 \x01(\x05R\n" +
 	"totalSeats\x12B\n" +
 	"\x0eoccupied_seats\x18\x06 \x01(\v2\x1b.google.protobuf.Int64ValueR\roccupiedSeats\x12%\n" +
-	"\x0elittle_picture\x18\a \x01(\tR\rlittlePicture\"\xb6\x03\n" +
+	"\x0elittle_picture\x18\a \x01(\tR\rlittlePicture\x12\x1a\n" +
+	"\bpictures\x18\b \x03(\tR\bpictures\"\xb6\x03\n" +
 	"\x12UpdateEventRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x19\n" +
 	"\x05title\x18\x02 \x01(\tH\x00R\x05title\x88\x01\x01\x12%\n" +
@@ -2163,12 +2180,13 @@ const file_special_admin_proto_rawDesc = "" +
 	"\x02id\x18\x01 \x01(\tR\x02id\"@\n" +
 	"\x0fGetItemsRequest\x12\x12\n" +
 	"\x04page\x18\x01 \x01(\x05R\x04page\x12\x19\n" +
-	"\bper_page\x18\x02 \x01(\x05R\aperPage\"\x88\x01\n" +
+	"\bper_page\x18\x02 \x01(\x05R\aperPage\"\xa4\x01\n" +
 	"\x11CreateItemRequest\x12\x14\n" +
 	"\x05title\x18\x01 \x01(\tR\x05title\x12 \n" +
 	"\vdescription\x18\x02 \x01(\tR\vdescription\x12\x14\n" +
 	"\x05price\x18\x03 \x01(\x05R\x05price\x12%\n" +
-	"\x0elittle_picture\x18\x04 \x01(\tR\rlittlePicture\"\xd4\x01\n" +
+	"\x0elittle_picture\x18\x04 \x01(\tR\rlittlePicture\x12\x1a\n" +
+	"\bpictures\x18\x05 \x03(\tR\bpictures\"\xd4\x01\n" +
 	"\x11UpdateItemRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x19\n" +
 	"\x05title\x18\x02 \x01(\tH\x00R\x05title\x88\x01\x01\x12%\n" +

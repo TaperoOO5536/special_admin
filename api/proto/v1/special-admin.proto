@@ -179,6 +179,7 @@ message CreateEventRequest {
   int32 total_seats = 5;
   google.protobuf.Int64Value occupied_seats = 6;
   string little_picture = 7;
+  repeated string pictures = 8;
 }
 
 message UpdateEventRequest {
@@ -248,6 +249,7 @@ message CreateItemRequest {
   string description = 2;
   int32 price = 3;
   string little_picture = 4;
+  repeated string pictures = 5;
 }
 
 message UpdateItemRequest {

@@ -86,8 +86,22 @@ func (h *EventServiceHandler) CreateEvent(ctx context.Context, req *pb.CreateEve
 		err := status.Error(codes.InvalidArgument, "price is required")
 		return nil, err
 	}
+	if req.Pictures == nil {
+		err := status.Error(codes.InvalidArgument, "pictures are required")
+		return nil, err
+	}
 
 	eventID := uuid.New()
+
+	pictures := make([]models.EventPicture, 0, len(req.Pictures))
+	for _, pbPicture := range req.Pictures {
+		picture := models.EventPicture{
+			ID:      uuid.New(),
+			EventID: eventID,
+			Path:    pbPicture,
+		}
+		pictures = append(pictures, picture)
+	}
 
 	event := &models.Event{
 		ID:            eventID,
@@ -98,6 +112,7 @@ func (h *EventServiceHandler) CreateEvent(ctx context.Context, req *pb.CreateEve
 		TotalSeats:    int64(req.TotalSeats),
 		OccupiedSeats: req.OccupiedSeats.Value,
 		LittlePicture: req.LittlePicture,
+		Pictures:      pictures,
 	}
 
 	createdEvent, err := h.eventService.CreateEvent(ctx, event)

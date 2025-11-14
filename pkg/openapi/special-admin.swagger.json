@@ -755,6 +755,12 @@
         },
         "littlePicture": {
           "type": "string"
+        },
+        "pictures": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
@@ -773,6 +779,12 @@
         },
         "littlePicture": {
           "type": "string"
+        },
+        "pictures": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },

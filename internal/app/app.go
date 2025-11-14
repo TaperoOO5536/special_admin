@@ -22,6 +22,7 @@ import (
 	"syscall"
 
 	"github.com/TaperoOO5536/special_admin/internal/api"
+	"github.com/TaperoOO5536/special_admin/pkg/env"
 	"github.com/TaperoOO5536/special_admin/pkg/jwt"
 	pb "github.com/TaperoOO5536/special_admin/pkg/proto/v1"
 	"google.golang.org/grpc"
@@ -63,7 +64,7 @@ func (a *App) Start(ctx context.Context) error {
 
 	jwtManager := jwt.NewJWTManager("15m", "168h")
 
-	p, err := kafka.NewProducer([]string{"localhost:38905"})
+	p, err := kafka.NewProducer(env.GetKafkaBrokers())
 	if err != nil {
 		return fmt.Errorf("failed to create kafka producer: %v", err)
 	}
@@ -75,7 +76,7 @@ func (a *App) Start(ctx context.Context) error {
 	itemService := service.NewItemService(itemRepo)
 	itemPictureService := service.NewItemPictureService(itemPictureRepo)
 	orderService := service.NewOrderService(orderRepo, userRepo, p)
-	authService := service.NewAuthService(authRepo, jwtManager, config.GetJWTSecret())
+	authService := service.NewAuthService(authRepo, jwtManager, env.GetJWTSecret())
 
 	userServiceHandler := api.NewUserServiceHandler(userService)
 	eventServiceHandler := api.NewEventServiceHandler(eventService)
@@ -115,7 +116,7 @@ func (a *App) Start(ctx context.Context) error {
 	err = pb.RegisterSpecialAdminServiceHandlerFromEndpoint(
 		ctx,
 		gwmux,
-		"localhost:"+a.config.GrpcPort,
+		"localhost:" + a.config.GrpcPort,
 		[]grpc.DialOption{grpc.WithTransportCredentials(insecure.NewCredentials())},
 	)
 	if err != nil {
@@ -132,9 +133,9 @@ func (a *App) Start(ctx context.Context) error {
 	}
 
 	c := cors.New(cors.Options{
-        AllowedOrigins:   []string{"http://192.168.1.212", "http://localhost:5173"},
-        AllowedMethods:   []string{"GET", "POST", "PATCH", "DELETE", "OPTIONS"},
-        AllowedHeaders:   []string{"Authorization", "Content-Type", "Accept", "X-Requested-With"},
+        AllowedOrigins:   env.GetAllowedOrigins(),
+        AllowedMethods:   env.GetAllowedMethods(),
+        AllowedHeaders:   env.GetAllowedHeaders(),
         AllowCredentials: true,
         MaxAge:           300,
 				Debug:            true,

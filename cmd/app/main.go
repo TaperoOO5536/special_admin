@@ -6,20 +6,20 @@ import (
 	"time"
 
 	"github.com/TaperoOO5536/special_admin/internal/app"
-	"github.com/TaperoOO5536/special_admin/internal/config"
+	"github.com/TaperoOO5536/special_admin/pkg/env"
 	"golang.org/x/crypto/bcrypt"
 )
 
 func main() {
-	config.LoadEnv()
+	env.LoadEnv()
 
 	cfg := &app.Config{
-		GrpcPort:     "8090",
-		HttpPort:     "8091",
+		GrpcPort:     env.GetGRPCPort(),
+		HttpPort:     env.GetHTTPPort(),
 		ReadTimeout:  5 * time.Second,
 		WriteTimeout: 10 * time.Second,
 		IdleTimeout:  120 * time.Second,
-		Dsn:          config.GetDsn(),
+		Dsn:          env.GetDsn(),
 	}
 
 	app := app.New(cfg)

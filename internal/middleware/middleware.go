@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/TaperoOO5536/special_admin/internal/config"
 	"github.com/TaperoOO5536/special_admin/internal/service"
+	"github.com/TaperoOO5536/special_admin/pkg/env"
 )
 
 var publicPaths = map[string]bool{
@@ -39,7 +39,7 @@ func AuthMiddleware(next http.Handler, authService *service.AuthService) http.Ha
             return
         }
         
-        _, err := authService.Jwt.ValidateToken(token, config.GetJWTSecret())
+        _, err := authService.Jwt.ValidateToken(token, env.GetJWTSecret())
         if err != nil {
             http.Error(w, "Invalid token", http.StatusUnauthorized)
             return
