@@ -25,8 +25,10 @@ func NewAdminAuthRepository(db *gorm.DB) AdminAuthRepository {
 
 func (r *adminAuthRepository) GetAdmin(ctx context.Context, login string) (*models.Admin, error) {
     var admin models.Admin
-    err := r.db.Where("admin_login = ?", login).First(&admin).Error
-    return &admin, err
+     if err := r.db.Where("admin_login = ?", login).First(&admin).Error; err != nil {
+        return nil, err
+     }
+    return &admin, nil
 }
 
 func (r *adminAuthRepository) UpdateRefreshToken(ctx context.Context, tokenHash string, expiresAt time.Time) error {

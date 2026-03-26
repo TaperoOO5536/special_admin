@@ -69,7 +69,7 @@ service SpecialAdminService {
       get: "/v1/items"
     };
   }
-    rpc CreateItem(CreateItemRequest) returns (GetItemInfoResponse) {
+  rpc CreateItem(CreateItemRequest) returns (GetItemInfoResponse) {
     option (google.api.http) = {
       post: "/v1/items"
       body: "*"

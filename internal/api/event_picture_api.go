@@ -45,7 +45,7 @@ func (h *EventPictureServiceHandler) CreateEventPicture(ctx context.Context, req
 
 	event, err := h.eventPictureService.CreateEventPicture(ctx, eventPicture)
 	if err != nil {
-		return nil, status.Errorf(codes.InvalidArgument, "failed to create event picture: %v", err)
+		return nil, status.Errorf(codes.Internal, "failed to create event picture: %v", err)
 	}
 	
 	return EventToGetEventInfoResponse(event), nil
@@ -65,7 +65,7 @@ func (h *EventPictureServiceHandler) DeleteEventPicture(ctx context.Context, req
 
 	err = h.eventPictureService.DeleteEventPicture(ctx, EventPictureID)
 	if err != nil {
-		return nil, err
+		return nil, status.Errorf(codes.Internal, "failed to delete event picture: %v", err)
 	}
 
 	return &emptypb.Empty{}, nil

@@ -62,7 +62,7 @@ func (a *App) Start(ctx context.Context) error {
 	orderRepo := repository.NewOrderRepository(db)
 	authRepo := repository.NewAdminAuthRepository(db)
 
-	jwtManager := jwt.NewJWTManager("15m", "168h")
+	jwtManager := jwt.NewJWTManager("24h", "168h")
 
 	p, err := kafka.NewProducer(env.GetKafkaBrokers())
 	if err != nil {
@@ -138,7 +138,8 @@ func (a *App) Start(ctx context.Context) error {
         AllowedHeaders:   env.GetAllowedHeaders(),
         AllowCredentials: true,
         MaxAge:           300,
-				Debug:            true,
+				// Debug:            true,
+				Logger:           log.New(os.Stdout, "[cors] ", log.LstdFlags|log.Lshortfile),
     })
 
 	corshandler := c.Handler(gwmux)

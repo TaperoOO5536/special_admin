@@ -29,7 +29,7 @@ func (h *AuthServiceHandler) Login(ctx context.Context, req *pb.LoginRequest) (*
 
 	tokens, err := h.authService.Login(ctx, req.Login, req.Password)
 	if err != nil {
-		return nil, status.Errorf(codes.InvalidArgument, "failed to login: %v", err)
+		return nil, status.Errorf(codes.Internal, "failed to login: %v", err)
 	}
 
 	return &pb.LoginResponse{

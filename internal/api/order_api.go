@@ -64,7 +64,7 @@ func (h *OrderServiceHandler) GetOrderInfo(ctx context.Context, req *pb.GetOrder
 
 	order, err := h.orderService.GetOrderInfo(ctx, OrderID)
 	if err != nil {
-		return nil, status.Errorf(codes.InvalidArgument, "failed to get order: %v", err)
+		return nil, status.Errorf(codes.Internal, "failed to get order: %v", err)
 	}
 
 	return OrderToGetOrderInfoResponse(order), nil
@@ -86,7 +86,7 @@ func (h *OrderServiceHandler) GetOrders(ctx context.Context, req *pb.GetOrdersRe
 	
 	paginatedOrders, err := h.orderService.GetOrders(ctx, pagination)
 	if err != nil {
-		return nil, status.Errorf(codes.InvalidArgument, "failed to get orders: %v", err)
+		return nil, status.Errorf(codes.Internal, "failed to get orders: %v", err)
 	}
 
 	pbOrders := make([]*pb.OrderInfoForList, 0, len(paginatedOrders.Orders))
@@ -137,7 +137,7 @@ func (h *OrderServiceHandler) UpdateOrder(ctx context.Context, req *pb.UpdateOrd
 
 	updatedOrder, err := h.orderService.UpdateOrder(ctx, order)
 	if err != nil {
-		return nil, status.Errorf(codes.InvalidArgument, "failed to update order: %v", err)
+		return nil, status.Errorf(codes.Internal, "failed to update order: %v", err)
 	}
 	
 	return OrderToGetOrderInfoResponse(updatedOrder), nil
@@ -157,7 +157,7 @@ func (h *OrderServiceHandler) DeleteOrder(ctx context.Context, req *pb.DeleteOrd
 
 	err = h.orderService.DeleteOrder(ctx, OrderID)
 	if err != nil {
-		return nil, err
+		return nil, status.Errorf(codes.Internal, "failed to delete order: %v", err)
 	}
 
 	return &emptypb.Empty{}, nil

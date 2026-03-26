@@ -84,7 +84,7 @@ func (h *ItemServiceHandler) CreateItem(ctx context.Context, req *pb.CreateItemR
 
 	createdItem, err := h.itemService.CreateItem(ctx, item)
 	if err != nil {
-		return nil, status.Errorf(codes.InvalidArgument, "failed to create item: %v", err)
+		return nil, status.Errorf(codes.Internal, "failed to create item: %v", err)
 	}
 	
 	return ItemToGetItemInfoResponse(createdItem), nil
@@ -104,7 +104,7 @@ func (h *ItemServiceHandler) GetItemInfo(ctx context.Context, req *pb.GetItemInf
 
 	item, err := h.itemService.GetItemInfo(ctx, itemID)
 	if err != nil {
-		return nil, status.Errorf(codes.InvalidArgument, "failed to get item: %v", err)
+		return nil, status.Errorf(codes.Internal, "failed to get item: %v", err)
 	}
 
 	return ItemToGetItemInfoResponse(item), nil
@@ -126,7 +126,7 @@ func (h *ItemServiceHandler) GetItems(ctx context.Context, req *pb.GetItemsReque
 	
 	paginatedItems, err := h.itemService.GetItems(ctx, pagination)
 	if err != nil {
-		return nil, status.Errorf(codes.InvalidArgument, "failed to get items: %v", err)
+		return nil, status.Errorf(codes.Internal, "failed to get items: %v", err)
 	}
 
 	response := &pb.GetItemsResponse{
@@ -186,7 +186,7 @@ func (h *ItemServiceHandler) UpdateItem(ctx context.Context, req *pb.UpdateItemR
 
 	updatedItem, err := h.itemService.UpdateItem(ctx, item, isPriceUpdated)
 	if err != nil {
-		return nil, status.Errorf(codes.InvalidArgument, "failed to update item: %v", err)
+		return nil, status.Errorf(codes.Internal, "failed to update item: %v", err)
 	}
 	
 	return ItemToGetItemInfoResponse(updatedItem), nil
@@ -206,7 +206,7 @@ func (h *ItemServiceHandler) DeleteItem(ctx context.Context, req *pb.DeleteItemR
 
 	err = h.itemService.DeleteItem(ctx, itemID)
 	if err != nil {
-		return nil, err
+		return nil, status.Errorf(codes.Internal, "failed to delete item: %v", err)
 	}
 
 	return &emptypb.Empty{}, nil

@@ -45,7 +45,7 @@ func (h *ItemPictureServiceHandler) CreateItemPicture(ctx context.Context, req *
 
 	item, err := h.itemPictureService.CreateItemPicture(ctx, itemPicture)
 	if err != nil {
-		return nil, status.Errorf(codes.InvalidArgument, "failed to create item picture: %v", err)
+		return nil, status.Errorf(codes.Internal, "failed to create item picture: %v", err)
 	}
 	
 	return ItemToGetItemInfoResponse(item), nil
@@ -65,7 +65,7 @@ func (h *ItemPictureServiceHandler) DeleteItemPicture(ctx context.Context, req *
 
 	err = h.itemPictureService.DeleteItemPicture(ctx, ItemPictureID)
 	if err != nil {
-		return nil, err
+		return nil, status.Errorf(codes.Internal, "failed to delete item picture: %v", err)
 	}
 
 	return &emptypb.Empty{}, nil

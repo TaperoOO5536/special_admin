@@ -16,7 +16,11 @@ var publicPaths = map[string]bool{
 }
 
 func AuthMiddleware(next http.Handler, authService *service.AuthService) http.HandlerFunc {
-    return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {        
+    return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) { 
+        if r.Method == http.MethodOptions {
+			next.ServeHTTP(w, r)
+			return
+		}       
         if publicPaths[r.URL.Path] {
             next.ServeHTTP(w, r)
             return

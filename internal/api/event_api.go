@@ -117,7 +117,7 @@ func (h *EventServiceHandler) CreateEvent(ctx context.Context, req *pb.CreateEve
 
 	createdEvent, err := h.eventService.CreateEvent(ctx, event)
 	if err != nil {
-		return nil, status.Errorf(codes.InvalidArgument, "failed to create event: %v", err)
+		return nil, status.Errorf(codes.Internal, "failed to create event: %v", err)
 	}
 	
 	return EventToGetEventInfoResponse(createdEvent), nil
@@ -138,7 +138,7 @@ func (h *EventServiceHandler) GetEventInfo(ctx context.Context, req *pb.GetEvent
 
 	event, err := h.eventService.GetEventInfo(ctx, EventID)
 	if err != nil {
-		return nil, status.Errorf(codes.InvalidArgument, "failed to get event: %v", err)
+		return nil, status.Errorf(codes.Internal, "failed to get event: %v", err)
 	}
 
 	return EventToGetEventInfoResponse(event), nil
@@ -160,7 +160,7 @@ func (h *EventServiceHandler) GetEvents(ctx context.Context, req *pb.GetEventsRe
 	
 	paginatedEvents, err := h.eventService.GetEvents(ctx, pagination)
 	if err != nil {
-		return nil, status.Errorf(codes.InvalidArgument, "failed to get events: %v", err)
+		return nil, status.Errorf(codes.Internal, "failed to get events: %v", err)
 	}
 
 	response := &pb.GetEventsResponse{
@@ -235,7 +235,7 @@ func (h *EventServiceHandler) UpdateEvent(ctx context.Context, req *pb.UpdateEve
 
 	updatedEvent, err := h.eventService.UpdateEvent(ctx, event, isPriceUpdated, isOccupiedSeats)
 	if err != nil {
-		return nil, status.Errorf(codes.InvalidArgument, "failed to update event: %v", err)
+		return nil, status.Errorf(codes.Internal, "failed to update event: %v", err)
 	}
 	
 	return EventToGetEventInfoResponse(updatedEvent), nil
@@ -255,7 +255,7 @@ func (h *EventServiceHandler) DeleteEvent(ctx context.Context, req *pb.DeleteEve
 
 	err = h.eventService.DeleteEvent(ctx, EventID)
 	if err != nil {
-		return nil, err
+		return nil, status.Errorf(codes.Internal, "failed to delete event: %v", err)
 	}
 
 	return &emptypb.Empty{}, nil

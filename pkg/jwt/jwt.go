@@ -28,7 +28,7 @@ func NewJWTManager(accessDur, refreshDur string) (*JWTManager) {
 func (m *JWTManager) GenerateTokenPair(login, secret string) (accessToken, refreshToken string, err error) {
     accessToken, err = m.GenerateAccessToken(login, secret)
     if err != nil {
-        return
+        return "", "", err
     }
     refreshToken = generateRandomString(64)
     return accessToken, refreshToken, nil

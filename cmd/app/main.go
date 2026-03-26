@@ -7,7 +7,7 @@ import (
 
 	"github.com/TaperoOO5536/special_admin/internal/app"
 	"github.com/TaperoOO5536/special_admin/pkg/env"
-	"golang.org/x/crypto/bcrypt"
+	// "golang.org/x/crypto/bcrypt"
 )
 
 func main() {
@@ -28,6 +28,6 @@ func main() {
 		log.Fatalf("Failed to start server: %v", err)
 	}
 
-	password, _ := bcrypt.GenerateFromPassword([]byte("qwer1234"), bcrypt.DefaultCost)
-	log.Println(string(password))
+	// password, _ := bcrypt.GenerateFromPassword([]byte("qwer1234"), bcrypt.DefaultCost)
+	// log.Println(string(password))
 }
